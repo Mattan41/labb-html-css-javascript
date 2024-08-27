@@ -1,0 +1,28 @@
+@media (max-width: 768px) {
+    /* Stilar för mobilversionen */
+    body {
+        font-size: 16px;
+    }
+    header {
+        height: 50px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Stilar för tabletversionen */
+    body {
+        font-size: 18px;
+    }
+    header {
+        height: 75px;
+    }
+}
+@media (min-width: 1025px) {
+    /* Stilar för desktopversionen */
+    body {
+        font-size: 20px;
+    }
+    header {
+        height: 100px;
+    }
+}
