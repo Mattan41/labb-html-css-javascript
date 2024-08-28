@@ -1,5 +1,10 @@
 // todo: update welcome message when user logs in
 // todo: only sign in if signed out, otherwise sign out
+// todo: if clicking outside of login, close login popup
+// todo: if logged in, clicking icon should show logout form
+// todo: fix display login box
+// todo: search movies, filter movies, dark theme, list och favourite movies - icons for displaying.
+// todo: in desktop/tablet mode, fetch selected movie and show above the list.
 
 // Kontrollera om användaren är inloggad
 window.onload = function () {
