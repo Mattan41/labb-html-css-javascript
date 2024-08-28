@@ -1,20 +1,34 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Movie Details</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/movie-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Movie details</title>
 </head>
 <body>
-<h2 id="movie-title"> Movie Title</h2>
-<p id="movie-synopsis"></p>
-<!-- etc. -->
-<script>
-  const id = new URLSearchParams(window.location.search).get('id');
-  const movie = movieDataMap.get(id);
-  if (movie) {
-    document.getElementById('movie-title').textContent = movie.title;
-    document.getElementById('movie-synopsis').textContent = movie.synopsis;
-    // etc.
-  }
-</script>
+<a href="index.html">Back to Movie List</a>
+
+<template id="movie-details-template">
+    <div id="movie-details-container">
+        <img id="movie-image" src="" width="200" height="300">
+        <h2 id="movie-title"></h2>
+        <p id="movie-year-rated"></p>
+        <ul id="movie-list">
+            <li>Director: <span id="movie-director"></span></li>
+            <li>Genre: <span id="movie-genre"></span></li>
+            <li>Stars: <span id="movie-stars"></span></li>
+        </ul>
+        <div id="movie-synopsis">
+            <p id="movie-description"></p>
+        </div>
+        <p id="movie-favourite"></p>
+        <i id="starIcon" class="fas fa-star"></i>
+    </div>
+</template>
+
+<script src="js/movie-details.js"></script>
 </body>
 </html>

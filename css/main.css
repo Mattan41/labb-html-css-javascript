@@ -22,6 +22,29 @@ h2 {
     margin-bottom: 10px;
 }
 
+/* movie search*/
+#search-bar {
+    width: 70%; /* adjust the width of the search bar */
+    border: 1px solid #ccc; /* add a border to the search bar */
+    border-radius: 4px;
+    padding: 10px; /* add some padding to the search bar */
+    font-size: 16px; /* adjust the font size of the search bar */
+    margin: 0 auto; /* to center the section on the page */
+}
+
+#filter-icon {
+    display: inline-block; /* make the filter icon display inline-block */
+    margin-left: 10px; /* add some margin to the left of the filter icon */
+}
+
+#filter-icon i {
+    font-size: 20px; /* adjust the font size of the filter icon */
+}
+
+#filter-icon span {
+    font-size: 16px; /* adjust the font size of the filter text */
+    margin-left: 5px; /* add some margin to the left of the filter text */
+}
 
 /* movie-details.css */
 
@@ -35,11 +58,25 @@ h2 {
 
 
 /* movie-list.css */
-
+.max-width-800 {
+    max-width: 800px;
+    margin: 0 auto; /* to center the section on the page */
+}
 .fas.fa-star.favorite {
     color: yellow;
 }
 
+/* Hide columns for mobile devices */
+@media only screen and (max-width: 768px) {
+    #movieListDetails th:nth-child(4),
+    #movieListDetails th:nth-child(5),
+    #movieListDetails th:nth-child(6),
+    #movieListDetails td:nth-child(4),
+    #movieListDetails td:nth-child(5),
+    #movieListDetails td:nth-child(6) {
+        display: none;
+    }
+}
 #movieListContainer li div {
     display: flex;
     justify-content: space-between;

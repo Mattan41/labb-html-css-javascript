@@ -1,32 +1,23 @@
-import movieData from './data.js';
 
-const movieDataMap = new Map(movieData.map(movie => [movie.id, movie]));
+let movieDataMap;
 
-// Function to show movie details
-function showMovieDetails(id) {
-    const movie = movieDataMap.get(id);
-    if (!movie) return; // Handle missing movie data
-
-    // Load the new HTML page into an iframe
-    const iframe = document.createElement('iframe');
-    iframe.src = `movie-details.html?id=${id}`;
-    iframe.frameBorder = 0;
-    iframe.width = '100%';
-    iframe.height = '100%';
-
-    // Replace the contents of #movieDisplayed with the iframe
-    const movieDisplayed = document.getElementById('movieDisplayed');
-    movieDisplayed.innerHTML = '';
-    movieDisplayed.appendChild(iframe);
-}
-
+fetch('json/data.json')
+    .then(response => response.json())
+    .then(data => {
+        movieDataMap = new Map(data.map(movie => [movie.id, movie]));
+        populateMovieList();
+    })
+    .catch(error => console.error(error));
 // Function to populate the movie list
 function populateMovieList() {
     const movieTemplate = document.getElementById('movieTemplate');
     const movieListContainer = document.getElementById('movieListContainer');
 
-    movieData.forEach((movie, id) => {
+    movieDataMap.forEach((movie, id) => {
         const movieItem = movieTemplate.content.cloneNode(true);
+        const movieTitle = movieItem.querySelector('#movieTitle');
+        const movieImage = movieItem.querySelector('#movieImage');
+
         movieItem.querySelector('#movieTitle').textContent = movie.title;
         movieItem.querySelector('#movieGenre').textContent = movie.genre;
         movieItem.querySelector('#movieDirector').textContent = movie.director;
@@ -41,8 +32,6 @@ function populateMovieList() {
             movieItem.querySelector('#movieImage').src = "img/cam.png";
         }
 
-        // Use the star hollow.png as default for the star icon
-        movieItem.querySelector('#starIcon').src = movie.favourite ? 'img/star filled.png' : 'img/star hollow.png';
 
         const starIcon = movieItem.querySelector('#starIcon');
         if (movie.favourite) {
@@ -50,10 +39,14 @@ function populateMovieList() {
         } else {
             starIcon.classList.remove('favorite');
         }
-        // Add click event listener to the movie item
-        movieItem.addEventListener("click", function () {
-            window.location.href = "movie-details.html?id=" + id;
+        // Add click event listener to the movie title and image
+        [movieTitle, movieImage].forEach((element) => {
+            element.addEventListener("click", () => {
+                const id = movie.id; // Get the movie ID from the current movie object
+                window.location.href = "movie-details.html?id=" + id;
+            });
         });
+
         movieListContainer.appendChild(movieItem);
     });
 
@@ -66,6 +59,3 @@ function populateMovieList() {
         }
     });
 }
-
-// Call the function to populate the movie list
-populateMovieList();
