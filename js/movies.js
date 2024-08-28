@@ -46,8 +46,7 @@ function populateMovieList() {
         // Add click event listener to the movie title and image
         [movieTitle, movieImage].forEach((element) => {
             element.addEventListener("click", () => {
-                movie.id; // Get the movie ID from the current movie object
-                window.location.href = "movie-details.html?id=" + id;
+                window.location.href = "movie-details.html?id=" + movie.id;
             });
         });
 
