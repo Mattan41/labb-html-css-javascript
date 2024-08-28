@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movie Details</title>
+</head>
+<body>
+<h2 id="movie-title"> Movie Title</h2>
+<p id="movie-synopsis"></p>
+<!-- etc. -->
+<script>
+  const id = new URLSearchParams(window.location.search).get('id');
+  const movie = movieDataMap.get(id);
+  if (movie) {
+    document.getElementById('movie-title').textContent = movie.title;
+    document.getElementById('movie-synopsis').textContent = movie.synopsis;
+    // etc.
+  }
+</script>
+</body>
+</html>

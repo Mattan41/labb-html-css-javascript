@@ -21,7 +21,7 @@ function login() {
         setTimeout(function() {
             document.getElementById("login-popup").style.display = "none";
         }, 100); // close the login-popup after 100ms
-        alert("Inloggning lyckades för användare: " + username);
+        alert("Login successful for user: " + username);
         showLogoutForm();
     } else {
         alert("Vänligen fyll i både användarnamn och lösenord.");

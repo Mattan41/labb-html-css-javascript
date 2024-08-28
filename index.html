@@ -6,69 +6,78 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Document</title>
-</head>
+    </head>
 <body>
-<header class="header">
-    <div class="logo-container">
-        <img src="img/cam.png" alt="Logo" id="logo">
-        <h1>Top Flicks</h1>
-    </div>
-    <div class="right-container">
-        <div id="login-icon">
-            <i class="fas fa-user" id="login-button"></i>
-            <div id="login-popup" style="display: none;">
-                <label for="username"></label><input type="text" placeholder="Username" id="username">
-                <label for="password"></label><input type="password" placeholder="Password" id="password">
-                <button onclick="login()">Sign in</button>
-                <button onclick="window.location.href='register-form.html'">Register</button>
+<div class="grid-container">
+    <header class="header">
+        <div class="logo-container">
+            <img src="img/cam.png" alt="Logo" id="logo">
+            <h1>Top Flicks</h1>
+        </div>
+        <div class="right-container">
+            <div id="login-icon">
+                <i class="fas fa-user" id="login-button"></i>
+                <div id="login-popup" style="display: none;">
+                    <label for="username"></label><input type="text" placeholder="Username" id="username">
+                    <label for="password"></label><input type="password" placeholder="Password" id="password">
+                    <button onclick="login()">Sign in</button>
+                    <button onclick="window.location.href='register-form.html'">Register</button>
+                </div>
             </div>
+            <div id="logout-form" style="display: none;">
+                <span id="welcome-message"></span>
+                <button onclick="logout()">Logga ut</button>
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="theme-switch">
+                <span class="slider round"></span>
+            </label>
         </div>
-        <div id="logout-form" style="display: none;">
-            <span id="welcome-message"></span>
-            <button onclick="logout()">Logga ut</button>
-        </div>
-        <label class="switch">
-            <input type="checkbox" id="theme-switch">
-            <span class="slider round"></span>
-        </label>
-    </div>
-</header>
+    </header>
+    <main class="main-content">
+        <h1>Index Landningssida</h1>
+        <section id="movieDisplayed">
+            <!-- This list will be populated dynamically -->
+        </section>
 
-<main>
-    <h1>Index Landningssida</h1>
-    <section id="movieDisplayed">
-        <!-- This list will be populated dynamically -->
-    </section>
-
-    <section id="movieList">
-        <h2>Movies</h2>
-        <table id="movieListDetails">
-            <thead>
-            <tr>
-                <th>TITLE</th>
-                <th>GENRE</th>
-                <th>DIRECTOR</th>
-                <th>YEAR</th>
-                <th>RATING</th>
-            </tr>
-            </thead>
-            <tbody id="movieListContainer">
-            <!-- movie list will be populated dynamically -->
-            </tbody>
-        </table>
+        <section id="movieList">
+            <h2>Movies</h2>
+            <table id="movieListDetails">
+                <thead>
+                <tr>
+                    <th scope="col">TITLE</th>
+                    <th scope="col">GENRE</th>
+                    <th scope="col">DIRECTOR</th>
+                    <th scope="col">YEAR</th>
+                    <th scope="col">RATING</th>
+                    <th scope="col">STAR</th>
+                </tr>
+                </thead>
+                <tbody id="movieListContainer">
+                <!-- movie list will be populated dynamically -->
+                </tbody>
+            </table>
+        </section>
 
         <template id="movieTemplate">
             <tr>
-                <td id="movieTitle"></td>
-                <td id="movieGenre"></td>
-                <td id="movieDirector"></td>
-                <td id="movieYear"></td>
-                <td id="movieRating"></td>
+                <td class="col-md-2">
+                    <img id="movieImage" width="50" height="50" class="img-fluid">
+                </td>
+                <td class="col-md-3" id="movieTitle"></td>
+                <td class="col-md-2" id="movieGenre"></td>
+                <td class="col-md-2" id="movieDirector"></td>
+                <td class="col-md-1" id="movieYear"></td>
+                <td class="col-md-1" id="movieRating"></td>
+                <td class="col-md-1">
+                    <i id="starIcon" class="fas fa-star"></i>
+                </td>
             </tr>
         </template>
-    </section>
 
-</main>
+    </main>
+
+</div>
 <script type="module" src="js/movies.js"></script>
 <script src="js/login.js"></script>
 </body>
