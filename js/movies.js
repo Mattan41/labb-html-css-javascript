@@ -13,10 +13,11 @@ function populateMovieList() {
     const movieTemplate = document.getElementById('movieTemplate');
     const movieListContainer = document.getElementById('movieListContainer');
 
-    movieDataMap.forEach((movie, id) => {
+    movieDataMap.forEach((movie) => {
         const movieItem = movieTemplate.content.cloneNode(true);
         const movieTitle = movieItem.querySelector('#movieTitle');
         const movieImage = movieItem.querySelector('#movieImage');
+        const starIcon = movieItem.querySelector('#starIcon');
 
         movieItem.querySelector('#movieTitle').textContent = movie.title;
         movieItem.querySelector('#movieGenre').textContent = movie.genre;
@@ -32,30 +33,27 @@ function populateMovieList() {
             movieItem.querySelector('#movieImage').src = "img/cam.png";
         }
 
+        // Toggle the 'favorite' class on the star icon based on the 'favourite' property of the movie
+        starIcon.classList.toggle('favorite', movie.favourite);
 
-        const starIcon = movieItem.querySelector('#starIcon');
-        if (movie.favourite) {
-            starIcon.classList.add('favorite');
-        } else {
-            starIcon.classList.remove('favorite');
-        }
+        // event listener to the star icon
+        starIcon.addEventListener("click", () => {
+            movie.favourite = !movie.favourite;
+            starIcon.classList.toggle('favorite', movie.favourite);
+            updateFavouriteList(movie.id);
+        });
+
         // Add click event listener to the movie title and image
         [movieTitle, movieImage].forEach((element) => {
             element.addEventListener("click", () => {
-                const id = movie.id; // Get the movie ID from the current movie object
+                movie.id; // Get the movie ID from the current movie object
                 window.location.href = "movie-details.html?id=" + id;
             });
         });
 
         movieListContainer.appendChild(movieItem);
-    });
 
 
-    // Attach event listener directly to movieListContainer
-    movieListContainer.addEventListener("click", function (event) {
-        if (event.target.tagName === "LI") {
-            const id = event.target.dataset.id;
-            showMovieDetails(id);
-        }
     });
+
 }

@@ -11,8 +11,6 @@ fetch(`json/data.json`)
     })
     .catch(error => console.error(error));
 
-// Fetch the the movie from JSON
-
 // Function to display the movie details
 function displayMovieDetails(movieData) {
     const movieDetailsTemplate = document.querySelector('#movie-details-template');
@@ -26,8 +24,16 @@ function displayMovieDetails(movieData) {
     movieDetailsContainer.querySelector('#movie-genre').textContent = movieData.genre;
     movieDetailsContainer.querySelector('#movie-stars').textContent = movieData.actors;
     movieDetailsContainer.querySelector('#movie-description').textContent = movieData.synopsis;
-    movieDetailsContainer.querySelector('#movie-favourite').textContent = movieData.favourite;
+    //movieDetailsContainer.querySelector('#movie-favourite').textContent = movieData.favourite;
 
-    // Add the movie details to the page
     document.body.appendChild(movieDetailsContainer);
+
+    const starIcon = document.querySelector('#starIcon');
+    starIcon.classList.toggle('favorite', movieData.favourite);
+
+    starIcon.addEventListener('click', () => {
+        movieData.favourite = !movieData.favourite;
+        starIcon.classList.toggle('favorite', movieData.favourite);
+        updateFavouriteList(movieId);
+    });
 }
