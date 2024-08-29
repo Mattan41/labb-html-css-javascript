@@ -1,10 +1,13 @@
-// todo: update welcome message when user logs in
+
+// todo: fix favourites view - mobile, tablet, desktop, close favourites for mobile
+// todo: add movie to favourites, display in list, clickable
+// todo: display  welcome message when user logs in
 // todo: only sign in if signed out, otherwise sign out
 // todo: if clicking outside of login, close login popup
 // todo: if logged in, clicking icon should show logout form
-// todo: fix display login box
-// todo: search movies, filter movies, dark theme, list och favourite movies - icons for displaying.
-// todo: in desktop/tablet mode, fetch selected movie and show above the list.
+// todo:  dark theme
+// todo: search movies, filter movies,
+// todo: fetch selected movie and show above the list.
 
 // Kontrollera om användaren är inloggad
 window.onload = function () {
@@ -48,6 +51,6 @@ function showLoginForm() {
 function showLogoutForm() {
     const username = sessionStorage.getItem("username");
     document.getElementById("welcome-message").textContent =
-        "Välkommen, " + username + "!";
+        "Hi, " + username + "!";
     document.getElementById("logout-form").style.display = "flex";
 }

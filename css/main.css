@@ -1,5 +1,5 @@
 @import "header.css";
-
+@import "_utils.css";
 /* global.css */
 /* mobile first*/
 
@@ -22,7 +22,30 @@ h2 {
     margin-bottom: 10px;
 }
 
-/* movie search*/
+/* media queries tablet and desktop*/
+@media (min-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    body {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+}
+
+
+/* movie search styles*/
 #search-bar {
     width: 70%; /* adjust the width of the search bar */
     border: 1px solid #ccc; /* add a border to the search bar */
@@ -48,9 +71,11 @@ h2 {
 
 /* movie-details.css */
 
+
 .movie-list-header {
     display: flex;
     align-items: center;
+    font-size: 24px; /* Justera font-storleken för mobil-vy */
 }
 
 .movie-list-header i {
@@ -66,43 +91,103 @@ h2 {
 
 }
 
+/* movie list styles */
 .container > .row {
+    /* Ange bredden till 100% för mobil-vy */
     display: flex;
     flex-direction: row;
     gap: 20px;
     justify-content: center;
     border: 1px solid #ccc;
     border-radius: 4px;
-    padding: 10px;
+    padding: 5px;
 }
-/* movie-list.css */
 
+/* movie-list.css */
 .movie-list {
     display: flex;
-    justify-content: center; /* to center the section on the page */
+    flex-direction: column; /* Arrange items vertically */
+    overflow-x: auto;
+    width: 100%;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 20px;
 }
 
-.fas.fa-star.favorite {
-    color: yellow;
-}
-
-#movieList {
-    border: 2px solid #333; /* tjockare border */
-    border-radius: 8px; /* mer rundade hörn */
-    padding: 20px; /* mer padding */
-}
-
-#movieDetailsBar {
+.movie-item {
     display: flex;
-    justify-content: space-between;
-    background-color: #f1f1f1;
+    align-items: center;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     padding: 10px;
-    margin-bottom: 10px;
 }
 
+.movie-item img {
+    width: 100px; /* Adjust image width as needed */
+    height: auto;
+    margin-right: 10px;
+}
+
+.movie-item-details {
+    flex: 1; /* Allow details to take up remaining space */
+    display: flex;
+    justify-content: space-between; /* Distribute details evenly */
+    flex-direction: column; /* Arrange details vertically */
+}
+
+.movie-item-details p {
+    margin: 0;
+}
+
+.movie-item-details .star-icon {
+    margin-left: 10px;
+}
+
+.movie-item-details h3 {
+    margin-bottom: 5px; /* Add spacing below the title */
+}
+
+.movie-item-details {
+    /* ... other styles ... */
+    flex-direction: column;
+}
+
+.movie-item-details .movie-title-container {
+    display: flex;
+    justify-content: space-between; /* Align title and star icon horizontally */
+}
+
+.movie-item-details h3 {
+    margin-bottom: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .movie-list .movie-item {
+        flex: 0 0 150px; /* Reduce width for smaller screens */
+    }
+}
+
+
+@media (min-width: 768px) {
+    #movieTitle {
+        max-width: 300px; /* Ange den maximala bredden du vill ha */
+    }
+}
+
+@media (min-width: 1024px) {
+    #movieTitle {
+        max-width: 400px; /* Ange den maximala bredden du vill ha */
+    }
+}
+
+
+/* favourites styles */
 #favourites-container {
     display: none; /* Dölj favourite-listan  */
 }
+
 #favourites-container.show {
     display: block;
 }

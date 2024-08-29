@@ -1,4 +1,4 @@
-
+/* Header Styles */
 .header {
     display: flex;
     justify-content: space-between;
@@ -98,12 +98,11 @@ input:checked + .slider:before {
     margin-right: 10px; /* avstånd mellan bild och text */
 }
 
-.header h2 {
-    font-size: 24px; /* adjust the font size to your liking */
-    font-weight: bold; /* make the text bold */
-    display: inline-block; /* make the text display inline with the image */
-    vertical-align: middle; /* center the text vertically with the image */
-}
+/*.header h2 {*/
+/*    font-weight: bold; !* make the text bold *!*/
+/*    display: inline-block; !* make the text display inline with the image *!*/
+/*    vertical-align: middle; !* center the text vertically with the image *!*/
+/*}*/
 
 #logout-form {
     display: flex;
@@ -137,7 +136,7 @@ input:checked + .slider:before {
 
 #login-popup {
     position: relative;
-    top: 80%;
+    top: 100%;
     right: 0;
     background-color: #f1f1f1;
     padding: 10px;
