@@ -1,5 +1,5 @@
 @import "header.css";
-
+@import "_utils.css";
 /* global.css */
 /* mobile first*/
 
@@ -22,7 +22,30 @@ h2 {
     margin-bottom: 10px;
 }
 
-/* movie search*/
+/* media queries tablet and desktop*/
+@media (min-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    body {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+}
+
+
+/* movie search styles*/
 #search-bar {
     width: 70%; /* adjust the width of the search bar */
     border: 1px solid #ccc; /* add a border to the search bar */
@@ -51,6 +74,7 @@ h2 {
 .movie-list-header {
     display: flex;
     align-items: center;
+    font-size: 24px; /* Justera font-storleken för mobil-vy */
 }
 
 .movie-list-header i {
@@ -66,7 +90,9 @@ h2 {
 
 }
 
-.container > .row {
+/* movie list styles */
+.container > .row{
+    /* Ange bredden till 100% för mobil-vy */
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -79,27 +105,68 @@ h2 {
 
 .movie-list {
     display: flex;
+    flex-direction: row;
     justify-content: center; /* to center the section on the page */
-}
-
-.fas.fa-star.favorite {
-    color: yellow;
-}
-
-#movieList {
+    width: 100%; /* Ange bredden till 100% för mobil-vy */
     border: 2px solid #333; /* tjockare border */
     border-radius: 8px; /* mer rundade hörn */
     padding: 20px; /* mer padding */
 }
-
-#movieDetailsBar {
-    display: flex;
-    justify-content: space-between;
-    background-color: #f1f1f1;
-    padding: 10px;
-    margin-bottom: 10px;
+#movieListDetails {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    font-size: inherit;
+    width: 100%;
 }
 
+#movieListDetails th, #movieListDetails td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    flex-grow: 1;
+}
+
+.container > table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.container >th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.container > th {
+    background-color: #f0f0f0;
+}
+
+/* movie-details styles */
+#movieTitle {
+    max-width: 200px; /* Ange den maximala bredden du vill ha */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#movieDirector {
+    max-width: 200px; /* Ange den maximala bredden du vill ha */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+    #movieTitle {
+        max-width: 300px; /* Ange den maximala bredden du vill ha */
+    }
+}
+@media (min-width: 1024px) {
+    #movieTitle {
+        max-width: 400px; /* Ange den maximala bredden du vill ha */
+    }
+}
+
+
+/* favourites styles */
 #favourites-container {
     display: none; /* Dölj favourite-listan  */
 }

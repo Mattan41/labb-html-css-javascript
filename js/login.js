@@ -51,6 +51,6 @@ function showLoginForm() {
 function showLogoutForm() {
     const username = sessionStorage.getItem("username");
     document.getElementById("welcome-message").textContent =
-        "Välkommen, " + username + "!";
+        "Hi, " + username + "!";
     document.getElementById("logout-form").style.display = "flex";
 }
