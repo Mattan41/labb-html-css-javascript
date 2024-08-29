@@ -168,20 +168,7 @@ h2 {
         flex: 0 0 150px; /* Reduce width for smaller screens */
     }
 }
-/* movie-details styles */
-#movieTitle {
-    max-width: 200px; /* Ange den maximala bredden du vill ha */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
 
-#movieDirector {
-    max-width: 200px; /* Ange den maximala bredden du vill ha */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
 
 @media (min-width: 768px) {
     #movieTitle {
