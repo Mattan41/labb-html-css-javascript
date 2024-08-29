@@ -48,6 +48,50 @@ h2 {
 
 /* movie-details.css */
 
+.movie-list-header {
+    display: flex;
+    align-items: center;
+}
+
+.movie-list-header i {
+    margin-left: 10px;
+}
+
+.main-content #movieListHeader {
+    font-size: 36px; /* adjust the font size */
+    font-weight: bold; /* make the text bold */
+    color: #333; /* change the text color */
+    text-align: center; /* center the text */
+    margin-bottom: 20px; /* add some space below the header */
+
+}
+
+.container > .row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+}
+/* movie-list.css */
+
+.movie-list {
+    display: flex;
+    justify-content: center; /* to center the section on the page */
+}
+
+.fas.fa-star.favorite {
+    color: yellow;
+}
+
+#movieList {
+    border: 2px solid #333; /* tjockare border */
+    border-radius: 8px; /* mer rundade hörn */
+    padding: 20px; /* mer padding */
+}
+
 #movieDetailsBar {
     display: flex;
     justify-content: space-between;
@@ -56,58 +100,12 @@ h2 {
     margin-bottom: 10px;
 }
 
-
-/* movie-list.css */
-.max-width-800 {
-    max-width: 800px;
-    margin: 0 auto; /* to center the section on the page */
+#favourites-container {
+    display: none; /* Dölj favourite-listan  */
 }
-.fas.fa-star.favorite {
-    color: yellow;
-}
-
-/* Hide columns for mobile devices */
-@media only screen and (max-width: 768px) {
-    #movieListDetails th:nth-child(4),
-    #movieListDetails th:nth-child(5),
-    #movieListDetails th:nth-child(6),
-    #movieListDetails td:nth-child(4),
-    #movieListDetails td:nth-child(5),
-    #movieListDetails td:nth-child(6) {
-        display: none;
-    }
-}
-#movieListContainer li div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-#movieListContainer li div p:first-child {
-    font-weight: bold;
-    margin-right: 10px;
+#favourites-container.show {
+    display: block;
 }
 
 
-/*  tablet */
 
-@media (min-width: 769px) and (max-width: 1024px) {
-
-    body {
-        font-size: 18px;
-    }
-    header {
-        height: 75px;
-    }
-}
-/* desktop */
-@media (min-width: 1025px) {
-
-    body {
-        font-size: 20px;
-    }
-    header {
-        height: 100px;
-    }
-}

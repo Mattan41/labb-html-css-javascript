@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
 <body>
@@ -12,14 +12,14 @@
     <header class="header">
         <div class="logo-container">
             <img src="img/cam.png" alt="Logo" id="logo">
-            <h1>Top Flicks</h1>
+            <h2>Top Flicks</h2>
         </div>
         <div class="right-container">
             <div id="login-icon">
-                <i class="fas fa-user" id="login-button"></i>
+                <i class="fas fa-user" id="login-button" title="Login or Register"></i>
                 <div id="login-popup" style="display: none;">
-                    <label for="username"></label><input type="text" placeholder="Username" id="username">
-                    <label for="password"></label><input type="password" placeholder="Password" id="password">
+                    <label for="username"></label><input type="text" id="username" placeholder="Username" autocomplete="username" >
+                    <label for="password"></label><input type="password" id="password" placeholder="Password">
                     <button onclick="login()">Sign in</button>
                     <button onclick="window.location.href='register-form.html'">Register</button>
                 </div>
@@ -47,47 +47,65 @@
             <!-- This list will be populated dynamically id in tablet och desktop mode, in mobile mode will be empty -->
         </section>
 
-        <section id="movieList" class="max-width-800">
-            <h2>Movies</h2>
-            <table id="movieListDetails">
-                <thead>
-                <tr>
-                    <th></th>
-                    <th>TITLE</th>
-                    <th>GENRE</th>
-                    <th>DIRECTOR</th>
-                    <th>YEAR</th>
-                    <th>RATING</th>
-                    <th>STAR</th>
-                </tr>
-                </thead>
-                <tbody id="movieListContainer">
-                <!-- movie list will be populated dynamically -->
-                </tbody>
-            </table>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 id="movieListHeader">
+                        Movies
+                        <i class="fa-solid fa-f" data-bs-toggle="collapse" data-bs-target="#favourites-container"></i>
+                        </h2>
+                    <section id="movieList" class="movie-list">
+                        <table id="movieListDetails">
+                            <thead>
+                            <tr>
+                                <th>TITLE</th>
+                                <th>GENRE</th>
+                                <th>DIRECTOR</th>
+                                <th>YEAR</th>
+                                <th>RATING</th>
+                                <th>STAR</th>
+                            </tr>
+                            </thead>
+                            <tbody id="movieListContainer">
+                            <!-- movie list will be populated dynamically -->
+                            </tbody>
+                        </table>
 
-            <template id="movieTemplate">
-                <tr>
-                    <td class="col-md-2">
-                        <img id="movieImage" width="50" height="50" class="img-fluid">
-                    </td>
-                    <td class="col-md-3" id="movieTitle"></td>
-                    <td class="col-md-2" id="movieGenre"></td>
-                    <td class="col-md-2" id="movieDirector"></td>
-                    <td class="col-md-1" id="movieYear"></td>
-                    <td class="col-md-1" id="movieRating"></td>
-                    <td class="col-md-1">
-                        <i id="starIcon" class="fas fa-star"></i>
-                    </td>
-                </tr>
-            </template>
-
-        </section>
-
+                        <template id="movieTemplate">
+                            <tr>
+                                <td class="col-md-2">
+                                    <img id="movieImage" width="50" height="50" class="img-fluid">
+                                </td>
+                                <td class="col-md-3" id="movieTitle"></td>
+                                <td class="col-md-2" id="movieGenre"></td>
+                                <td class="col-md-2" id="movieDirector"></td>
+                                <td class="col-md-1" id="movieYear"></td>
+                                <td class="col-md-1" id="movieRating"></td>
+                                <td class="col-md-1">
+                                    <i id="starIcon" class="fas fa-star" title="Add/remove favourite"></i>
+                                </td>
+                            </tr>
+                        </template>
+                    </section>
+                </div>
+                <div class="col-md-4">
+                    <!-- Listan med favourites -->
+                    <div id="favourites-container" class="collapse">
+                        <h2>Favourites</h2>
+                        <ul>
+                            <li>movie 1</li>
+                            <li>movie 2</li>
+                            <li>movie 3</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
 </div>
 <script type="module" src="js/movies.js"></script>
 <script src="js/login.js"></script>
+<script src="js/favourites.js"></script>
 </body>
 </html>
