@@ -169,6 +169,14 @@ h2 {
     }
 }
 
+#movieGenre {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    margin: 5px;
+}
 
 @media (min-width: 768px) {
     #movieTitle {

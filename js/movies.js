@@ -26,10 +26,31 @@ function populateMovieList() {
         const starIcon = movieItem.querySelector('#starIcon');
 
         movieItem.querySelector('#movieTitle').textContent = movie.title;
-        movieItem.querySelector('#movieGenre').textContent = movie.genre;
         movieItem.querySelector('#movieDirector').textContent = "Director: " + movie.director;
         movieItem.querySelector('#movieYear').textContent = movie.year;
         movieItem.querySelector('#movieRating').textContent = "Rating: " + movie.rating;
+        movieItem.querySelector('#movieGenre').textContent = movie.genre;
+
+        // todo: Fix genres return as list
+/*
+movieItem.querySelector('#movieTitle').textContent = movie.title;
+  movieItem.querySelector('#movieDirector').textContent = "Director: " + movie.director;
+  movieItem.querySelector('#movieYear').textContent = movie.year;
+  movieItem.querySelector('#movieRating').textContent = "Rating: " + movie.rating;
+
+  // Hantera listan med genrer
+  const genres = movie.genres; // Anta att du har en lista med genrer i din data
+  const genreList = movieItem.querySelector('#genreList'); // Skapa ett nytt element för att visa listan med genrer
+
+  genres.forEach((genre) => {
+    const genreItem = document.createElement('span');
+    genreItem.textContent = genre;
+    genreItem.classList.add('genre'); // Lägg till en klass för att styla varje genre
+    genreList.appendChild(genreItem);
+  });
+ */
+
+
 
         // Check if the movie has an image URL
         if (movie.imageUrl) {
