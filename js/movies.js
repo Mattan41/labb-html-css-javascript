@@ -1,8 +1,14 @@
-
 let movieDataMap;
 
-fetch('json/data.json')
-    .then(response => response.json())
+fetch('../labb1/json/data.json', {mode : 'no-cors'})
+    .then(response => {
+        // Check if the response is OK (status code 200)
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        // Parse the JSON from the response
+        return response.json();
+    })
     .then(data => {
         movieDataMap = new Map(data.map(movie => [movie.id, movie]));
         populateMovieList();
