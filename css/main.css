@@ -71,6 +71,7 @@ h2 {
 
 /* movie-details.css */
 
+
 .movie-list-header {
     display: flex;
     align-items: center;
@@ -91,7 +92,7 @@ h2 {
 }
 
 /* movie list styles */
-.container > .row{
+.container > .row {
     /* Ange bredden till 100% för mobil-vy */
     display: flex;
     flex-direction: row;
@@ -99,47 +100,74 @@ h2 {
     justify-content: center;
     border: 1px solid #ccc;
     border-radius: 4px;
-    padding: 10px;
+    padding: 5px;
 }
-/* movie-list.css */
 
+/* movie-list.css */
 .movie-list {
     display: flex;
-    flex-direction: row;
-    justify-content: center; /* to center the section on the page */
-    width: 100%; /* Ange bredden till 100% för mobil-vy */
-    border: 2px solid #333; /* tjockare border */
-    border-radius: 8px; /* mer rundade hörn */
-    padding: 20px; /* mer padding */
-}
-#movieListDetails {
-    border: 1px solid #ccc;
-    border-collapse: collapse;
-    font-size: inherit;
+    flex-direction: column; /* Arrange items vertically */
+    overflow-x: auto;
     width: 100%;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 20px;
 }
 
-#movieListDetails th, #movieListDetails td {
+.movie-item {
+    display: flex;
+    align-items: center;
+    margin: 10px;
     border: 1px solid #ccc;
+    border-radius: 4px;
     padding: 10px;
-    flex-grow: 1;
 }
 
-.container > table {
-    border-collapse: collapse;
-    width: 100%;
+.movie-item img {
+    width: 100px; /* Adjust image width as needed */
+    height: auto;
+    margin-right: 10px;
 }
 
-.container >th, td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
+.movie-item-details {
+    flex: 1; /* Allow details to take up remaining space */
+    display: flex;
+    justify-content: space-between; /* Distribute details evenly */
+    flex-direction: column; /* Arrange details vertically */
 }
 
-.container > th {
-    background-color: #f0f0f0;
+.movie-item-details p {
+    margin: 0;
 }
 
+.movie-item-details .star-icon {
+    margin-left: 10px;
+}
+
+.movie-item-details h3 {
+    margin-bottom: 5px; /* Add spacing below the title */
+}
+
+.movie-item-details {
+    /* ... other styles ... */
+    flex-direction: column;
+}
+
+.movie-item-details .movie-title-container {
+    display: flex;
+    justify-content: space-between; /* Align title and star icon horizontally */
+}
+
+.movie-item-details h3 {
+    margin-bottom: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .movie-list .movie-item {
+        flex: 0 0 150px; /* Reduce width for smaller screens */
+    }
+}
 /* movie-details styles */
 #movieTitle {
     max-width: 200px; /* Ange den maximala bredden du vill ha */
@@ -147,6 +175,7 @@ h2 {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 #movieDirector {
     max-width: 200px; /* Ange den maximala bredden du vill ha */
     overflow: hidden;
@@ -159,6 +188,7 @@ h2 {
         max-width: 300px; /* Ange den maximala bredden du vill ha */
     }
 }
+
 @media (min-width: 1024px) {
     #movieTitle {
         max-width: 400px; /* Ange den maximala bredden du vill ha */
@@ -170,6 +200,7 @@ h2 {
 #favourites-container {
     display: none; /* Dölj favourite-listan  */
 }
+
 #favourites-container.show {
     display: block;
 }

@@ -27,9 +27,9 @@ function populateMovieList() {
 
         movieItem.querySelector('#movieTitle').textContent = movie.title;
         movieItem.querySelector('#movieGenre').textContent = movie.genre;
-        movieItem.querySelector('#movieDirector').textContent = movie.director;
+        movieItem.querySelector('#movieDirector').textContent = "Director: " + movie.director;
         movieItem.querySelector('#movieYear').textContent = movie.year;
-        movieItem.querySelector('#movieRating').textContent = movie.rating;
+        movieItem.querySelector('#movieRating').textContent = "Rating: " + movie.rating;
 
         // Check if the movie has an image URL
         if (movie.imageUrl) {
