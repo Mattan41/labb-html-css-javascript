@@ -2,16 +2,21 @@
 /* todo:
     favourites view - mobile, tablet, desktop, close favourites for mobile
 todo:
- add movie to favourites, display in list, clickable. save to local storage when movieList is populated, get from local storage
+ display of favourites in list, clickable movies. in mobileview over movielist, in desktop view to the right of the movie list
+
+ todo: movie details view, above layer favourites in mobile - in desktop above movie list
 
  todo:
   LOGIN:
+   -popup login form better design
   -display  welcome message when user logs in
   -only sign in if signed out, otherwise sign out
   -if clicking outside of login, close login popup
   -if logged in, clicking icon should show logout form
 
-todo:  dark theme
+todo:  dark theme, global settings
+
+todo: design/styling - better looking filter, better looking movie list, better looking movie details, better looking favourites list
 
 
  */
