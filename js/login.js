@@ -1,5 +1,9 @@
 
-/* todo:
+/*
+
+todo: erase welcome message when logging out
+
+todo:
     favourites view - mobile, tablet, desktop, close favourites for mobile
     Favourite F icon more responsive
 todo:
