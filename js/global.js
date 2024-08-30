@@ -53,12 +53,20 @@ function displayStoredMovieList() {
         const movieElement = document.createElement('li');
         const starIcon = document.createElement('i');
         starIcon.classList.add('fas', 'fa-star', 'favorite');
-        starIcon.title = 'Remove from favourites';
-        starIcon.addEventListener('click', () => {
-            updateFavouriteList(movie.id, false);
-        });
+        toggleFavourite(starIcon, movie);
         movieElement.appendChild(starIcon);
         movieElement.appendChild(document.createTextNode(movie.title));
         favoriteListElement.appendChild(movieElement);
+    });
+}
+
+
+export function toggleFavourite(starIcon, movie) {
+    starIcon.classList.toggle('favorite', movie.favourite);
+    starIcon.title = movie.favourite ? 'Remove from favourites' : 'Add to favourites';
+    starIcon.addEventListener('click', () => {
+        movie.favourite = !movie.favourite;
+        starIcon.classList.toggle('favorite', movie.favourite);
+        updateFavouriteList(movie.id, movie.favourite);
     });
 }

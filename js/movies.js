@@ -1,4 +1,4 @@
-import { fetchMovies, getMoviesFromLocalStorage, updateFavouriteList, loadFavouriteList } from './global.js';
+import { fetchMovies, getMoviesFromLocalStorage, updateFavouriteList, loadFavouriteList, toggleFavourite } from './global.js';
 
 let movieDataMap;
 fetchMovies().then(() => {
@@ -47,18 +47,14 @@ export function populateMovieList(movies = Array.from(movieDataMap.values())) {
             movieImage.src = "img/cam.png";
         }
 
-        starIcon.classList.toggle('favorite', movie.favourite);
+        toggleFavourite(starIcon, movie);
 
-        starIcon.addEventListener("click", () => {
-            movie.favourite = !movie.favourite;
-            starIcon.classList.toggle('favorite', movie.favourite);
-            updateFavouriteList(movie.id, movie.favourite);
+        starIcon.addEventListener('click', (event) => {
+            event.stopPropagation();
         });
 
-        [movieTitle, movieImage].forEach((element) => {
-            element.addEventListener("click", () => {
-                window.location.href = "movie-details.html?id=" + movie.id;
-            });
+        movieItem.querySelector('.movie-item').addEventListener("click", () => {
+            window.location.href = "movie-details.html?id=" + movie.id;
         });
 
         movieListContainer.appendChild(movieItem);
