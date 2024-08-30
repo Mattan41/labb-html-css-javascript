@@ -18,7 +18,7 @@ todo: design/styling - better looking filter, better looking movie list, better 
 
  */
 // Kontrollera om användaren är inloggad
-// login.js
+
 window.onload = function () {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const loginButton = document.getElementById("login-button");
@@ -28,13 +28,12 @@ window.onload = function () {
         loginButton.classList.add("logged-in");
         loginButton.title = "Log out";
     } else {
-        showLoginForm();
         loginButton.classList.remove("logged-in");
         loginButton.title = "Login or Register";
     }
 
     loginButton.addEventListener("click", function () {
-        if (isLoggedIn) {
+        if (sessionStorage.getItem("isLoggedIn")) {
             logout();
         } else {
             toggleLoginForm();
@@ -49,7 +48,8 @@ window.onload = function () {
     });
 };
 
-function login() {
+function login(event) {
+    event.preventDefault(); // Prevent form submission
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
     const errorMessage = document.getElementById("error-message");
@@ -72,15 +72,9 @@ function login() {
 function logout() {
     sessionStorage.removeItem("isLoggedIn");
     sessionStorage.removeItem("username");
-    showLoginForm();
     alert("You have logged out.");
     document.getElementById("login-button").classList.remove("logged-in");
     document.getElementById("login-button").title = "Login or Register";
-}
-
-function showLoginForm() {
-    document.getElementById("login-popup").style.display = "flex";
-    document.getElementById("logout-form").style.display = "none";
 }
 
 function showLogoutForm() {

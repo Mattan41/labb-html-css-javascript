@@ -17,23 +17,24 @@
             <h2>Top Flicks</h2>
         </div>
         <div class="right-container">
-            <div id="login-icon">
-                <i class="fas fa-user" id="login-button" title="Login or Register"></i>
-                <div id="login-popup" class="login-popup hidden">
-                    <form id="login-form" onsubmit="event.preventDefault(); login();">
-                        <label for="username">Username</label>
-                        <input type="text" id="username" placeholder="Username" autocomplete="username">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" placeholder="Password">
-                        <div id="error-message" class="error-message hidden"></div>
-                        <button type="submit">Sign in</button>
-                        <button type="button" onclick="window.location.href='register-form.html'">Register</button>
-                    </form>
-                </div>
-                <div id="logout-form" class="hidden">
-                    <span id="welcome-message"></span>
-                </div>
-            </div>
+            <!-- index.html -->
+<div id="login-icon">
+    <i class="fas fa-user" id="login-button" title="Login or Register"></i>
+    <div id="login-popup" class="login-popup hidden">
+        <form id="login-form">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Username" autocomplete="username">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Password">
+            <div id="error-message" class="error-message hidden"></div>
+            <button type="submit" onclick="login(event)">Sign in</button>
+            <button type="button" onclick="window.location.href='register-form.html'">Register</button>
+        </form>
+    </div>
+    <div id="logout-form" class="hidden">
+        <span id="welcome-message"></span>
+    </div>
+</div>
             <label class="switch">
                 <input type="checkbox" id="theme-switch">
                 <span class="slider round"></span>

@@ -87,14 +87,6 @@
     color: #555;
 }
 
-.logged-in {
-    color: #d9534f; /* Different color for logged-in state */
-}
-
-.logged-in:hover {
-    color: #c9302c;
-}
-
 /* light/dark mode switch */
 
 .switch {
