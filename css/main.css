@@ -87,6 +87,10 @@ h2 {
     border-radius: 4px;
     padding: 10px;
 }
+/* main.css */
+.movie-item:hover {
+    background-color: aliceblue; /* Change to desired hover color */
+}
 
 .movie-item img {
     width: 50px;

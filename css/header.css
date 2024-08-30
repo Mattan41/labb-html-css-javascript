@@ -23,8 +23,68 @@
     align-items: center;
 }
 
-#login-icon {
-    margin-right: 20px;
+/*Log in*/
+
+.login-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 90%;
+    max-width: 400px;
+}
+
+.login-popup label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.login-popup input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-popup button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.login-popup button:hover {
+    background-color: #555;
+}
+
+.hidden {
+    display: none;
+}
+
+#login-popup {
+    display: none; /* Ensure the login form is hidden by default */
+}
+
+
+#login-button {
+    color: #333;
+    cursor: pointer;
+}
+
+#login-button:hover {
+    color: #555;
 }
 
 /* light/dark mode switch */
@@ -96,70 +156,4 @@ input:checked + .slider:before {
     width: 50px;
     height: 50px;
     margin-right: 10px; /* avstånd mellan bild och text */
-}
-
-/*.header h2 {*/
-/*    font-weight: bold; !* make the text bold *!*/
-/*    display: inline-block; !* make the text display inline with the image *!*/
-/*    vertical-align: middle; !* center the text vertically with the image *!*/
-/*}*/
-
-#logout-form {
-    display: flex;
-}
-
-/* login.css */
-
-#login-icon {
-    position: relative;
-    display: inline-block;
-}
-
-
-#login-button {
-    font-size: 24px;
-    cursor: pointer;
-}
-
-#login-popup label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-#login-popup input[type="text"], #login-popup input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-#login-popup {
-    position: relative;
-    top: 100%;
-    right: 0;
-    background-color: #f1f1f1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    display: block;
-}
-
-#login-popup input[type="text"], #login-popup input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-}
-
-#login-popup button {
-    width: 100%;
-    padding: 10px;
-    background-color: #aaa6a6;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-#login-popup button:hover {
-    background-color: #939893;
 }
