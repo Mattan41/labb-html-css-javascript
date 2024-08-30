@@ -1,15 +1,12 @@
-import { fetchMovies, updateFavouriteList, loadFavouriteList } from './global.js';
+import { fetchMovies, getMoviesFromLocalStorage, updateFavouriteList, loadFavouriteList, toggleFavourite } from './global.js';
 
 let movieDataMap;
+fetchMovies().then(() => {
+    movieDataMap = getMoviesFromLocalStorage();
+    populateMovieList();
+});
 
-fetchMovies()
-    .then(data => {
-        movieDataMap = data;
-        populateMovieList();
-    })
-    .catch(error => console.error(error));
-
-function populateMovieList(movies = Array.from(movieDataMap.values())) {
+export function populateMovieList(movies = Array.from(movieDataMap.values())) {
     const movieTemplate = document.getElementById('movieTemplate');
     const movieListContainer = document.getElementById('movieListContainer');
     movieListContainer.innerHTML = '';
@@ -20,7 +17,7 @@ function populateMovieList(movies = Array.from(movieDataMap.values())) {
         const movieImage = movieItem.querySelector('#movieImage');
         const starIcon = movieItem.querySelector('#starIcon');
 
-        movieItem.querySelector('#movieTitle').textContent = movie.title;
+        movieTitle.textContent = movie.title;
         movieItem.querySelector('#movieDirector').textContent = "Director: " + movie.director;
         movieItem.querySelector('#movieYear').textContent = movie.year;
         movieItem.querySelector('#movieRating').textContent = "Rating: " + movie.rating;
@@ -45,25 +42,19 @@ function populateMovieList(movies = Array.from(movieDataMap.values())) {
         }
 
         if (movie.imageUrl) {
-            movieItem.querySelector('#movieImage').src = movie.imageUrl;
+            movieImage.src = movie.imageUrl;
         } else {
-            movieItem.querySelector('#movieImage').src = "img/cam.png";
+            movieImage.src = "img/cam.png";
         }
 
-        starIcon.classList.toggle('favorite', movie.favourite);
+        toggleFavourite(starIcon, movie);
 
-        starIcon.addEventListener("click", () => {
-            movie.favourite = !movie.favourite;
-            starIcon.classList.toggle('favorite', movie.favourite);
-            updateFavouriteList();
+        starIcon.addEventListener('click', (event) => {
+            event.stopPropagation();
         });
 
-
-        // todo: change to movie-details.html
-        [movieTitle, movieImage].forEach((element) => {
-            element.addEventListener("click", () => {
-                window.location.href = "movie-details.html?id=" + movie.id;
-            });
+        movieItem.querySelector('.movie-item').addEventListener("click", () => {
+            window.location.href = "movie-details.html?id=" + movie.id;
         });
 
         movieListContainer.appendChild(movieItem);
