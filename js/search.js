@@ -1,16 +1,18 @@
-// Toggle filter container visibility
+import {getMoviesFromLocalStorage} from "./global";
+
+
+let movieDataMap = getMoviesFromLocalStorage();
+
 document.getElementById('filter-icon').addEventListener('click', () => {
     const filterContainer = document.getElementById('filterContainer');
     filterContainer.classList.toggle('hidden');
 });
 
-// Apply filter and close filter container
 document.getElementById('applyFilter').addEventListener('click', () => {
     filterMoviesByGenre();
     document.getElementById('filterContainer').classList.add('hidden');
 });
 
-// Sorting functionality
 document.getElementById('sort-options').addEventListener('change', (event) => {
     sortMovies(event.target.value);
 });
@@ -28,7 +30,6 @@ function sortMovies(criteria) {
     populateMovieList(sortedMovies);
 }
 
-// Filtering functionality
 document.querySelectorAll('#genre-filters input').forEach(checkbox => {
     checkbox.addEventListener('change', () => {
         filterMoviesByGenre();
@@ -43,7 +44,6 @@ function filterMoviesByGenre() {
     populateMovieList(filteredMovies);
 }
 
-// Search functionality
 document.getElementById('search-bar').addEventListener('input', (event) => {
     searchMovies(event.target.value);
 });
