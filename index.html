@@ -29,7 +29,7 @@
             </div>
             <div id="logout-form" style="display: none;">
                 <span id="welcome-message"></span>
-                <button onclick="logout()">Logga ut</button>
+                <button onclick="logout()">Log out</button>
             </div>
             <label class="switch">
                 <input type="checkbox" id="theme-switch">
@@ -46,6 +46,30 @@
             </div>
         </section>
 
+        <!-- Filter container -->
+        <section id="filterContainer" class="hidden">
+            <div id="movieControls">
+                <label for="sort-options">Sort by:</label>
+                <select id="sort-options">
+                    <option value="title">Title</option>
+                    <option value="rating">Rating</option>
+                    <option value="year">Year</option>
+                </select>
+
+                <div id="genre-filters">
+                    <label>Filter by genre:</label>
+                    <input type="checkbox" id="genre-drama" value="Drama"> Drama
+                    <input type="checkbox" id="genre-crime" value="Crime"> Crime
+                    <input type="checkbox" id="genre-fantasy" value="Fantasy"> Fantasy
+                    <input type="checkbox" id="genre-action" value="Action"> Action
+                    <input type="checkbox" id="genre-romance" value="Romance"> Romance
+                    <input type="checkbox" id="genre-thriller" value="Thriller"> Thriller
+                </div>
+                <button id="applyFilter">Apply Filter</button>
+            </div>
+        </section>
+
+
         <section id="movieDisplayed">
             <!-- This list will be populated dynamically id in tablet och desktop mode, in mobile mode will be empty -->
         </section>
@@ -55,7 +79,7 @@
                 <div class="col-md-8">
                     <h2 id="movieListHeader">
                         Movies
-                        <i class="fa-solid fa-f" data-bs-toggle="collapse" data-bs-target="#favourites-container"></i>
+                        <i class="fa-solid fa-f" data-bs-toggle="collapse" data-bs-target="#favourites-container" title="Favourites"></i>
                     </h2>
 
 
@@ -66,12 +90,16 @@
                                 <div class="movie-item-details">
                                     <div class="movie-title-container">
                                         <h3 id="movieTitle"></h3>
-                                        <i id="starIcon" class="fas fa-star" title="Add/remove favourite"></i>
+                                        <div class="rating-container">
+                                            <p id="movieRating"></p>
+                                            <i id="starIcon" class="fas fa-star" title="Add/remove favourite"></i>
+                                        </div>
                                     </div>
-                                    <p id="movieGenre"></p>
+                                    <div class="movie-info">
+                                        <p id="movieGenre"></p>
+                                    </div>
                                     <p id="movieDirector"></p>
                                     <p id="movieYear"></p>
-                                    <p id="movieRating"></p>
                                 </div>
                             </div>
                         </template>
@@ -83,10 +111,9 @@
                     <!-- Listan med favourites -->
                     <div id="favourites-container" class="collapse">
                         <h2>Favourites</h2>
-                        <ul>
-                            <li>movie 1</li>
-                            <li>movie 2</li>
-                            <li>movie 3</li>
+                        <button id="close-favourites">Close</button>
+                        <ul id="favorite-list">
+                            <!-- Favorite movies will be populated here -->
                         </ul>
                     </div>
                 </div>
@@ -97,6 +124,7 @@
 </div>
 <script type="module" src="js/movies.js"></script>
 <script src="js/login.js"></script>
-<script src="js/favourites.js"></script>
+<script type ="module" src="js/favourites.js"></script>
+<script src="js/search.js"></script>
 </body>
 </html>
