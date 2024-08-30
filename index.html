@@ -19,17 +19,20 @@
         <div class="right-container">
             <div id="login-icon">
                 <i class="fas fa-user" id="login-button" title="Login or Register"></i>
-                <div id="login-popup" style="display: none;">
-                    <label for="username"></label><input type="text" id="username" placeholder="Username"
-                                                         autocomplete="username">
-                    <label for="password"></label><input type="password" id="password" placeholder="Password">
-                    <button onclick="login()">Sign in</button>
-                    <button onclick="window.location.href='register-form.html'">Register</button>
+                <div id="login-popup" class="login-popup hidden">
+                    <form id="login-form" onsubmit="event.preventDefault(); login();">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="Username" autocomplete="username">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Password">
+                        <div id="error-message" class="error-message hidden"></div>
+                        <button type="submit">Sign in</button>
+                        <button type="button" onclick="window.location.href='register-form.html'">Register</button>
+                    </form>
                 </div>
-            </div>
-            <div id="logout-form" style="display: none;">
-                <span id="welcome-message"></span>
-                <button onclick="logout()">Log out</button>
+                <div id="logout-form" class="hidden">
+                    <span id="welcome-message"></span>
+                </div>
             </div>
             <label class="switch">
                 <input type="checkbox" id="theme-switch">
@@ -48,26 +51,26 @@
 
         <!-- Filter container -->
         <section id="filterContainer" class="hidden">
-    <div id="movieControls">
-        <label for="sort-options">Sort by:</label>
-        <select id="sort-options">
-            <option value="title">Title</option>
-            <option value="rating">Rating</option>
-            <option value="year">Year</option>
-        </select>
+            <div id="movieControls">
+                <label for="sort-options">Sort by:</label>
+                <select id="sort-options">
+                    <option value="title">Title</option>
+                    <option value="rating">Rating</option>
+                    <option value="year">Year</option>
+                </select>
 
-        <div id="genre-filters">
-            <label>Filter by genre:</label>
-            <input type="checkbox" id="genre-drama" value="Drama"> Drama
-            <input type="checkbox" id="genre-crime" value="Crime"> Crime
-            <input type="checkbox" id="genre-fantasy" value="Fantasy"> Fantasy
-            <input type="checkbox" id="genre-action" value="Action"> Action
-            <input type="checkbox" id="genre-romance" value="Romance"> Romance
-            <input type="checkbox" id="genre-thriller" value="Thriller"> Thriller
-        </div>
-        <button id="applyFilter">Apply Filter</button>
-    </div>
-</section>
+                <div id="genre-filters">
+                    <label>Filter by genre:</label>
+                    <input type="checkbox" id="genre-drama" value="Drama"> Drama
+                    <input type="checkbox" id="genre-crime" value="Crime"> Crime
+                    <input type="checkbox" id="genre-fantasy" value="Fantasy"> Fantasy
+                    <input type="checkbox" id="genre-action" value="Action"> Action
+                    <input type="checkbox" id="genre-romance" value="Romance"> Romance
+                    <input type="checkbox" id="genre-thriller" value="Thriller"> Thriller
+                </div>
+                <button id="applyFilter">Apply Filter</button>
+            </div>
+        </section>
 
 
         <section id="movieDisplayed">
@@ -79,7 +82,8 @@
                 <div class="col-md-8">
                     <h2 id="movieListHeader">
                         Movies
-                        <i class="fa-solid fa-f" data-bs-toggle="collapse" data-bs-target="#favourites-container" title="Favourites"></i>
+                        <i class="fa-solid fa-f" data-bs-toggle="collapse" data-bs-target="#favourites-container"
+                           title="Favourites"></i>
                     </h2>
 
 
@@ -124,7 +128,7 @@
 </div>
 <script type="module" src="js/movies.js"></script>
 <script src="js/login.js"></script>
-<script type ="module" src="js/favourites.js"></script>
-<script type ="module" src="js/search.js"></script>
+<script type="module" src="js/favourites.js"></script>
+<script type="module" src="js/search.js"></script>
 </body>
 </html>
