@@ -39,8 +39,10 @@
         "id": 4,
         "title": "The Two Towers",
         "genre": [
-          "Fantasy",
-          "Adventure"
+          "Action",
+          "Adventure",
+          "Drama",
+          "Fantasy"
         ],
         "year": 2002,
         "rating": 8.7,

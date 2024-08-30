@@ -1,14 +1,20 @@
 
-// todo: fix favourites view - mobile, tablet, desktop, close favourites for mobile
-// todo: add movie to favourites, display in list, clickable
-// todo: display  welcome message when user logs in
-// todo: only sign in if signed out, otherwise sign out
-// todo: if clicking outside of login, close login popup
-// todo: if logged in, clicking icon should show logout form
-// todo:  dark theme
-// todo: search movies, filter movies,
-// todo: fetch selected movie and show above the list.
+/* todo:
+    favourites view - mobile, tablet, desktop, close favourites for mobile
+todo:
+ add movie to favourites, display in list, clickable. save to local storage when movieList is populated, get from local storage
 
+ todo:
+  LOGIN:
+  -display  welcome message when user logs in
+  -only sign in if signed out, otherwise sign out
+  -if clicking outside of login, close login popup
+  -if logged in, clicking icon should show logout form
+
+todo:  dark theme
+
+
+ */
 // Kontrollera om användaren är inloggad
 window.onload = function () {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
@@ -19,7 +25,7 @@ window.onload = function () {
     document.getElementById("login-icon").addEventListener("click", showLoginForm);
 
 };
-
+// logga in
 function login() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
@@ -35,7 +41,7 @@ function login() {
         alert("Vänligen fyll i både användarnamn och lösenord.");
     }
 }
-
+//logga ut
 function logout() {
     sessionStorage.removeItem("isLoggedIn");
     sessionStorage.removeItem("username");
