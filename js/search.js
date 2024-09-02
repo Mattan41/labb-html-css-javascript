@@ -7,39 +7,47 @@ document.getElementById('filter-icon').addEventListener('click', () => {
     filterContainer.classList.toggle('hidden');
 });
 
-document.getElementById('applyFilter').addEventListener('click', () => {
-    filterMoviesByGenre();
-    document.getElementById('filterContainer').classList.add('hidden');
-});
-
+// SORT MOVIES todo: filtersort both ways, better design
 document.getElementById('sort-options').addEventListener('change', (event) => {
     sortMovies(event.target.value);
 });
 
+const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
+
+const sortFunctions = new Map([
+    ['title', (a, b) => collator.compare(a.title, b.title)],
+    ['rating', (a, b) => (b.rating ?? 0) - (a.rating ?? 0)],
+    ['year', (a, b) => (b.year ?? 0) - (a.year ?? 0)]
+]);
+
 function sortMovies(criteria) {
-    const sortedMovies = Array.from(movieDataMap.values()).sort((a, b) => {
-        if (criteria === 'title') {
-            return a.title.localeCompare(b.title);
-        } else if (criteria === 'rating') {
-            return b.rating - a.rating;
-        } else if (criteria === 'year') {
-            return b.year - a.year;
-        }
-    });
-    populateMovieList(sortedMovies);
+    const sortFunction = sortFunctions.get(criteria);
+    if (sortFunction) {
+        const sortedMovies = Array.from(movieDataMap.values()).sort(sortFunction);
+        populateMovieList(sortedMovies);
+    }
 }
 
-document.querySelectorAll('#genre-filters input').forEach(checkbox => {
-    checkbox.addEventListener('change', () => {
+
+document.querySelectorAll('.genre-filter').forEach(genreElement => {
+    genreElement.addEventListener('click', () => {
+        genreElement.classList.toggle('selected');
         filterMoviesByGenre();
     });
 });
 
 function filterMoviesByGenre() {
-    const selectedGenres = Array.from(document.querySelectorAll('#genre-filters input:checked')).map(cb => cb.value);
-    const filteredMovies = Array.from(movieDataMap.values()).filter(movie => {
-        return selectedGenres.some(genre => movie.genre.includes(genre));
-    });
+    const selectedGenres = Array.from(document.querySelectorAll('.genre-filter.selected')).map(el => el.dataset.genre);
+    let filteredMovies;
+
+    if (selectedGenres.length === 0) {
+        filteredMovies = Array.from(movieDataMap.values());
+    } else {
+        filteredMovies = Array.from(movieDataMap.values()).filter(movie => {
+            return selectedGenres.some(genre => movie.genre.includes(genre));
+        });
+    }
+
     populateMovieList(filteredMovies);
 }
 

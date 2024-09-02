@@ -18,23 +18,23 @@
         </div>
         <div class="right-container">
             <!-- index.html -->
-<div id="login-icon">
-    <i class="fas fa-user" id="login-button" title="Login or Register"></i>
-    <div id="login-popup" class="login-popup hidden">
-        <form id="login-form">
-            <label for="username">Username</label>
-            <input type="text" id="username" placeholder="Username" autocomplete="username">
-            <label for="password">Password</label>
-            <input type="password" id="password" placeholder="Password">
-            <div id="error-message" class="error-message hidden"></div>
-            <button type="submit" onclick="login(event)">Sign in</button>
-            <button type="button" onclick="window.location.href='register-form.html'">Register</button>
-        </form>
-    </div>
-    <div id="logout-form" class="hidden">
-        <span id="welcome-message"></span>
-    </div>
-</div>
+            <div id="login-icon">
+                <i class="fas fa-user" id="login-button" title="Login or Register"></i>
+                <div id="login-popup" class="login-popup hidden">
+                    <form id="login-form">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="Username" autocomplete="username">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Password">
+                        <div id="error-message" class="error-message hidden"></div>
+                        <button type="submit" onclick="login(event)">Sign in</button>
+                        <button type="button" onclick="window.location.href='register-form.html'">Register</button>
+                    </form>
+                </div>
+                <div id="logout-form" class="hidden">
+                    <span id="welcome-message"></span>
+                </div>
+            </div>
             <label class="switch">
                 <input type="checkbox" id="theme-switch">
                 <span class="slider round"></span>
@@ -48,33 +48,34 @@
                 <i class="fas fa-filter"></i>
                 <span>Filter</span>
             </div>
+
         </section>
 
         <!-- Filter container -->
-        <section id="filterContainer" class="hidden">
-            <div id="movieControls">
-                <label for="sort-options">Sort by:</label>
-                <select id="sort-options">
-                    <option value="title">Title</option>
-                    <option value="rating">Rating</option>
-                    <option value="year">Year</option>
-                </select>
 
-                <div id="genre-filters">
-                    <label>Filter by genre:</label>
-                    <input type="checkbox" id="genre-drama" value="Drama"> Drama
-                    <input type="checkbox" id="genre-crime" value="Crime"> Crime
-                    <input type="checkbox" id="genre-fantasy" value="Fantasy"> Fantasy
-                    <input type="checkbox" id="genre-action" value="Action"> Action
-                    <input type="checkbox" id="genre-romance" value="Romance"> Romance
-                    <input type="checkbox" id="genre-thriller" value="Thriller"> Thriller
-                </div>
-                <button id="applyFilter">Apply Filter</button>
-            </div>
-        </section>
+<section id="filterContainer" class="hidden">
+    <div id="movieControls">
+        <label for="sort-options">Sort by:</label>
+        <select id="sort-options">
+            <option value="title">Title</option>
+            <option value="rating">Rating</option>
+            <option value="year">Year</option>
+        </select>
 
+        <div id="genre-filters">
+            <label>Filter by genre:</label>
+            <span class="genre-filter" data-genre="Drama">Drama</span>
+            <span class="genre-filter" data-genre="Crime">Crime</span>
+            <span class="genre-filter" data-genre="Fantasy">Fantasy</span>
+            <span class="genre-filter" data-genre="Action">Action</span>
+            <span class="genre-filter" data-genre="Romance">Romance</span>
+            <span class="genre-filter" data-genre="Thriller">Thriller</span>
+        </div>
 
-        <section id="movieDisplayed">
+    </div>
+</section>
+
+        <section id="movieDisplayed" class ="hidden">
             <!-- This list will be populated dynamically id in tablet och desktop mode, in mobile mode will be empty -->
         </section>
 
@@ -91,7 +92,7 @@
                     <section id="movieList">
                         <template id="movieTemplate">
                             <div class="movie-item">
-                                <img id="movieImage">
+                                <img src="img/cam.png" alt="movieImage" id="movieImage">
                                 <div class="movie-item-details">
                                     <div class="movie-title-container">
                                         <h3 id="movieTitle"></h3>
@@ -125,11 +126,14 @@
             </div>
         </div>
     </main>
-
+    <footer class="footer">
+        <p>&copy; 2021 Top Flicks</p>
+    </footer>
 </div>
 <script type="module" src="js/movies.js"></script>
 <script src="js/login.js"></script>
 <script type="module" src="js/favourites.js"></script>
 <script type="module" src="js/search.js"></script>
+<script src="js/dynamic-display.js"></script>
 </body>
 </html>

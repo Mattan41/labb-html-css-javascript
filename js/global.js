@@ -30,6 +30,16 @@ export function getMoviesFromLocalStorage() {
     return movieDataMap;
 }
 
+export function toggleFavourite(starIcon, movie) {
+    starIcon.classList.toggle('favorite', movie.favourite);
+    starIcon.title = movie.favourite ? 'Remove from favourites' : 'Add to favourites';
+    starIcon.addEventListener('click', () => {
+        movie.favourite = !movie.favourite;
+        starIcon.classList.toggle('favorite', movie.favourite);
+        updateFavouriteList(movie.id, movie.favourite);
+    });
+}
+
 export function updateFavouriteList(movieId, isFavorite) {
     const data = JSON.parse(localStorage.getItem('movieData')) || [];
     const movie = data.find(movie => movie.id === movieId);
@@ -44,6 +54,7 @@ export function loadFavouriteList() {
     displayStoredMovieList();
 }
 
+
 function displayStoredMovieList() {
     const data = JSON.parse(localStorage.getItem('movieData')) || [];
     const favoriteMovies = data.filter(movie => movie.favourite);
@@ -57,16 +68,5 @@ function displayStoredMovieList() {
         movieElement.appendChild(starIcon);
         movieElement.appendChild(document.createTextNode(movie.title));
         favoriteListElement.appendChild(movieElement);
-    });
-}
-
-
-export function toggleFavourite(starIcon, movie) {
-    starIcon.classList.toggle('favorite', movie.favourite);
-    starIcon.title = movie.favourite ? 'Remove from favourites' : 'Add to favourites';
-    starIcon.addEventListener('click', () => {
-        movie.favourite = !movie.favourite;
-        starIcon.classList.toggle('favorite', movie.favourite);
-        updateFavouriteList(movie.id, movie.favourite);
     });
 }
