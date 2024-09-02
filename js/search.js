@@ -7,10 +7,6 @@ document.getElementById('filter-icon').addEventListener('click', () => {
     filterContainer.classList.toggle('hidden');
 });
 
-document.getElementById('applyFilter').addEventListener('click', () => {
-    filterMoviesByGenre();
-    document.getElementById('filterContainer').classList.add('hidden');
-});
 
 document.getElementById('sort-options').addEventListener('change', (event) => {
     sortMovies(event.target.value);
@@ -29,17 +25,26 @@ function sortMovies(criteria) {
     populateMovieList(sortedMovies);
 }
 
-document.querySelectorAll('#genre-filters input').forEach(checkbox => {
-    checkbox.addEventListener('change', () => {
+
+document.querySelectorAll('.genre-filter').forEach(genreElement => {
+    genreElement.addEventListener('click', () => {
+        genreElement.classList.toggle('selected');
         filterMoviesByGenre();
     });
 });
 
 function filterMoviesByGenre() {
-    const selectedGenres = Array.from(document.querySelectorAll('#genre-filters input:checked')).map(cb => cb.value);
-    const filteredMovies = Array.from(movieDataMap.values()).filter(movie => {
-        return selectedGenres.some(genre => movie.genre.includes(genre));
-    });
+    const selectedGenres = Array.from(document.querySelectorAll('.genre-filter.selected')).map(el => el.dataset.genre);
+    let filteredMovies;
+
+    if (selectedGenres.length === 0) {
+        filteredMovies = Array.from(movieDataMap.values());
+    } else {
+        filteredMovies = Array.from(movieDataMap.values()).filter(movie => {
+            return selectedGenres.some(genre => movie.genre.includes(genre));
+        });
+    }
+
     populateMovieList(filteredMovies);
 }
 

@@ -46,6 +46,23 @@ h2 {
     margin-left: 5px;
 }
 
+/* main.css */
+.genre-filter {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #f1f1f1;
+}
+
+.genre-filter.selected {
+    background-color: #333;
+    color: #fff;
+}
+
+
 /* Movie list styles */
 
 /* Add this CSS to your existing styles */
