@@ -7,22 +7,25 @@ document.getElementById('filter-icon').addEventListener('click', () => {
     filterContainer.classList.toggle('hidden');
 });
 
-
+// SORT MOVIES todo: filtersort both ways, better design
 document.getElementById('sort-options').addEventListener('change', (event) => {
     sortMovies(event.target.value);
 });
 
+const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
+
+const sortFunctions = new Map([
+    ['title', (a, b) => collator.compare(a.title, b.title)],
+    ['rating', (a, b) => (b.rating ?? 0) - (a.rating ?? 0)],
+    ['year', (a, b) => (b.year ?? 0) - (a.year ?? 0)]
+]);
+
 function sortMovies(criteria) {
-    const sortedMovies = Array.from(movieDataMap.values()).sort((a, b) => {
-        if (criteria === 'title') {
-            return a.title.localeCompare(b.title);
-        } else if (criteria === 'rating') {
-            return b.rating - a.rating;
-        } else if (criteria === 'year') {
-            return b.year - a.year;
-        }
-    });
-    populateMovieList(sortedMovies);
+    const sortFunction = sortFunctions.get(criteria);
+    if (sortFunction) {
+        const sortedMovies = Array.from(movieDataMap.values()).sort(sortFunction);
+        populateMovieList(sortedMovies);
+    }
 }
 
 

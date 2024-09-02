@@ -48,6 +48,7 @@
                 <i class="fas fa-filter"></i>
                 <span>Filter</span>
             </div>
+
         </section>
 
         <!-- Filter container -->
@@ -59,7 +60,6 @@
                     <option value="rating">Rating</option>
                     <option value="year">Year</option>
                 </select>
-
 
                 <div id="genre-filters">
                     <label>Filter by genre:</label>
@@ -74,7 +74,7 @@
         </section>
 
 
-        <section id="movieDisplayed">
+        <section id="movieDisplayed" class ="hidden">
             <!-- This list will be populated dynamically id in tablet och desktop mode, in mobile mode will be empty -->
         </section>
 
@@ -125,11 +125,14 @@
             </div>
         </div>
     </main>
-
+    <footer class="footer">
+        <p>&copy; 2021 Top Flicks</p>
+    </footer>
 </div>
 <script type="module" src="js/movies.js"></script>
 <script src="js/login.js"></script>
 <script type="module" src="js/favourites.js"></script>
 <script type="module" src="js/search.js"></script>
+<script src="js/dynamic-display.js"></script>
 </body>
 </html>

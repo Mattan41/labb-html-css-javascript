@@ -5,7 +5,24 @@
     align-items: center;
     padding: 10px;
     background-color: #d9d9d9;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    margin-bottom: 5px;
 }
+
+/* Footer Styles */
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #d9d9d9;
+    text-align: center;
+    padding: 10px;
+    z-index: 1000;
+}
+
 
 .logo-container {
     display: flex;

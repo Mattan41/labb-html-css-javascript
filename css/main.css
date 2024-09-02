@@ -1,4 +1,4 @@
-@import "header.css";
+@import "header-footer.css";
 @import "_utils.css";
 @import "media-queries.css";
 
@@ -22,14 +22,33 @@ h2 {
     margin-bottom: 10px;
 }
 
+/* main.css */
+
+/* Adjust main content to account for fixed header, movieSearch, and footer */
+
+.main-content {
+    padding-top: 180px; /* Adjust based on header, movieSearch, and filterContainer height */
+    padding-bottom: 40px; /* Adjust based on footer height */
+}
+/* Movie search styles */
+#movieSearch {
+    position: fixed;
+    top: 60px; /* Adjust based on header height */
+    width: 100%;
+    background-color: #f1f1f1;
+    z-index: 999;
+    padding: 5px;
+}
+
+
 /* Movie search styles */
 #search-bar {
-    width: 70%;
+    width: 65%;
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 10px;
     font-size: 16px;
-    margin: 0 auto;
+    margin: 5px 0 auto;
 }
 
 #filter-icon {
@@ -46,6 +65,18 @@ h2 {
     margin-left: 5px;
 }
 
+/* Filter container styles */
+#filterContainer {
+    position: fixed;
+    top: 120px; /* Adjust based on header and movieSearch height */
+    width: 100%;
+    background-color: #c6c6c6;
+    z-index: 998;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
 /* main.css */
 .genre-filter {
     display: inline-block;
@@ -65,7 +96,7 @@ h2 {
 
 /* Movie list styles */
 
-/* Add this CSS to your existing styles */
+
 #movieListHeader {
     display: flex;
     justify-content: space-between;
@@ -143,8 +174,6 @@ h2 {
     text-overflow: ellipsis;
     max-width: 150px;
 }
-
-
 
 
 .rating-container {
