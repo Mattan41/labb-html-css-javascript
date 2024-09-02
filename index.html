@@ -16,8 +16,14 @@
             <img src="img/cam.png" alt="Logo" id="logo">
             <h2>Top Flicks</h2>
         </div>
+        <div class="search-filter-container">
+            <label for="search-bar"></label><input type="text" id="search-bar" placeholder="Search movies...">
+            <div id="filter-icon">
+                <i class="fas fa-filter"></i>
+                <span>Filter</span>
+            </div>
+        </div>
         <div class="right-container">
-            <!-- index.html -->
             <div id="login-icon">
                 <i class="fas fa-user" id="login-button" title="Login or Register"></i>
                 <div id="login-popup" class="login-popup hidden">
@@ -40,19 +46,9 @@
                 <span class="slider round"></span>
             </label>
         </div>
+
     </header>
     <main class="main-content">
-        <section id="movieSearch">
-            <label for="search-bar"></label><input type="text" id="search-bar" placeholder="Search movies...">
-            <div id="filter-icon">
-                <i class="fas fa-filter"></i>
-                <span>Filter</span>
-            </div>
-
-        </section>
-
-        <!-- Filter container -->
-
         <section id="filterContainer" class="hidden">
             <div id="movieControls">
                 <label for="sort-options">Sort by:</label>
@@ -61,7 +57,6 @@
                     <option value="rating">Rating</option>
                     <option value="year">Year</option>
                 </select>
-
                 <div id="genre-filters">
                     <label>Filter by genre:</label>
                     <span class="genre-filter" data-genre="Drama">Drama</span>
@@ -71,14 +66,9 @@
                     <span class="genre-filter" data-genre="Romance">Romance</span>
                     <span class="genre-filter" data-genre="Thriller">Thriller</span>
                 </div>
-
             </div>
         </section>
-
-        <section id="movieDisplayed" class="hidden">
-            <!-- This list will be populated dynamically id in tablet och desktop mode, in mobile mode will be empty -->
-        </section>
-
+        <iframe title="movieDetails" id="movieDetailsFrame" src="movie-details.html" class="hidden"></iframe>
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
@@ -132,5 +122,6 @@
 <script type="module" src="js/favourites.js"></script>
 <script type="module" src="js/search.js"></script>
 <script src="js/dynamic-display.js"></script>
+<script type="module" src="js/movie-details.js"></script>
 </body>
 </html>

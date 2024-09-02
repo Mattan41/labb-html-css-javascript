@@ -70,3 +70,9 @@ function displayStoredMovieList() {
         favoriteListElement.appendChild(movieElement);
     });
 }
+export function getMovieFromLocalStorage(movieId) {
+    const data = JSON.parse(localStorage.getItem('movieData')) || [];
+    const movie = data.find(movie => movie.id === movieId);
+    console.log(`Fetched movie: ${movie ? movie.title : 'Not found'}`);
+    return movie;
+}
