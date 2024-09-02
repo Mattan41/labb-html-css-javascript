@@ -3,26 +3,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
     background-color: #d9d9d9;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    margin-bottom: 50px;
 }
-
-/* Footer Styles */
-.footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #d9d9d9;
-    text-align: center;
-    padding: 10px;
-    z-index: 1000;
-}
-
 
 .logo-container {
     display: flex;
@@ -31,17 +18,102 @@
 
 .logo-container img {
     width: 50px;
-    height: 50px;
+    height: auto;
     margin-right: 10px;
 }
+
+.search-filter-container {
+    display: flex;
+    align-content: flex-start;
+    gap: 10px;
+    margin-left: -60%;
+}
+
+#search-bar {
+    padding: 5px;
+    font-size: 14px;
+    width: 65%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+    margin: 5px 0 auto;
+}
+
+#filter-icon {
+
+    align-items: center;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#filter-icon i {
+    font-size: 20px;
+}
+
+#filter-icon span {
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+/* Filter container styles */
+#filterContainer {
+    position: fixed;
+    top: 120px; /* Adjust based on header and movieSearch height */
+    width: 100%;
+    background-color: #c6c6c6;
+    z-index: 998;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.genre-filter {
+    display: inline-block;
+    margin-right: 5px;
+    border: 1px #0C2733;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    max-height: 50px; /* Adjust as needed */
+    overflow: hidden;
+    padding: 1px 3px;
+}
+
+.genre-filter.selected {
+    background-color: #858585;
+    color: #fff;
+}
+
+/* Sort-by dropdown styles */
+#sort-options {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+#sort-options:hover {
+    border-color: #333;
+}
+
+#sort-options:focus {
+    outline: none;
+    border-color: #666;
+}
+
 
 .right-container {
     display: flex;
     align-items: center;
 }
 
-/*Log in*/
-
+/* Log in */
 .login-popup {
     position: fixed;
     top: 50%;
@@ -94,7 +166,6 @@
     display: none; /* Ensure the login form is hidden by default */
 }
 
-
 #login-button {
     color: #333;
     cursor: pointer;
@@ -105,7 +176,6 @@
 }
 
 /* light/dark mode switch */
-
 .switch {
     position: relative;
     display: inline-block;
@@ -173,4 +243,18 @@ input:checked + .slider:before {
     width: 50px;
     height: 50px;
     margin-right: 10px; /* avstånd mellan bild och text */
+}
+
+
+
+
+/* Footer Styles */
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #d9d9d9;
+    text-align: center;
+    padding: 10px;
+    z-index: 1000;
 }
