@@ -52,27 +52,28 @@
         </section>
 
         <!-- Filter container -->
-        <section id="filterContainer" class="hidden">
-            <div id="movieControls">
-                <label for="sort-options">Sort by:</label>
-                <select id="sort-options">
-                    <option value="title">Title</option>
-                    <option value="rating">Rating</option>
-                    <option value="year">Year</option>
-                </select>
 
-                <div id="genre-filters">
-                    <label>Filter by genre:</label>
-                    <span class="genre-filter" data-genre="Drama">Drama</span>
-                    <span class="genre-filter" data-genre="Crime">Crime</span>
-                    <span class="genre-filter" data-genre="Fantasy">Fantasy</span>
-                    <span class="genre-filter" data-genre="Action">Action</span>
-                    <span class="genre-filter" data-genre="Romance">Romance</span>
-                    <span class="genre-filter" data-genre="Thriller">Thriller</span>
-                </div>
-            </div>
-        </section>
+<section id="filterContainer" class="hidden">
+    <div id="movieControls">
+        <label for="sort-options">Sort by:</label>
+        <select id="sort-options">
+            <option value="title">Title</option>
+            <option value="rating">Rating</option>
+            <option value="year">Year</option>
+        </select>
 
+        <div id="genre-filters">
+            <label>Filter by genre:</label>
+            <span class="genre-filter" data-genre="Drama">Drama</span>
+            <span class="genre-filter" data-genre="Crime">Crime</span>
+            <span class="genre-filter" data-genre="Fantasy">Fantasy</span>
+            <span class="genre-filter" data-genre="Action">Action</span>
+            <span class="genre-filter" data-genre="Romance">Romance</span>
+            <span class="genre-filter" data-genre="Thriller">Thriller</span>
+        </div>
+
+    </div>
+</section>
 
         <section id="movieDisplayed" class ="hidden">
             <!-- This list will be populated dynamically id in tablet och desktop mode, in mobile mode will be empty -->
@@ -91,7 +92,7 @@
                     <section id="movieList">
                         <template id="movieTemplate">
                             <div class="movie-item">
-                                <img id="movieImage">
+                                <img src="img/cam.png" alt="movieImage" id="movieImage">
                                 <div class="movie-item-details">
                                     <div class="movie-title-container">
                                         <h3 id="movieTitle"></h3>

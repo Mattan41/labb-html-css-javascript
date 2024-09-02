@@ -2,14 +2,15 @@
 /*
 
 todo: erase welcome message when logging out
-
+    logout function more intuitive
 todo:
     favourites view - mobile, tablet, desktop, close favourites for mobile
     Favourite F icon more responsive
 todo:
- display of favourites in list, clickable movies. in mobileview over movielist, in desktop view to the right of the movie list
+     display of favourites in list, clickable movies. in mobileview over movielist, in desktop view to the right of the movie list
 
  todo: movie details view, above layer favourites in mobile - in desktop above movie list
+    toggle favourites in movie details view
 
 todo: fix filter view for mobile,
  load genres from movies local storage,
@@ -19,6 +20,7 @@ todo: fix filter view for mobile,
 todo:  dark theme, global settings
 
 todo: design/styling - better looking filter, better looking movie list, better looking movie details, better looking favourites list
+    monocrome
 
 
  */

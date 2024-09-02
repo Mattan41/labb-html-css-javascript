@@ -27,13 +27,13 @@ h2 {
 /* Adjust main content to account for fixed header, movieSearch, and footer */
 
 .main-content {
-    padding-top: 180px; /* Adjust based on header, movieSearch, and filterContainer height */
+    padding-top: 120px; /* Adjust based on header, movieSearch, and filterContainer height */
     padding-bottom: 40px; /* Adjust based on footer height */
 }
 /* Movie search styles */
 #movieSearch {
     position: fixed;
-    top: 60px; /* Adjust based on header height */
+    top: 61px; /* Adjust based on header height */
     width: 100%;
     background-color: #f1f1f1;
     z-index: 999;
@@ -77,25 +77,46 @@ h2 {
     border-radius: 4px;
     margin-bottom: 5px;
 }
-/* main.css */
+
 .genre-filter {
     display: inline-block;
     margin-right: 5px;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px #0C2733;
+    border-radius: 15px;
     cursor: pointer;
     background-color: #f1f1f1;
+    max-height: 50px; /* Adjust as needed */
+    overflow: hidden;
+    padding: 1px 3px;
 }
 
 .genre-filter.selected {
-    background-color: #333;
+    background-color: #858585;
     color: #fff;
 }
 
 
-/* Movie list styles */
+/* Sort-by dropdown styles */
+#sort-options {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
 
+#sort-options:hover {
+    border-color: #333;
+}
+
+#sort-options:focus {
+    outline: none;
+    border-color: #666;
+}
+
+/* Movie list styles */
 
 #movieListHeader {
     display: flex;
@@ -125,6 +146,7 @@ h2 {
     border: 2px solid #333;
     border-radius: 8px;
     padding: 20px;
+
 }
 
 .movie-item {
@@ -190,14 +212,11 @@ h2 {
     margin-right: 5px;
 }
 
-#movieGenre {
-    max-height: 50px; /* Adjust as needed */
-    overflow: hidden;
-}
-
 /* Genre styles */
 .genre {
     display: inline-block;
+    max-height: 50px; /* Adjust as needed */
+    overflow: hidden;
     margin-right: 5px;
     padding: 1px 3px;
     border: 1px solid #ccc;
