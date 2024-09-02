@@ -1,6 +1,5 @@
 @import "header-footer.css";
 @import "_utils.css";
-@import "media-queries.css";
 
 /* Global styles */
 * {
@@ -12,36 +11,64 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f1f1f1;
+    color: #333; /* Monochrome color */
+    background-color: #f1f1f1; /* Light grey background */
 }
 
 h2 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
+    color: #333; /* Monochrome color */
 }
 
-/* main.css */
+/* Tablet view */
+@media (min-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    #movieTitle {
+        max-width: 300px;
+    }
+}
+
+/* Desktop view */
+@media (min-width: 1024px) {
+    body {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    #movieTitle {
+        max-width: 400px;
+    }
+}
+
 
 /* Adjust main content to account for fixed header, movieSearch, and footer */
-
 .main-content {
     padding-top: 120px; /* Adjust based on header, movieSearch, and filterContainer height */
     padding-bottom: 40px; /* Adjust based on footer height */
 }
+
 /* Movie search styles */
 #movieSearch {
     position: fixed;
     top: 61px; /* Adjust based on header height */
     width: 100%;
-    background-color: #f1f1f1;
+    background-color: #f1f1f1; /* Light grey background */
     z-index: 999;
     padding: 5px;
 }
 
-
-/* Movie search styles */
 #search-bar {
     width: 65%;
     border: 1px solid #ccc;
@@ -49,6 +76,8 @@ h2 {
     padding: 10px;
     font-size: 16px;
     margin: 5px 0 auto;
+    background-color: #fff; /* White background */
+    color: #333; /* Monochrome color */
 }
 
 #filter-icon {
@@ -58,11 +87,13 @@ h2 {
 
 #filter-icon i {
     font-size: 20px;
+    color: #333; /* Monochrome color */
 }
 
 #filter-icon span {
     font-size: 16px;
     margin-left: 5px;
+    color: #333; /* Monochrome color */
 }
 
 /* Filter container styles */
@@ -70,7 +101,7 @@ h2 {
     position: fixed;
     top: 120px; /* Adjust based on header and movieSearch height */
     width: 100%;
-    background-color: #c6c6c6;
+    background-color: #c6c6c6; /* Light grey background */
     z-index: 998;
     padding: 10px;
     border: 1px solid #ccc;
@@ -84,48 +115,50 @@ h2 {
     border: 1px #0C2733;
     border-radius: 15px;
     cursor: pointer;
-    background-color: #f1f1f1;
+    background-color: #f1f1f1; /* Light grey background */
     max-height: 50px; /* Adjust as needed */
     overflow: hidden;
     padding: 1px 3px;
+    color: #333; /* Monochrome color */
 }
 
 .genre-filter.selected {
-    background-color: #858585;
-    color: #fff;
+    background-color: #858585; /* Dark grey background */
+    color: #fff; /* White text */
 }
-
 
 /* Sort-by dropdown styles */
 #sort-options {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background-color: #fff;
+    background-color: #fff; /* White background */
     font-size: 16px;
     cursor: pointer;
     transition: border-color 0.3s ease;
+    color: #333; /* Monochrome color */
 }
 
 #sort-options:hover {
-    border-color: #333;
+    border-color: #333; /* Monochrome color */
 }
 
 #sort-options:focus {
     outline: none;
-    border-color: #666;
+    border-color: #666; /* Dark grey border */
 }
 
 /* Movie list styles */
-
 #movieListHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: #333; /* Monochrome color */
 }
 
 #movieListHeader i {
     margin-left: auto;
+    color: #333; /* Monochrome color */
 }
 
 .container > .row {
@@ -136,6 +169,7 @@ h2 {
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 5px;
+    background-color: #f1f1f1; /* Light grey background */
 }
 
 .movie-list {
@@ -143,10 +177,10 @@ h2 {
     flex-direction: column;
     overflow-x: auto;
     width: 100%;
-    border: 2px solid #333;
+    border: 2px solid #333; /* Monochrome color */
     border-radius: 8px;
     padding: 20px;
-
+    background-color: #fff; /* White background */
 }
 
 .movie-item {
@@ -156,10 +190,11 @@ h2 {
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 10px;
+    background-color: #f1f1f1; /* Light grey background */
 }
-/* main.css */
+
 .movie-item:hover {
-    background-color: aliceblue; /* Change to desired hover color */
+    background-color: aliceblue; /* Hover color */
 }
 
 .movie-item img {
@@ -173,15 +208,17 @@ h2 {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    color: #333; /* Monochrome color */
 }
 
 .movie-item-details p {
     margin: 0;
+    color: #333; /* Monochrome color */
 }
-
 
 .movie-item-details h3 {
     margin-bottom: 5px;
+    color: #333; /* Monochrome color */
 }
 
 .movie-item-details .movie-title-container {
@@ -189,14 +226,13 @@ h2 {
     justify-content: space-between;
 }
 
-
 #movieTitle {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 150px;
+    color: #333; /* Monochrome color */
 }
-
 
 .rating-container {
     display: flex;
@@ -206,10 +242,12 @@ h2 {
 .rating-container #movieRating {
     font-size: 0.75em;
     margin-right: 5px;
+    color: #333; /* Monochrome color */
 }
 
 .rating-container #starIcon {
     margin-right: 5px;
+    color: gold; /* Keep star color */
 }
 
 /* Genre styles */
@@ -220,11 +258,11 @@ h2 {
     margin-right: 5px;
     padding: 1px 3px;
     border: 1px solid #ccc;
-    background-color: #b1abab;
+    background-color: #b1abab; /* Light grey background */
     border-radius: 15px;
     font-size: 0.75em;
+    color: #333; /* Monochrome color */
 }
-
 
 /* Adjust font size based on the number of genres */
 #movieGenre.few-genres .genre {
@@ -244,23 +282,28 @@ h2 {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    color: #333; /* Monochrome color */
 }
 
 #sort-options {
     padding: 5px;
+    color: #333; /* Monochrome color */
 }
 
 #genre-filters {
     display: flex;
     flex-wrap: wrap;
+    color: #333; /* Monochrome color */
 }
 
 #genre-filters label {
     margin-right: 10px;
+    color: #333; /* Monochrome color */
 }
 
 #genre-filters input {
     margin-right: 5px;
+    color: #333; /* Monochrome color */
 }
 
 /* Pagination controls */
@@ -268,11 +311,14 @@ h2 {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    color: #333; /* Monochrome color */
 }
 
 #paginationControls button {
     padding: 5px 10px;
     margin: 0 5px;
+    background-color: #fff; /* White background */
+    color: #333; /* Monochrome color */
 }
 
 /* Hidden class */
@@ -286,14 +332,47 @@ h2 {
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-bottom: 20px;
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Light grey background */
+    color: #333; /* Monochrome color */
 }
 
 /* Favourites styles */
 #favourites-container {
     display: none;
+    position: fixed;
+    z-index: 999;
+    background-color: #fff; /* White background */
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    top: 120px;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    color: #333; /* Monochrome color */
 }
 
 #favourites-container.show {
     display: block;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    #favourites-container {
+        position: -ms-device-fixed;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+        background-color: #d3d3d3; /* Light grey background */
+        border: 1px solid #6c6c6c;
+        left: 60%;
+        top: 20%;
+        width: 30%;
+        height: auto;
+        font-size: 20px;
+        color: #333; /* Monochrome color */
+    }
+
+    #movieList {
+        width: 70%;
+    }
 }

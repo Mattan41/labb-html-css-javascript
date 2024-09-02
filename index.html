@@ -53,29 +53,29 @@
 
         <!-- Filter container -->
 
-<section id="filterContainer" class="hidden">
-    <div id="movieControls">
-        <label for="sort-options">Sort by:</label>
-        <select id="sort-options">
-            <option value="title">Title</option>
-            <option value="rating">Rating</option>
-            <option value="year">Year</option>
-        </select>
+        <section id="filterContainer" class="hidden">
+            <div id="movieControls">
+                <label for="sort-options">Sort by:</label>
+                <select id="sort-options">
+                    <option value="title">Title</option>
+                    <option value="rating">Rating</option>
+                    <option value="year">Year</option>
+                </select>
 
-        <div id="genre-filters">
-            <label>Filter by genre:</label>
-            <span class="genre-filter" data-genre="Drama">Drama</span>
-            <span class="genre-filter" data-genre="Crime">Crime</span>
-            <span class="genre-filter" data-genre="Fantasy">Fantasy</span>
-            <span class="genre-filter" data-genre="Action">Action</span>
-            <span class="genre-filter" data-genre="Romance">Romance</span>
-            <span class="genre-filter" data-genre="Thriller">Thriller</span>
-        </div>
+                <div id="genre-filters">
+                    <label>Filter by genre:</label>
+                    <span class="genre-filter" data-genre="Drama">Drama</span>
+                    <span class="genre-filter" data-genre="Crime">Crime</span>
+                    <span class="genre-filter" data-genre="Fantasy">Fantasy</span>
+                    <span class="genre-filter" data-genre="Action">Action</span>
+                    <span class="genre-filter" data-genre="Romance">Romance</span>
+                    <span class="genre-filter" data-genre="Thriller">Thriller</span>
+                </div>
 
-    </div>
-</section>
+            </div>
+        </section>
 
-        <section id="movieDisplayed" class ="hidden">
+        <section id="movieDisplayed" class="hidden">
             <!-- This list will be populated dynamically id in tablet och desktop mode, in mobile mode will be empty -->
         </section>
 
@@ -87,8 +87,6 @@
                         <i class="fa-solid fa-f" data-bs-toggle="collapse" data-bs-target="#favourites-container"
                            title="Favourites"></i>
                     </h2>
-
-
                     <section id="movieList">
                         <template id="movieTemplate">
                             <div class="movie-item">
@@ -114,12 +112,11 @@
                     </section>
                 </div>
                 <div class="col-md-4">
-                    <!-- Listan med favourites -->
                     <div id="favourites-container" class="collapse">
                         <h2>Favourites</h2>
                         <button id="close-favourites">Close</button>
                         <ul id="favorite-list">
-                            <!-- Favorite movies will be populated here -->
+                            <!-- Favorite movies will be populated here by javascript-->
                         </ul>
                     </div>
                 </div>
