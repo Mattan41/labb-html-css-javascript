@@ -7,7 +7,6 @@ document.getElementById('filter-icon').addEventListener('click', () => {
     filterContainer.classList.toggle('hidden');
 });
 
-// SORT MOVIES todo: filtersort both ways, better design
 document.getElementById('sort-options').addEventListener('change', (event) => {
     sortMovies(event.target.value);
 });
