@@ -12,62 +12,70 @@
 <body>
 <div class="grid-container">
     <header class="header">
-        <div class="logo-container">
-            <img src="img/cam.png" alt="Logo" id="logo">
-            <h2>Top Flicks</h2>
-        </div>
-        <div class="search-filter-container">
-            <label for="search-bar"></label><input type="text" id="search-bar" placeholder="Search movies...">
-            <div id="filter-icon">
-                <i class="fas fa-filter"></i>
-                <span>Filter</span>
+        <div class="header-row">
+            <div class="logo-container">
+                <img src="img/cam.png" alt="Logo" id="logo">
+                <h2>Top Flicks</h2>
             </div>
-        </div>
-        <div class="right-container">
-            <div id="login-icon">
+
+            <div class="right-container">
                 <i class="fas fa-user" id="login-button" title="Login or Register"></i>
-                <div id="login-popup" class="login-popup hidden">
-                    <form id="login-form">
-                        <label for="username">Username</label>
-                        <input type="text" id="username" placeholder="Username" autocomplete="username">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" placeholder="Password">
-                        <div id="error-message" class="error-message hidden"></div>
-                        <button type="submit" onclick="login(event)">Sign in</button>
-                        <button type="button" onclick="window.location.href='register-form.html'">Register</button>
-                    </form>
-                </div>
-                <div id="logout-form" class="hidden">
-                    <span id="welcome-message"></span>
+                <label class="switch">
+                    <input type="checkbox" id="theme-switch">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+        <div class="header-row">
+            <div class="search-filter-container">
+                <label for="search-bar"></label>
+                <input type="text" id="search-bar" placeholder="Search movies...">
+                <div id="filter-icon">
+                    <i class="fas fa-filter"></i>
+                    <span>Filter</span>
                 </div>
             </div>
-            <label class="switch">
-                <input type="checkbox" id="theme-switch">
-                <span class="slider round"></span>
-            </label>
         </div>
 
+        <!-- Hidden Elements Container -->
+<div id="hidden-elements-container" style="display: none;">
+    <div id="login-popup" class="login-popup hidden">
+        <form id="login-form">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Username" autocomplete="username">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Password">
+            <div id="error-message" class="error-message hidden"></div>
+            <button type="submit" onclick="login(event)">Sign in</button>
+            <button type="button" onclick="window.location.href='register-form.html'">Register</button>
+        </form>
+    </div>
+    <div id="logout-form" class="hidden">
+        <span id="welcome-message"></span>
+    </div>
+    <section id="filterContainer" class="hidden">
+        <div id="movieControls">
+            <label for="sort-options">Sort by:</label>
+            <select id="sort-options">
+                <option value="title">Title</option>
+                <option value="rating">Rating</option>
+                <option value="year">Year</option>
+            </select>
+            <div id="genre-filters">
+                <label>Filter by genre:</label>
+                <span class="genre-filter" data-genre="Drama">Drama</span>
+                <span class="genre-filter" data-genre="Crime">Crime</span>
+                <span class="genre-filter" data-genre="Fantasy">Fantasy</span>
+                <span class="genre-filter" data-genre="Action">Action</span>
+                <span class="genre-filter" data-genre="Romance">Romance</span>
+                <span class="genre-filter" data-genre="Thriller">Thriller</span>
+            </div>
+        </div>
+    </section>
+</div>
     </header>
     <main class="main-content">
-        <section id="filterContainer" class="hidden">
-            <div id="movieControls">
-                <label for="sort-options">Sort by:</label>
-                <select id="sort-options">
-                    <option value="title">Title</option>
-                    <option value="rating">Rating</option>
-                    <option value="year">Year</option>
-                </select>
-                <div id="genre-filters">
-                    <label>Filter by genre:</label>
-                    <span class="genre-filter" data-genre="Drama">Drama</span>
-                    <span class="genre-filter" data-genre="Crime">Crime</span>
-                    <span class="genre-filter" data-genre="Fantasy">Fantasy</span>
-                    <span class="genre-filter" data-genre="Action">Action</span>
-                    <span class="genre-filter" data-genre="Romance">Romance</span>
-                    <span class="genre-filter" data-genre="Thriller">Thriller</span>
-                </div>
-            </div>
-        </section>
+
         <iframe title="movieDetails" id="movieDetailsFrame" src="movie-details.html" class="hidden"></iframe>
         <div class="container">
             <div class="row">

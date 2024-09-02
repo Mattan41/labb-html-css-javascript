@@ -21,6 +21,7 @@ TODO:    SENARE
     Favourite F icon more clear what it does
     make logout function more intuitive
     todo: filtersort both ways, better design where to click
+     random movie from favourites chosen as first movie in shommoviedetails
 
 todo:  dark theme, global settings
 todo: design/styling - better looking filter, better looking movie list, better looking movie details, better looking favourites list

@@ -1,14 +1,20 @@
 /* Header Styles */
 .header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 10px;
     padding: 5px;
     background-color: #d9d9d9;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo-container {
@@ -26,12 +32,20 @@
     display: flex;
     align-content: flex-start;
     gap: 10px;
-    margin-left: -60%;
+    width: 100%;
+}
+
+.right-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.search-filter-container {
+    margin-left: 0; /* Reset margin for mobile */
+    width: 100%; /* Full width for mobile */
 }
 
 #search-bar {
-    padding: 5px;
-    font-size: 14px;
     width: 65%;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -41,7 +55,6 @@
 }
 
 #filter-icon {
-
     align-items: center;
     cursor: pointer;
     display: inline-block;
@@ -59,8 +72,7 @@
 
 /* Filter container styles */
 #filterContainer {
-    position: fixed;
-    top: 120px; /* Adjust based on header and movieSearch height */
+
     width: 100%;
     background-color: #c6c6c6;
     z-index: 998;
@@ -68,7 +80,9 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-bottom: 5px;
+    margin-top: 10px; /* Add margin to separate from header */
 }
+
 
 .genre-filter {
     display: inline-block;
@@ -86,6 +100,7 @@
     background-color: #858585;
     color: #fff;
 }
+
 
 /* Sort-by dropdown styles */
 #sort-options {
@@ -105,12 +120,6 @@
 #sort-options:focus {
     outline: none;
     border-color: #666;
-}
-
-
-.right-container {
-    display: flex;
-    align-items: center;
 }
 
 /* Log in */
@@ -245,7 +254,10 @@ input:checked + .slider:before {
     margin-right: 10px; /* avstånd mellan bild och text */
 }
 
-
+/* Ensure hidden elements are not displayed by default */
+.hidden {
+    display: none;
+}
 
 
 /* Footer Styles */
