@@ -1,5 +1,6 @@
 @import "header-footer.css";
 @import "_utils.css";
+@import "movie-details.css";
 
 /* Global styles */
 * {
@@ -136,6 +137,12 @@ h2 {
 #sort-options:focus {
     outline: none;
     border-color: #666;
+}
+
+/* movie details styles */
+#iframe {
+    width: 100%;
+    height: 600px;
 }
 
 /* Movie list styles */
