@@ -64,6 +64,8 @@ h2 {
     z-index: 1001; /* Ensure it is above other elements */
     border: none; /* Remove any default border */
 }
+
+
 /* Movie list styles */
 
 #movieListHeader {
@@ -247,7 +249,7 @@ h2 {
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     top: 120px;
-    bottom:40px;
+    bottom: 40px;
     left: 0;
     right: 0;
     overflow-y: auto;
@@ -257,24 +259,61 @@ h2 {
     display: block;
 }
 
+
+
 /* Desktop */
 @media (min-width: 1024px) {
+    .container {
+        position: relative; /* Ensure the container is the reference point */
+    }
+    .col-md-8 {
+        width: 100%; /* Adjust width as needed */
+    }
     #favourites-container {
-        position: -ms-device-fixed;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+        position: relative;
+
+        width: 100%; /* Adjust width as needed */
+        height: calc(100% - 160px); /* Adjust based on header and footer height */
+        overflow-y: auto;
+        z-index: 1000;
+
+        /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0);*/
         background-color: #d3d3d3;
         border: 1px solid #6c6c6c;
-        left: 60%;
-        top: 20%;
-        width: 30%;
-        height: auto;
-
         font-size: 20px;
     }
 
-    #movieList {
-        width: 70%;
+
+
+    #movieDetailsFrame {
+        position: relative;
+        width: 30%;
+        border: none; /* Remove any default border */
+        top: 120px; /* Adjust based on header height */
+        height: 100%;
+
+        left: 0; /* Position to the left of the movie list */
     }
+
+
+
+    #movieImage {
+        width: 150px; /* Adjust width as needed */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    #movieTitle {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+}
+/*Tablet view*/
+@media (min-width: 768px) {
+
+
+
 }
 
 .hidden {

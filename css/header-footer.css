@@ -257,8 +257,8 @@ input:checked + .slider:before {
     z-index: 1000;
 }
 
-/* Desktop */
-@media (min-width: 1024px) {
+/* Tablet and larger*/
+@media (min-width: 768px) {
     .footer {
         position: fixed;
 
