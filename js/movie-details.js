@@ -25,7 +25,6 @@ export function showMovieDetails() {
     movieDisplayed.querySelector('#movie-title').textContent = movie.title;
     movieDisplayed.querySelector('#movie-year-rated').textContent = `${movie.year} | ${movie.rated}`;
     movieDisplayed.querySelector('#movie-rating').textContent = `Rating: ${movie.rating}`;
-    movieDisplayed.querySelector('#movie-favourite').textContent = movie.favourite ? 'Favourite: Yes' : 'Favourite: No';
     movieDisplayed.querySelector('#movie-director').textContent = movie.director.join(', ');
     movieDisplayed.querySelector('#movie-genre').textContent = movie.genre.join(', ');
     movieDisplayed.querySelector('#movie-stars').textContent = movie.actors.join(', ');
