@@ -54,12 +54,16 @@ h2 {
     padding-bottom: 40px; /* Adjust based on footer height */
 }
 
-/* movie details styles */
-#iframe {
+/* Ensure the iframe covers the entire screen */
+#movieDetailsFrame {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 600px;
+    height: 100%;
+    z-index: 1001; /* Ensure it is above other elements */
+    border: none; /* Remove any default border */
 }
-
 /* Movie list styles */
 
 #movieListHeader {
@@ -237,7 +241,7 @@ h2 {
 #favourites-container {
     display: none;
     position: fixed;
-    z-index: 999;
+    z-index: 900;
     background-color: #fff;
     border: 1px solid #ccc;
     padding: 10px;
@@ -271,4 +275,8 @@ h2 {
     #movieList {
         width: 70%;
     }
+}
+
+.hidden {
+    display: none;
 }

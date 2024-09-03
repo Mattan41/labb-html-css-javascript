@@ -12,43 +12,47 @@
 <body>
 <div class="grid-container">
     <header class="header">
-        <div class="logo-container">
-            <img src="img/cam.png" alt="Logo" id="logo">
-            <h2>Top Flicks</h2>
-        </div>
-        <div class="search-filter-container">
-            <label for="search-bar"></label><input type="text" id="search-bar" placeholder="Search movies...">
-            <div id="filter-icon">
-                <i class="fas fa-filter"></i>
-                <span>Filter</span>
+        <div class="header-row">
+            <div class="logo-container">
+                <img src="img/cam.png" alt="Logo" id="logo">
+                <h2>Top Flicks</h2>
             </div>
-        </div>
-        <div class="right-container">
-            <div id="login-icon">
+
+            <div class="right-container">
                 <i class="fas fa-user" id="login-button" title="Login or Register"></i>
-                <div id="login-popup" class="login-popup hidden">
-                    <form id="login-form">
-                        <label for="username">Username</label>
-                        <input type="text" id="username" placeholder="Username" autocomplete="username">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" placeholder="Password">
-                        <div id="error-message" class="error-message hidden"></div>
-                        <button type="submit" onclick="login(event)">Sign in</button>
-                        <button type="button" onclick="window.location.href='register-form.html'">Register</button>
-                    </form>
-                </div>
-                <div id="logout-form" class="hidden">
-                    <span id="welcome-message"></span>
+                <label class="switch">
+                    <input type="checkbox" id="theme-switch">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+        <div class="header-row">
+            <div class="search-filter-container">
+                <label for="search-bar"></label>
+                <input type="text" id="search-bar" placeholder="Search movies...">
+                <div id="filter-icon">
+                    <i class="fas fa-filter"></i>
+                    <span>Filter</span>
                 </div>
             </div>
-            <label class="switch">
-                <input type="checkbox" id="theme-switch">
-                <span class="slider round"></span>
-            </label>
         </div>
 
-    </header>
-    <main class="main-content">
+        <!-- Hidden Elements Container -->
+
+        <div id="login-popup" class="login-popup hidden">
+            <form id="login-form">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Username" autocomplete="username">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Password">
+                <div id="error-message" class="error-message hidden"></div>
+                <button type="submit" onclick="login(event)">Sign in</button>
+                <button type="button" onclick="window.location.href='register-form.html'">Register</button>
+            </form>
+        </div>
+        <div id="logout-form" class="hidden">
+            <span id="welcome-message"></span>
+        </div>
         <section id="filterContainer" class="hidden">
             <div id="movieControls">
                 <label for="sort-options">Sort by:</label>
@@ -68,6 +72,9 @@
                 </div>
             </div>
         </section>
+
+    </header>
+    <main class="main-content">
         <iframe title="movieDetails" id="movieDetailsFrame" src="movie-details.html" class="hidden"></iframe>
         <div class="container">
             <div class="row">

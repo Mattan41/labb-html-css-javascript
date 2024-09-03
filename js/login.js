@@ -1,27 +1,31 @@
 
 /*
+TODO: FIX HEADER VIEW IN MOBILE, TABLET, DESKTOP
 
-todo: erase welcome message when logging out
-    logout function more intuitive
+todo: BUG-FIX favourites: Update both favouritelist and movieList after favourite is toggled
+
+todo: BUG-FIX erase welcome message when logging out
+
+ todo: MOVIEDETAILS view,
+    above layer favourites in mobile (over favouritlist aswell)
+    in desktop and tablet above movie list - smaller for tablet
+
 todo:
-    favourites view - mobile, tablet, desktop, close favourites for mobile
-    Favourite F icon more responsive
-todo:
-     display of favourites in list, clickable movies. in mobileview over movielist, in desktop view to the right of the movie list
+    FEATURE display of favourites in list, clickable movies. in mobileview over movielist, in desktop view to the right of the movie list
+    Toggle favourites in movie details view
 
- todo: movie details view, above layer favourites in mobile - in desktop above movie list
-    toggle favourites in movie details view
 
-todo: fix filter view for mobile,
- load genres from movies local storage,
- filter movies by genre by clicking on genre instead of apply button.
- If no genre is selected, show all movies
+
+TODO:    SENARE
+    FEATURE  load genres from movies local storage,
+    Favourite F icon more clear what it does
+    make logout function more intuitive
+    todo: filtersort both ways, better design where to click
+     random movie from favourites chosen as first movie in shommoviedetails
 
 todo:  dark theme, global settings
-
 todo: design/styling - better looking filter, better looking movie list, better looking movie details, better looking favourites list
     monocrome
-
 
  */
 // Kontrollera om användaren är inloggad
