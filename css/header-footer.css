@@ -25,7 +25,7 @@
 .logo-container img {
     width: 50px;
     height: auto;
-    margin-right: 10px;
+    margin-right: 10px; /* avstånd mellan bild och text */
 }
 
 .search-filter-container {
@@ -68,19 +68,20 @@
 #filter-icon span {
     font-size: 16px;
     margin-left: 5px;
+
 }
 
 /* Filter container styles */
 #filterContainer {
-
     width: 100%;
     background-color: #c6c6c6;
-    z-index: 998;
+    z-index: 900;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-bottom: 5px;
     margin-top: 10px; /* Add margin to separate from header */
+
 }
 
 
@@ -108,7 +109,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #fff;
-    font-size: 16px;
+    font-size: 12px;
     cursor: pointer;
     transition: border-color 0.3s ease;
 }
@@ -120,6 +121,67 @@
 #sort-options:focus {
     outline: none;
     border-color: #666;
+}
+
+/* light/dark mode switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #333;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #666;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }
 
 /* Log in */
@@ -184,85 +246,21 @@
     color: #555;
 }
 
-/* light/dark mode switch */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-input:checked + .slider {
-    background-color: #333;
-}
-
-input:focus + .slider {
-    box-shadow: 0 0 1px #666;
-}
-
-input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-}
-
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-
-.header button {
-    margin-left: 10px;
-}
-
-.header img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px; /* avstånd mellan bild och text */
-}
-
-
 
 /* Footer Styles */
 .footer {
-    position: fixed;
     bottom: 0;
     width: 100%;
     background-color: #d9d9d9;
     text-align: center;
     padding: 10px;
     z-index: 1000;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .footer {
+        position: fixed;
+
+    }
 }

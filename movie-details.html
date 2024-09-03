@@ -1,57 +1,33 @@
-<!--<!doctype html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--    <link rel="stylesheet" type="text/css" href="css/main.css">-->
-<!--    <link rel="stylesheet" type="text/css" href="css/movie-details.css">-->
-<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">-->
-<!--    <title>Movie details</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--<a href="index.html">Back to Movie List</a>-->
-
-<!--<template id="movie-details-template">-->
-<!--    <div id="movie-details-container">-->
-<!--        <img id="movie-image" src="" width="200" height="300">-->
-<!--        <h2 id="movie-title"></h2>-->
-<!--        <p id="movie-year-rated"></p>-->
-<!--        <ul id="movie-list">-->
-<!--            <li>Director: <span id="movie-director"></span></li>-->
-<!--            <li>Genre: <span id="movie-genre"></span></li>-->
-<!--            <li>Stars: <span id="movie-stars"></span></li>-->
-<!--        </ul>-->
-<!--        <div id="movie-synopsis">-->
-<!--            <p id="movie-description"></p>-->
-<!--        </div>-->
-<!--        <i id="starIcon" class="fas fa-star"></i>-->
-<!--    </div>-->
-<!--</template>-->
-
-<!--<script src="js/movie-details.js"></script>-->
-<!--</body>-->
-<!--</html>-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/movie-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <title>Movie Details</title>
 </head>
 <body>
-    <section id="movieDisplayed">
-        <img id="movie-image" src="" width="200" height="300" alt="movieImg">
+<section id="movieDisplayed">
+    <img id="movie-image" src="" alt="Movie Image">
+    <div class="info-container">
         <h2 id="movie-title"></h2>
         <p id="movie-year-rated"></p>
+        <p id="movie-rating"></p>
+        <p id="movie-favourite"></p>
         <ul id="movie-list">
             <li>Director: <span id="movie-director"></span></li>
             <li>Genre: <span id="movie-genre"></span></li>
             <li>Stars: <span id="movie-stars"></span></li>
         </ul>
         <label for="movie-synopsis"></label><textarea id="movie-synopsis"> Synopsis: </textarea>
+        <i id="starIcon" class="fas fa-star" title="Add/remove favourite"></i>
         <button id="closeMovieDetails">Close</button>
-    </section>
-    <script type="module" src="js/movie-details.js"></script>
+    </div>
+</section>
+<script type="module" src="js/movie-details.js"></script>
 </body>
 </html>

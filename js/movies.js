@@ -53,21 +53,12 @@ export function populateMovieList(movies = Array.from(movieDataMap.values())) {
             event.stopPropagation();
         });
 
-        // movieItem.querySelector('.movie-item').addEventListener("click", () => {
-        //     window.location.href = "movie-details.html?id=" + movie.id;
-        // });
-
         // Modify the event listener to show the iframe and pass the movie ID
         movieItem.querySelector('.movie-item').addEventListener("click", () => {
             const movieDetailsFrame = document.getElementById('movieDetailsFrame');
             movieDetailsFrame.src = `movie-details.html?id=${movie.id}`;
             movieDetailsFrame.classList.remove('hidden');
         });
-
-        // movieItem.querySelector('.movie-item').addEventListener("click", () => {
-        //     console.log('MovieId ' + movie.id + ' clicked');
-        //     showMovieDetails(movie.id);
-        //      });
 
         movieListContainer.appendChild(movieItem);
     });

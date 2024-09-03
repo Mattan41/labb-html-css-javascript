@@ -29,7 +29,6 @@ export function getMoviesFromLocalStorage() {
     movieDataMap = new Map(data.map(movie => [movie.id, movie]));
     return movieDataMap;
 }
-
 export function toggleFavourite(starIcon, movie) {
     starIcon.classList.toggle('favorite', movie.favourite);
     starIcon.title = movie.favourite ? 'Remove from favourites' : 'Add to favourites';
@@ -54,12 +53,12 @@ export function loadFavouriteList() {
     displayStoredMovieList();
 }
 
-
 function displayStoredMovieList() {
     const data = JSON.parse(localStorage.getItem('movieData')) || [];
     const favoriteMovies = data.filter(movie => movie.favourite);
     const favoriteListElement = document.querySelector('#favorite-list');
     favoriteListElement.innerHTML = '';
+
     favoriteMovies.forEach(movie => {
         const movieElement = document.createElement('li');
         const starIcon = document.createElement('i');
