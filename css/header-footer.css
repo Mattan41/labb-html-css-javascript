@@ -254,10 +254,6 @@ input:checked + .slider:before {
     margin-right: 10px; /* avstånd mellan bild och text */
 }
 
-/* Ensure hidden elements are not displayed by default */
-.hidden {
-    display: none;
-}
 
 
 /* Footer Styles */
