@@ -263,11 +263,23 @@ h2 {
 
 /* Desktop */
 @media (min-width: 1024px) {
-    .container {
-        position: relative; /* Ensure the container is the reference point */
+    .row {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
     }
+    #movieDetailsFrame {
+        position: relative;
+        width:100%;
+        border: solid #333333;
+        top: 60px; /* Adjust based on header height */
+        height: auto;
+    }
+
+
     .col-md-8 {
         width: 100%; /* Adjust width as needed */
+
     }
     #favourites-container {
         position: relative;
@@ -285,15 +297,15 @@ h2 {
 
 
 
-    #movieDetailsFrame {
-        position: relative;
-        width: 30%;
-        border: none; /* Remove any default border */
-        top: 120px; /* Adjust based on header height */
-        height: 100%;
+    /*#movieDetailsFrame {*/
+    /*    position: relative;*/
+    /*    width: 30%;*/
+    /*    border: none; !* Remove any default border *!*/
+    /*    top: 120px; !* Adjust based on header height *!*/
+    /*    height: 100%;*/
 
-        left: 0; /* Position to the left of the movie list */
-    }
+    /*    left: 0; !* Position to the left of the movie list *!*/
+    /*}*/
 
 
 

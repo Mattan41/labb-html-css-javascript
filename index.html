@@ -19,6 +19,9 @@
             </div>
 
             <div class="right-container">
+                <div id="logout-form" class="hidden">
+                    <span id="welcome-message"></span>
+                </div>
                 <i class="fas fa-user" id="login-button" title="Login or Register"></i>
                 <label class="switch">
                     <input type="checkbox" id="theme-switch">
@@ -50,9 +53,7 @@
                 <button type="button" onclick="window.location.href='register-form.html'">Register</button>
             </form>
         </div>
-        <div id="logout-form" class="hidden">
-            <span id="welcome-message"></span>
-        </div>
+
         <section id="filterContainer" class="hidden">
             <div id="movieControls">
                 <label for="sort-options">Sort by:</label>
@@ -76,8 +77,8 @@
     </header>
     <main class="main-content">
         <div class="container">
+            <iframe title="movieDetails" id="movieDetailsFrame" src="movie-details.html" class="hidden"></iframe>
             <div class="row">
-                <iframe title="movieDetails" id="movieDetailsFrame" src="movie-details.html" class="hidden"></iframe>
                 <div class="col-md-8">
                     <h2 id="movieListHeader">
                         Movies
