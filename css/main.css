@@ -269,11 +269,11 @@ h2 {
         gap: 20px;
     }
     #movieDetailsFrame {
-        position: relative;
+        position: fixed;
         width:100%;
         border: solid #333333;
-        top: 60px; /* Adjust based on header height */
-        height: auto;
+        top: 120px; /* Adjust based on header height TODO Make it automatically adjust when filters etc */
+        height: 300px;
     }
 
 
@@ -283,7 +283,6 @@ h2 {
     }
     #favourites-container {
         position: relative;
-
         width: 100%; /* Adjust width as needed */
         height: calc(100% - 160px); /* Adjust based on header and footer height */
         overflow-y: auto;
@@ -294,20 +293,6 @@ h2 {
         border: 1px solid #6c6c6c;
         font-size: 20px;
     }
-
-
-
-    /*#movieDetailsFrame {*/
-    /*    position: relative;*/
-    /*    width: 30%;*/
-    /*    border: none; !* Remove any default border *!*/
-    /*    top: 120px; !* Adjust based on header height *!*/
-    /*    height: 100%;*/
-
-    /*    left: 0; !* Position to the left of the movie list *!*/
-    /*}*/
-
-
 
     #movieImage {
         width: 150px; /* Adjust width as needed */
