@@ -1,10 +1,4 @@
 /* Mobile Styles */
-#movie-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
 #movieDisplayed {
     position: fixed;
     top: 0;
@@ -33,15 +27,44 @@
     text-align: center;
 }
 
+.image-info-container .movieCover {
+    display: none;
+}
+
 #movieDisplayed h2 {
     font-size: 24px;
     margin-bottom: 10px;
 }
 
-#movieDisplayed p,
-#movieDisplayed ul {
+#movieDisplayed p {
     width: 100%;
     margin-bottom: 10px;
+}
+
+
+#movieDisplayed #year-released,
+#movieDisplayed #rated,
+#movieDisplayed #movie-rating {
+    font-size: 12px;
+    display: inline;
+}
+
+
+.details-container .top-info {
+    gap: 10px; /* Justera gapet mellan elementen om nödvändigt */
+}
+
+.details-container .top-info p {
+    margin: 0;
+}
+
+.details-container .top-info p::after {
+    content: '|';
+    margin-left: 5px;
+}
+
+.details-container .top-info p:last-child::after {
+    content: '';
 }
 
 #movieDisplayed textarea {
@@ -54,20 +77,6 @@
     padding: 10px;
     border: none;
     border-radius: 5px;
-}
-
-#movie-displayed button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #ff6f61;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.image-info-container .movieCover {
-    display: none;
 }
 
 /* Styling for the close button */
@@ -90,22 +99,29 @@
     background-color: #cc5048;
 }
 
-/* desktop */
+/* Desktop Styles */
 @media (min-width: 1024px) {
-
     #movieDisplayed {
-        position: relative;
+        position: sticky;
         display: flex;
         flex-direction: row;
         background-image: none;
+        width: 100%;
+        height: auto;
+        padding: 40px;
     }
+
     #movieDisplayed.hidden {
         display: none;
     }
 
-    #movieDisplayed .image-info-container img {
-        display: block; /* Ensure the image is displayed */
-        margin-right: 20px;
+    #movieDisplayed .info-container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        max-width: none;
+        text-align: left;
+        position: relative;
     }
 
     #movieDisplayed .image-info-container {
@@ -115,54 +131,63 @@
         margin-bottom: 20px;
     }
 
-    #movieDisplayed .info-container {
-        width: 60%;
-        margin-left: 20px;
-        display: flex;
-        flex-direction: column;
-    }
-
     #movieDisplayed .image-info-container img {
+        display: block;
         width: 150px;
         height: auto;
         margin-right: 20px;
-    }
-
-    #movieDisplayed .top-info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background-color: rgba(0, 0, 0, 0.6);
-        padding: 10px;
         border-radius: 5px;
     }
 
-    #movieDisplayed .top-info h2 {
-        font-size: 28px;
-        margin-bottom: 10px;
+    /* Apply filter to the cam.webp */
+    .apply-filter {
+        filter: sepia(1) saturate(0) brightness(2) invert(1);
     }
 
-    #movieDisplayed .top-info i {
-        margin-bottom: 10px;
+    .image-info-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    #movieDisplayed .top-info p {
-        font-size: 18px;
-        margin-bottom: 5px;
+    #movieDisplayed h2 {
+        font-size: 14px;
     }
 
-    #movieDisplayed p,
-    #movieDisplayed ul {
-        font-size: 18px;
+    #movieDisplayed #year-released,
+    #movieDisplayed #rated,
+    #movieDisplayed #movie-rating {
+        font-size: 10px;
     }
 
-    #movieDisplayed textarea {
-        height: 150px;
+    #movieDisplayed p {
+        font-size: 12px;
+    }
+
+
+    .details-container {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .synopsis-container {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
     }
 
     #closeMovieDetails {
         font-size: 14px;
         padding: 10px 15px;
+        position: absolute; /* Positioning the close button */
+        top: 10px; /* Adjust as needed */
+        right: 10px; /* Adjust as needed */
+        background-color: rgba(0, 0, 0, 0.7); /* Slightly darker background */
     }
 }
-
