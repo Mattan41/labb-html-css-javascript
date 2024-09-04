@@ -10,3 +10,13 @@ function handleSubmit(event) {
     alert('Du har registerat dig som användare. Välkommen!');
     window.location.href = 'index.html?message=success';
 }
+
+
+document.getElementById('show-password').addEventListener('change', function() {
+    const passwordInput = document.getElementById('password');
+    if (this.checked) {
+        passwordInput.type = 'text';
+    } else {
+        passwordInput.type = 'password';
+    }
+});

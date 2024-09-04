@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,10 +20,10 @@
             </div>
 
             <div class="right-container">
-                <div id="logout-form" class="hidden">
+                <div id="logout-form">
                     <span id="welcome-message"></span>
                 </div>
-                <i class="fas fa-user" id="login-button" title="Login or Register"></i>
+                <i class="fas fa-user" id="login-button" title="Sign in"></i>
                 <label class="switch">
                     <input type="checkbox" id="theme-switch">
                     <span class="slider round"></span>
@@ -48,7 +48,10 @@
                 <label for="username">Username</label>
                 <input type="text" id="username" placeholder="Username" autocomplete="username">
                 <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Password">
+                <div class="password-container">
+                    <input type="password" id="password" placeholder="Password">
+                    <i id="toggle-password" class="fas fa-eye toggle-password"></i>
+                </div>
                 <div id="error-message" class="error-message hidden"></div>
                 <button type="submit" onclick="login(event)">Sign in</button>
                 <button type="button" onclick="window.location.href='register-form.html'">Register</button>

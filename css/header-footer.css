@@ -28,6 +28,10 @@
     margin-right: 10px; /* avstånd mellan bild och text */
 }
 
+#logout-form {
+    display: flex;
+}
+
 .search-filter-container {
     display: flex;
     align-content: flex-start;
@@ -204,6 +208,7 @@ input:checked + .slider:before {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
+    color: #333;
 }
 
 .login-popup input {
@@ -212,6 +217,7 @@ input:checked + .slider:before {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 16px;
 }
 
 .login-popup button {
@@ -223,6 +229,8 @@ input:checked + .slider:before {
     border-radius: 4px;
     cursor: pointer;
     margin-bottom: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
 .login-popup button:hover {
@@ -243,6 +251,29 @@ input:checked + .slider:before {
 }
 
 #login-button:hover {
+    color: #555;
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+#password {
+    width: 100%;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+}
+
+.toggle-password:hover {
     color: #555;
 }
 

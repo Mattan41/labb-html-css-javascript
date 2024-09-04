@@ -18,7 +18,9 @@ h1 {
 }
 
 form {
+    justify-items: center;
     max-width: 600px;
+    width: 100%;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ddd;
@@ -26,18 +28,19 @@ form {
     background-color: #f9f9f9;
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
 input, textarea {
+    max-width: 100%;
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
 }
 
 button {
