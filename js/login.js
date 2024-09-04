@@ -81,6 +81,7 @@ function logout() {
     alert("You have logged out.");
     document.getElementById("login-button").classList.remove("logged-in");
     document.getElementById("login-button").title = "Login or Register";
+    document.getElementById("logout-form").style.display = "none";
 }
 
 function showLogoutForm() {
