@@ -21,7 +21,14 @@ export function showMovieDetails() {
     if (window.innerWidth < 768) {
         movieDisplayed.style.backgroundImage = `url(${movie.imageUrl || 'img/movie-background.webp'})`;
     } else {
-        movieDisplayed.querySelector('.movieCover').src = movie.imageUrl || 'img/cam.webp';
+        const movieCover = movieDisplayed.querySelector('.movieCover');
+        if (!movie.imageUrl) {
+            movieCover.src = 'img/cam.webp';
+            movieCover.classList.add('apply-filter');
+        } else {
+            movieCover.src = movie.imageUrl;
+            movieCover.classList.remove('apply-filter');
+        }
     }
     movieDisplayed.querySelector('#movie-title').textContent = movie.title;
     const ratedText = movie.rated !== undefined ? movie.rated : 'not rated';
