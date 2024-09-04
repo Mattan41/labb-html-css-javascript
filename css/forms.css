@@ -55,3 +55,14 @@ button {
 button:hover {
     background-color: #0C2733;
 }
+
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+#password, #confirm-password {
+    width: 100%;
+    padding-right: 30px; /* Adjust padding to make space for the icon */
+}

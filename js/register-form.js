@@ -1,22 +1,19 @@
+// js/register-form.js
 
 window.onload = function () {
-    // Koppla handleSubmit-funktionen till formuläret
     document.getElementById('register-form').addEventListener('submit', handleSubmit);
 };
 
-// JavaScript för att hantera formulärskickning
 function handleSubmit(event) {
     event.preventDefault();
-    alert('Du har registerat dig som användare. Välkommen!');
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+
+    if (password !== confirmPassword) {
+        alert('Passwords do not match.');
+        return;
+    }
+
+    alert('You have registered successfully. Welcome!');
     window.location.href = 'index.html?message=success';
 }
-
-
-document.getElementById('show-password').addEventListener('change', function() {
-    const passwordInput = document.getElementById('password');
-    if (this.checked) {
-        passwordInput.type = 'text';
-    } else {
-        passwordInput.type = 'password';
-    }
-});
