@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
           integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -14,11 +15,14 @@
     <header class="header">
         <div class="header-row">
             <div class="logo-container">
-                <img src="img/cam.png" alt="Logo" id="logo">
+                <img src="img/cam.webp" alt="Logo" id="logo">
                 <h2>Top Flicks</h2>
             </div>
 
             <div class="right-container">
+                <div id="logout-form" class="hidden">
+                    <span id="welcome-message"></span>
+                </div>
                 <i class="fas fa-user" id="login-button" title="Login or Register"></i>
                 <label class="switch">
                     <input type="checkbox" id="theme-switch">
@@ -50,9 +54,7 @@
                 <button type="button" onclick="window.location.href='register-form.html'">Register</button>
             </form>
         </div>
-        <div id="logout-form" class="hidden">
-            <span id="welcome-message"></span>
-        </div>
+
         <section id="filterContainer" class="hidden">
             <div id="movieControls">
                 <label for="sort-options">Sort by:</label>
@@ -75,8 +77,28 @@
 
     </header>
     <main class="main-content">
-        <iframe title="movieDetails" id="movieDetailsFrame" src="movie-details.html" class="hidden"></iframe>
         <div class="container">
+            <section id="movieDisplayed" class="hidden">
+                <div class="info-container">
+                    <div class="image-info-container">
+                        <img src="img/cam.webp" alt="movieCover" class="movieCover">
+                        <div class="top-info">
+                            <h2 id="movie-title"></h2>
+                            <p id="year-released"></p>
+                            <p id="rated"></p>
+                            <p id="movie-rating"></p>
+                        </div>
+                    </div>
+                    <ul id="movie-list">
+                        <li>Director: <span id="movie-director"></span></li>
+                        <li>Genre: <span id="movie-genre"></span></li>
+                        <li>Stars: <span id="movie-stars"></span></li>
+                    </ul>
+                    <label for="movie-synopsis"></label><textarea id="movie-synopsis"> Synopsis: </textarea>
+                    <button id="closeMovieDetails">Close</button>
+                </div>
+            </section>
+
             <div class="row">
                 <div class="col-md-8">
                     <h2 id="movieListHeader">
@@ -86,8 +108,8 @@
                     </h2>
                     <section id="movieList">
                         <template id="movieTemplate">
-                            <div class="movie-item">
-                                <img src="img/cam.png" alt="movieImage" id="movieImage">
+                            <div class="movie-item" >
+                                <img src="img/cam.webp" alt="movieCover"  class="movieCover">
                                 <div class="movie-item-details">
                                     <div class="movie-title-container">
                                         <h3 id="movieTitle"></h3>
@@ -112,7 +134,7 @@
                     <div id="favourites-container" class="collapse">
                         <h2>Favourites</h2>
                         <button id="close-favourites">Close</button>
-                        <ul id="favorite-list">
+                        <ul id="favorite-list" class="favorite-list">
                             <!-- Favorite movies will be populated here by javascript-->
                         </ul>
                     </div>
@@ -128,7 +150,6 @@
 <script src="js/login.js"></script>
 <script type="module" src="js/favourites.js"></script>
 <script type="module" src="js/search.js"></script>
-<script src="js/dynamic-display.js"></script>
 <script type="module" src="js/movie-details.js"></script>
 </body>
 </html>

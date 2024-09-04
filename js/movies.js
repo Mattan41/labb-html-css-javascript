@@ -1,4 +1,6 @@
 import {fetchMovies, getMoviesFromLocalStorage, toggleFavourite} from './global.js';
+import {showMovieDetails} from "./movie-details.js";
+
 
 let movieDataMap;
 fetchMovies().then(() => {
@@ -14,7 +16,7 @@ export function populateMovieList(movies = Array.from(movieDataMap.values())) {
     movies.forEach((movie) => {
         const movieItem = movieTemplate.content.cloneNode(true);
         const movieTitle = movieItem.querySelector('#movieTitle');
-        const movieImage = movieItem.querySelector('#movieImage');
+        const movieImage = movieItem.querySelector('.movieCover'); //
         const starIcon = movieItem.querySelector('#starIcon');
 
         movieTitle.textContent = movie.title;
@@ -44,7 +46,7 @@ export function populateMovieList(movies = Array.from(movieDataMap.values())) {
         if (movie.imageUrl) {
             movieImage.src = movie.imageUrl;
         } else {
-            movieImage.src = "img/cam.png";
+            movieImage.src = "img/cam.webp";
         }
 
         toggleFavourite(starIcon, movie);
@@ -53,12 +55,15 @@ export function populateMovieList(movies = Array.from(movieDataMap.values())) {
             event.stopPropagation();
         });
 
-        // Modify the event listener to show the iframe and pass the movie ID
         movieItem.querySelector('.movie-item').addEventListener("click", () => {
-            const movieDetailsFrame = document.getElementById('movieDetailsFrame');
-            movieDetailsFrame.src = `movie-details.html?id=${movie.id}`;
-            movieDetailsFrame.classList.remove('hidden');
+            const urlParams = new URLSearchParams();
+            urlParams.set('id', movie.id);
+            history.pushState(null, '', '?' + urlParams.toString());
+            console.log('Movie ID: ' + movie.id + ' clicked');
+            showMovieDetails();
+
         });
+
 
         movieListContainer.appendChild(movieItem);
     });

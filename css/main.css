@@ -54,6 +54,10 @@ h2 {
     padding-bottom: 40px; /* Adjust based on footer height */
 }
 
+.container {
+   position: relative;
+}
+
 /* Ensure the iframe covers the entire screen */
 #movieDetailsFrame {
     position: fixed;
@@ -64,6 +68,8 @@ h2 {
     z-index: 1001; /* Ensure it is above other elements */
     border: none; /* Remove any default border */
 }
+
+
 /* Movie list styles */
 
 #movieListHeader {
@@ -247,7 +253,7 @@ h2 {
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     top: 120px;
-    bottom:40px;
+    bottom: 40px;
     left: 0;
     right: 0;
     overflow-y: auto;
@@ -257,24 +263,79 @@ h2 {
     display: block;
 }
 
+#favorite-list li {
+    border-bottom: 1px solid #9f9f9f; /* Line between each item */
+    padding: 10px 0; /* Padding for better spacing */
+}
+
+#favorite-list li:last-child {
+    border-bottom: none; /* Remove line from the last item */
+}
+
+
 /* Desktop */
 @media (min-width: 1024px) {
+    .container > .row {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        position: relative;
+    }
+
+    #movieDetailsFrame {
+        position: fixed;
+        width:100%;
+        border: solid #333333;
+        top: 120px;
+        height: 300px;
+    }
+
+
+    .col-md-8 {
+        width: 100%; /* Adjust width as needed */
+
+    }
+
+    .col-md-4 {
+        height: 500px;
+    }
+
+    /*#favourite-list li {*/
+    /*    white-space: nowrap;*/
+    /*    overflow: hidden;*/
+    /*    text-overflow: ellipsis;*/
+    /*    width: 100%; !* Ensure the title has a fixed width *!*/
+    /*}*/
+
     #favourites-container {
-        position: -ms-device-fixed;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+        position: relative;
+        width: 100%; /* Adjust width as needed */
+        height: calc(100% - 160px); /* Adjust based on header and footer height */
+        overflow-y: auto;
+        z-index: 1000;
+        /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0);*/
         background-color: #d3d3d3;
         border: 1px solid #6c6c6c;
-        left: 60%;
-        top: 20%;
-        width: 30%;
-        height: auto;
-
         font-size: 20px;
     }
 
-    #movieList {
-        width: 70%;
+    #movieImage {
+        width: 150px; /* Adjust width as needed */
+        height: auto; /* Maintain aspect ratio */
     }
+
+    #movieTitle {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+}
+/*Tablet view*/
+@media (min-width: 768px) {
+
+
+
 }
 
 .hidden {
