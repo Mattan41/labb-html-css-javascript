@@ -1,6 +1,8 @@
+/* css/forms.css */
+
 h2 {
     color: #0C2733;
-    font-family: 'IMB Plex Sans', Georgia, 'Times New Roman', Times, serif;
+    font-family: 'IBM Plex Sans', Georgia, 'Times New Roman', Times, serif;
 }
 
 body {
@@ -18,7 +20,9 @@ h1 {
 }
 
 form {
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 600px;
     width: 100%;
     margin: 0 auto;
@@ -38,7 +42,7 @@ input, textarea {
 }
 
 label {
-    display: block;
+    align-self: flex-start;
     margin-bottom: 8px;
     font-weight: bold;
 }
@@ -50,12 +54,12 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin: 5px;
 }
 
 button:hover {
     background-color: #0C2733;
 }
-
 
 .password-container {
     position: relative;
@@ -64,5 +68,15 @@ button:hover {
 
 #password, #confirm-password {
     width: 100%;
-    padding-right: 30px; /* Adjust padding to make space for the icon */
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.button-container button {
+    margin-right: 10px;
 }
