@@ -1,15 +1,8 @@
 
 /*
-TODO:
-         Fix movie details view in desktop view
-         Media queries fonts and sizes
-
-TODO:    SENARE
-    Favourite F icon better styling and more clear what it does
-    make logout function more intuitive
-todo:  dark theme, global settings
-todo: design/styling - better looking filter, better looking movie list, better looking movie details, Better styling for favourites list
-    monocrome
+todo: Dark theme, global settings
+todo: design/styling - better looking filter-view, Better styling for favourites list
+todo: functionality filter sort / genres. fovourite list
 TODO: Style  HEADER VIEW IN MOBILE, TABLET, DESKTOP
 
  */
@@ -18,6 +11,10 @@ TODO: Style  HEADER VIEW IN MOBILE, TABLET, DESKTOP
 window.onload = function () {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const loginButton = document.getElementById("login-button");
+
+    // Set initial welcome message
+    document.getElementById("welcome-message").textContent = "Hi! Sign in";
+
 
     if (isLoggedIn) {
         showLogoutForm();
@@ -59,10 +56,11 @@ function login(event) {
     sessionStorage.setItem("isLoggedIn", "true");
     sessionStorage.setItem("username", username);
     document.getElementById("login-popup").style.display = "none";
-    alert("Login successful for user: " + username);
+    alert("Sign in successful for user: " + username);
     showLogoutForm();
     document.getElementById("login-button").classList.add("logged-in");
     document.getElementById("login-button").title = "Log out";
+
 }
 
 function logout() {
@@ -70,8 +68,8 @@ function logout() {
     sessionStorage.removeItem("username");
     alert("You have logged out.");
     document.getElementById("login-button").classList.remove("logged-in");
-    document.getElementById("login-button").title = "Login or Register";
-    document.getElementById("logout-form").style.display = "none";
+    document.getElementById("login-button").title = "Sign in";
+    document.getElementById("welcome-message").textContent = "Hi! Sign in";
 }
 
 function showLogoutForm() {
@@ -82,5 +80,20 @@ function showLogoutForm() {
 
 function toggleLoginForm() {
     const loginPopup = document.getElementById("login-popup");
-    loginPopup.style.display = loginPopup.style.display === "none" || loginPopup.style.display === "" ? "flex" : "none";
+    loginPopup.style.display = loginPopup.style.display === "none" || loginPopup.style.display === "" ? "flow" : "none";
 }
+
+// Show/hide password
+document.getElementById('toggle-password').addEventListener('click', function() {
+    const passwordInput = document.getElementById('password');
+    const toggleIcon = document.getElementById('toggle-password');
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleIcon.classList.remove('fa-eye');
+        toggleIcon.classList.add('fa-eye-slash');
+    } else {
+        passwordInput.type = 'password';
+        toggleIcon.classList.remove('fa-eye-slash');
+        toggleIcon.classList.add('fa-eye');
+    }
+});
