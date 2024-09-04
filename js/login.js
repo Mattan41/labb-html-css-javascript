@@ -1,27 +1,17 @@
 
 /*
-TODO:    Better styling for favourites list
+TODO:
          Fix movie details view in desktop view
          Media queries fonts and sizes
 
-todo: BUG-FIX favourites: Update movieList after favourite is toggled
-todo: BUG-FIX erase welcome message when logging out
-
-
-
-
-
 TODO:    SENARE
-    FEATURE  load genres from movies local storage,
     Favourite F icon better styling and more clear what it does
     make logout function more intuitive
-
-todo: FEATURE filtersort both ways, better design where to click
 todo:  dark theme, global settings
-todo: design/styling - better looking filter, better looking movie list, better looking movie details, better looking favourites list
+todo: design/styling - better looking filter, better looking movie list, better looking movie details, Better styling for favourites list
     monocrome
 TODO: Style  HEADER VIEW IN MOBILE, TABLET, DESKTOP
-    FEATURE  clickable movies in favourites in list.
+
  */
 // Kontrollera om användaren är inloggad
 
