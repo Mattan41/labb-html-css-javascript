@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
           integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -77,7 +78,27 @@
     </header>
     <main class="main-content">
         <div class="container">
-            <iframe title="movieDetails" id="movieDetailsFrame" src="movie-details.html" class="hidden"></iframe>
+            <section id="movieDisplayed" class="hidden">
+                <div class="info-container">
+                    <div class="image-info-container">
+                        <img src="img/cam.webp" alt="movieCover" class="movieCover">
+                        <div class="top-info">
+                            <h2 id="movie-title"></h2>
+                            <p id="year-released"></p>
+                            <p id="rated"></p>
+                            <p id="movie-rating"></p>
+                        </div>
+                    </div>
+                    <ul id="movie-list">
+                        <li>Director: <span id="movie-director"></span></li>
+                        <li>Genre: <span id="movie-genre"></span></li>
+                        <li>Stars: <span id="movie-stars"></span></li>
+                    </ul>
+                    <label for="movie-synopsis"></label><textarea id="movie-synopsis"> Synopsis: </textarea>
+                    <button id="closeMovieDetails">Close</button>
+                </div>
+            </section>
+
             <div class="row">
                 <div class="col-md-8">
                     <h2 id="movieListHeader">
@@ -87,8 +108,8 @@
                     </h2>
                     <section id="movieList">
                         <template id="movieTemplate">
-                            <div class="movie-item">
-                                <img src="img/cam.webp" alt="movieImage" id="movieImage">
+                            <div class="movie-item" >
+                                <img src="img/cam.webp" alt="movieCover"  class="movieCover">
                                 <div class="movie-item-details">
                                     <div class="movie-title-container">
                                         <h3 id="movieTitle"></h3>
