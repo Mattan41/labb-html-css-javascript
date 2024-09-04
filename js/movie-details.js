@@ -19,14 +19,14 @@ export function showMovieDetails() {
 
     const movieDisplayed = document.getElementById('movieDisplayed');
     if (window.innerWidth < 768) {
-        movieDisplayed.style.backgroundImage = `url(${movie.imageUrl || 'img/cam.webp'})`;
+        movieDisplayed.style.backgroundImage = `url(${movie.imageUrl || 'img/movie-background.webp'})`;
     } else {
         movieDisplayed.querySelector('.movieCover').src = movie.imageUrl || 'img/cam.webp';
     }
     movieDisplayed.querySelector('#movie-title').textContent = movie.title;
     const ratedText = movie.rated !== undefined ? movie.rated : 'not rated';
     movieDisplayed.querySelector('#rated').textContent = `Rated: ${ratedText}`;
-    movieDisplayed.querySelector('#year-released').textContent = `year: ${movie.year}`;
+    movieDisplayed.querySelector('#year-released').textContent = `Year: ${movie.year}`;
     movieDisplayed.querySelector('#movie-rating').textContent = `Rating: ${movie.rating}`;
     movieDisplayed.querySelector('#movie-director').textContent = movie.director.join(', ');
     movieDisplayed.querySelector('#movie-genre').textContent = movie.genre.join(', ');
@@ -42,5 +42,10 @@ const closeMovieDetailsButton = document.getElementById('closeMovieDetails');
 if (closeMovieDetailsButton) {
     closeMovieDetailsButton.addEventListener('click', () => {
         document.getElementById('movieDisplayed').classList.add('hidden');
+        clearBackgroundImage();
     });
+}
+function clearBackgroundImage() {
+    const movieDisplayed = document.getElementById('movieDisplayed');
+    movieDisplayed.style.backgroundImage = '';
 }
