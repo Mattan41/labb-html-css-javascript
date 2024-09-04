@@ -272,7 +272,6 @@ h2 {
     border-bottom: none; /* Remove line from the last item */
 }
 
-
 /* Desktop */
 @media (min-width: 1024px) {
     .container > .row {
@@ -300,12 +299,7 @@ h2 {
         height: 500px;
     }
 
-    /*#favourite-list li {*/
-    /*    white-space: nowrap;*/
-    /*    overflow: hidden;*/
-    /*    text-overflow: ellipsis;*/
-    /*    width: 100%; !* Ensure the title has a fixed width *!*/
-    /*}*/
+
 
     #favourites-container {
         position: relative;
@@ -313,7 +307,7 @@ h2 {
         height: calc(100% - 160px); /* Adjust based on header and footer height */
         overflow-y: auto;
         z-index: 1000;
-        /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0);*/
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
         background-color: #d3d3d3;
         border: 1px solid #6c6c6c;
         font-size: 20px;
@@ -331,13 +325,6 @@ h2 {
         max-width: 100%;
     }
 }
-/*Tablet view*/
-@media (min-width: 768px) {
-
-
-
-}
-
 .hidden {
     display: none;
 }

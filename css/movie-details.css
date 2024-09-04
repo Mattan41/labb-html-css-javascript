@@ -102,7 +102,7 @@
 /* Desktop Styles */
 @media (min-width: 1024px) {
     #movieDisplayed {
-        position: relative;
+        position: sticky;
         display: flex;
         flex-direction: row;
         background-image: none;
