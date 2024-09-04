@@ -54,6 +54,10 @@ h2 {
     padding-bottom: 40px; /* Adjust based on footer height */
 }
 
+.container {
+   position: relative;
+}
+
 /* Ensure the iframe covers the entire screen */
 #movieDetailsFrame {
     position: fixed;
@@ -271,16 +275,18 @@ h2 {
 
 /* Desktop */
 @media (min-width: 1024px) {
-    .row {
+    .container > .row {
         display: flex;
         flex-direction: row;
         gap: 20px;
+        position: relative;
     }
+
     #movieDetailsFrame {
         position: fixed;
         width:100%;
         border: solid #333333;
-        top: 120px; /* Adjust based on header height TODO Make it automatically adjust when filters etc */
+        top: 120px;
         height: 300px;
     }
 

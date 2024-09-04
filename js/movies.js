@@ -44,7 +44,7 @@ export function populateMovieList(movies = Array.from(movieDataMap.values())) {
         if (movie.imageUrl) {
             movieImage.src = movie.imageUrl;
         } else {
-            movieImage.src = "img/cam.png";
+            movieImage.src = "img/cam.webp";
         }
 
         toggleFavourite(starIcon, movie);

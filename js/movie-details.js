@@ -18,9 +18,9 @@ export function showMovieDetails() {
 
     const movieDisplayed = document.getElementById('movieDisplayed');
     if (window.innerWidth < 768) {
-        movieDisplayed.style.backgroundImage = `url(${movie.imageUrl || 'img/cam.png'})`;
+        movieDisplayed.style.backgroundImage = `url(${movie.imageUrl || 'img/cam.webp'})`;
     } else {
-        movieDisplayed.querySelector('#movie-image').src = movie.imageUrl || 'img/cam.png';
+        movieDisplayed.querySelector('#movie-image').src = movie.imageUrl || 'img/cam.webp';
     }
     movieDisplayed.querySelector('#movie-title').textContent = movie.title;
     movieDisplayed.querySelector('#movie-year-rated').textContent = `${movie.year} | ${movie.rated}`;
