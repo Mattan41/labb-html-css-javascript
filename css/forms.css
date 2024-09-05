@@ -1,50 +1,52 @@
-/* css/forms.css */
-
-h2 {
-    color: #0C2733;
-    font-family: 'IBM Plex Sans', Georgia, 'Times New Roman', Times, serif;
-}
 
 body {
     font-family: 'Roboto', Arial, sans-serif;
     color: #333333;
     font-size: 16px;
     line-height: 1.6;
-    margin: 20px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-h1 {
-    color: #042433;
-    font-family: 'IBM Plex Sans', Georgia, 'Times New Roman', Times, serif;
-    font-size: larger;
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 600px;
     width: 100%;
-    margin: 0 auto;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #f9f9f9;
 }
 
+label {
+    align-self: flex-start;
+    margin-bottom: 5px;
+}
+
 input, textarea {
-    max-width: 100%;
-    width: 100%;
+    width: 96%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-
-label {
-    align-self: flex-start;
-    margin-bottom: 8px;
-    font-weight: bold;
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
 }
 
 button {
@@ -61,22 +63,95 @@ button:hover {
     background-color: #0C2733;
 }
 
+
 .password-container {
     position: relative;
     width: 100%;
+    display: flex;
+    align-items: center;
 }
 
-#password, #confirm-password {
-    width: 100%;
+.password-container input {
+    flex: 1;
+    padding-right: 40px; /* Add padding to the right to make space for the eye icon */
+    box-sizing: border-box; /* Ensure padding does not affect the width */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+}
+
+.toggle-password:hover {
+    color: #555;
 }
 
 .button-container {
     display: flex;
     justify-content: flex-start;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 20px; /* Add margin to separate from the input fields */
+    margin-left : -10px;
 }
 
-.button-container button {
-    margin-right: 10px;
+/* Tablet and larger */
+@media (min-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+
+    label {
+        font-size: 18px;
+    }
+
+    input, textarea {
+        font-size: 18px;
+        padding: 15px; /* Increase padding for touch targets */
+    }
+
+    button {
+        font-size: 18px;
+        padding: 15px 25px; /* Increase padding for touch targets */
+    }
+
+    .toggle-password {
+        font-size: 20px;
+    }
+
+    .container {
+        padding: 40px; /* Increase padding for better spacing */
+    }
+}
+
+/* Desktop and larger */
+@media (min-width: 1024px) {
+    body {
+        font-size: 20px;
+    }
+
+    label {
+        font-size: 20px;
+    }
+
+    input, textarea {
+        font-size: 20px;
+        padding: 20px; /* Increase padding for touch targets */
+    }
+
+    button {
+        font-size: 20px;
+        padding: 20px 30px; /* Increase padding for touch targets */
+    }
+
+    .toggle-password {
+        font-size: 22px;
+    }
+
+    .container {
+        padding: 50px; /* Increase padding for better spacing */
+    }
 }

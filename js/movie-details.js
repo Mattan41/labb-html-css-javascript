@@ -1,4 +1,4 @@
-import {getMovieFromLocalStorage, toggleFavourite} from './global.js';
+import {getMovieFromLocalStorage} from './global.js';
 
 export function showMovieDetails() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -18,7 +18,7 @@ export function showMovieDetails() {
     }
 
     const movieDisplayed = document.getElementById('movieDisplayed');
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 1024) {
         movieDisplayed.style.backgroundImage = `url(${movie.imageUrl || 'img/movie-background.webp'})`;
     } else {
         const movieCover = movieDisplayed.querySelector('.movieCover');
