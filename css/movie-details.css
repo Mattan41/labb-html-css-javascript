@@ -188,6 +188,6 @@
         position: absolute; /* Positioning the close button */
         top: 10px; /* Adjust as needed */
         right: 10px; /* Adjust as needed */
-        background-color: rgba(0, 0, 0, 0.7); /* Slightly darker background */
+        background-color: rgba(216, 4, 4, 0.8);
     }
 }
