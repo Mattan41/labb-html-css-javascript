@@ -1,4 +1,14 @@
+import {handleUrlChange} from "./movie-details.js";
+import {initializeLogin} from "./login.js";
+
 let movieDataMap;
+
+window.onload = function() {
+    handleUrlChange();
+    window.addEventListener('popstate', handleUrlChange);
+    initializeLogin();
+
+};
 
 export function fetchMovies() {
     const localData = localStorage.getItem('movieData');
@@ -72,6 +82,9 @@ function displayStoredMovieList() {
 export function getMovieFromLocalStorage(movieId) {
     const data = JSON.parse(localStorage.getItem('movieData')) || [];
     const movie = data.find(movie => movie.id === movieId);
-    console.log(`Fetched movie: ${movie ? movie.title : 'Not found'}`);
+    if (!movie) {
+        console.error('Movie not found');
+        return;
+    }
     return movie;
 }

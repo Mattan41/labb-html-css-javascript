@@ -2,44 +2,41 @@
 /*
 todo: Dark theme, global settings
 todo: design/styling - better looking filter-view, Better styling for favourites list
-todo: functionality filter sort / genres. fovourite list
-TODO: Style  HEADER VIEW IN MOBILE, TABLET, DESKTOP
-
+todo: functionality filter sort / genres. favourite list
  */
-// Kontrollera om användaren är inloggad
 
-window.onload = function () {
-    const isLoggedIn = sessionStorage.getItem("isLoggedIn");
-    const loginButton = document.getElementById("login-button");
+    export function initializeLogin() {
+        const isLoggedIn = sessionStorage.getItem("isLoggedIn");
+        const loginButton = document.getElementById("login-button");
 
-    // Set initial welcome message
-    document.getElementById("welcome-message").textContent = "Hi! Sign in";
+        // Set initial welcome message
+        document.getElementById("welcome-message").textContent = "Hi! Sign in";
 
 
-    if (isLoggedIn) {
-        showLogoutForm();
-        loginButton.classList.add("logged-in");
-        loginButton.title = "Log out";
-    } else {
-        loginButton.classList.remove("logged-in");
-        loginButton.title = "Login or Register";
-    }
-
-    loginButton.addEventListener("click", function () {
-        if (sessionStorage.getItem("isLoggedIn")) {
-            logout();
+        if (isLoggedIn) {
+            showLogoutForm();
+            loginButton.classList.add("logged-in");
+            loginButton.title = "Log out";
         } else {
-            toggleLoginForm();
+            loginButton.classList.remove("logged-in");
+            loginButton.title = "Login or Register";
         }
-    });
 
-    document.addEventListener("click", function (event) {
-        const loginPopup = document.getElementById("login-popup");
-        if (!loginPopup.contains(event.target) && event.target.id !== "login-button") {
-            loginPopup.style.display = "none";
+        loginButton.addEventListener("click", function () {
+            if (sessionStorage.getItem("isLoggedIn")) {
+                logout();
+            } else {
+                toggleLoginForm();
+            }
+        });
+
+        document.addEventListener("click", function (event) {
+            const loginPopup = document.getElementById("login-popup");
+            if (!loginPopup.contains(event.target) && event.target.id !== "login-button") {
+                loginPopup.style.display = "none";
+            }
+        });
         }
-    });
-};
 
 function login(event) {
     event.preventDefault(); // Prevent form submission
