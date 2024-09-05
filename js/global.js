@@ -72,6 +72,9 @@ function displayStoredMovieList() {
 export function getMovieFromLocalStorage(movieId) {
     const data = JSON.parse(localStorage.getItem('movieData')) || [];
     const movie = data.find(movie => movie.id === movieId);
-    console.log(`Fetched movie: ${movie ? movie.title : 'Not found'}`);
+    if (!movie) {
+        console.error('Movie not found');
+        return;
+    }
     return movie;
 }
