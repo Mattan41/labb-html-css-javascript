@@ -2,6 +2,36 @@
 
 window.onload = function () {
     document.getElementById('register-form').addEventListener('submit', handleSubmit);
+
+    // Show/hide password
+    document.getElementById('toggle-password').addEventListener('click', function() {
+        const passwordInput = document.getElementById('password');
+        const toggleIcon = document.getElementById('toggle-password');
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            toggleIcon.classList.remove('fa-eye');
+            toggleIcon.classList.add('fa-eye-slash');
+        } else {
+            passwordInput.type = 'password';
+            toggleIcon.classList.remove('fa-eye-slash');
+            toggleIcon.classList.add('fa-eye');
+        }
+    });
+
+    // Show/hide confirm password
+    document.getElementById('toggle-confirm-password').addEventListener('click', function() {
+        const confirmPasswordInput = document.getElementById('confirm-password');
+        const toggleIcon = document.getElementById('toggle-confirm-password');
+        if (confirmPasswordInput.type === 'password') {
+            confirmPasswordInput.type = 'text';
+            toggleIcon.classList.remove('fa-eye');
+            toggleIcon.classList.add('fa-eye-slash');
+        } else {
+            confirmPasswordInput.type = 'password';
+            toggleIcon.classList.remove('fa-eye-slash');
+            toggleIcon.classList.add('fa-eye');
+        }
+    });
 };
 
 function handleSubmit(event) {

@@ -38,7 +38,7 @@ label {
 }
 
 input, textarea {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -62,4 +62,39 @@ button {
 
 button:hover {
     background-color: #0C2733;
+}
+
+
+.password-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    flex: 1;
+    padding-right: 40px; /* Add padding to the right to make space for the eye icon */
+    box-sizing: border-box; /* Ensure padding does not affect the width */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+}
+
+.toggle-password:hover {
+    color: #555;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 20px; /* Add margin to separate from the input fields */
+    margin-left : -10px;
 }

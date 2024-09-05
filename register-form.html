@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register User</title>
     <link rel="stylesheet" type="text/css" href="css/forms.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 
 <body>
@@ -16,9 +19,15 @@
         <label for="username">User:</label>
         <input type="text" id="username" name="username" placeholder="Banarne" required>
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" placeholder="********" required>
+        <div class="password-container">
+            <input type="password" id="password" name="password" placeholder="********" required>
+            <i id="toggle-password" class="fas fa-eye toggle-password"></i>
+        </div>
         <label for="confirm-password">Confirm Password:</label>
-        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+        <div class="password-container">
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+            <i id="toggle-confirm-password" class="fas fa-eye toggle-password"></i>
+        </div>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Jan Banan" required>
         <label for="email">E-mail:</label>
