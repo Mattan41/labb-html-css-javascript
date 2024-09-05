@@ -1,0 +1,92 @@
+/* Favourites styles */
+#favourites-container {
+    display: none;
+    position: fixed;
+    z-index: 900;
+    background-color: rgba(66, 64, 64, 0.95);
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    top: 120px;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    color: cornsilk;
+}
+
+#favourites-container.show {
+    display: block;
+}
+
+#favorite-list li {
+    border-bottom: 1px solid #200000; /* Dark Red line between each item */
+    padding: 10px 0; /* Padding for better spacing */
+    color: cornsilk; /* Set text color to white */
+}
+
+#favorite-list li:last-child {
+    border-bottom: none; /* Remove line from the last item */
+}
+
+.button {
+    background-color: rgba(116, 4, 4, 0.8); /* Match movie-details.css */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button:hover {
+    background-color: rgba(174, 0, 0, 0.8);
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+
+    .col-md-4 {
+        position: sticky;
+        height: 500px;
+
+    }
+
+    #favourites-container {
+        position: relative;
+        width: 80%; /* Adjust width as needed */
+        height: calc(100%); /* Adjust based on header and footer height */
+        background-color: rgba(147, 144, 144, 1);
+        font-size: 16px;
+        color: black;
+    }
+
+    #favorite-list li {
+        color: black;
+    }
+
+
+    #movieImage {
+        width: 150px; /* Adjust width as needed */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    #movieTitle {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+
+    #favourites-container {
+        display: block;
+        font-size: 20px;
+    }
+
+
+}

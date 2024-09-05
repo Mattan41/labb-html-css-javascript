@@ -1,4 +1,5 @@
 /* Header Styles */
+
 .header {
     display: flex;
     flex-direction: column; /* Stack elements vertically */
@@ -9,6 +10,7 @@
     top: 0;
     width: 100%;
     z-index: 1000;
+    font-size: small;
 }
 
 .header-row {
@@ -44,6 +46,7 @@
     align-items: center;
     gap: 10px;
 }
+
 .search-filter-container {
     margin-left: 0; /* Reset margin for mobile */
     width: 100%; /* Full width for mobile */
@@ -126,6 +129,7 @@
     outline: none;
     border-color: #666;
 }
+
 /* Log in */
 .login-popup {
     position: fixed;
@@ -198,7 +202,12 @@
 
 .right-container:hover {
     background-color: rgba(191, 191, 191, 0.8);
-
+}
+#welcome-message {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .password-container {
@@ -234,10 +243,36 @@
     z-index: 1000;
 }
 
-/* Tablet and larger*/
+/* Tablet view */
 @media (min-width: 768px) {
+    .header {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    #welcome-message {
+        max-width: 300px;
+    }
     .footer {
         position: fixed;
-
     }
+}
+
+/* Desktop view */
+@media (min-width: 1024px) {
+    .header {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    #welcome-message {
+        max-width: 400px;
+    }
+
 }

@@ -1,6 +1,7 @@
 @import "header-footer.css";
 @import "_utils.css";
 @import "movie-details.css";
+@import "favourites.css";
 
 /* Global styles */
 * {
@@ -22,32 +23,9 @@ h2 {
     margin-bottom: 10px;
 }
 
-/* Tablet view */
-@media (min-width: 768px) {
-    body {
-        font-size: 18px;
-    }
 
-    h2 {
-        font-size: 28px;
-    }
-}
-
-/* Desktop view */
-@media (min-width: 1024px) {
-    body {
-        font-size: 20px;
-    }
-
-    h2 {
-        font-size: 32px;
-    }
-
-}
 
 /* main.css */
-
-/* Adjust main content to account for fixed header, movieSearch, and footer */
 
 .main-content {
     padding-top: 120px; /* Adjust based on header, movieSearch, and filterContainer height */
@@ -235,37 +213,28 @@ h2 {
     background-color: #f9f9f9;
 }
 
-/* Favourites styles */
-#favourites-container {
-    display: none;
-    position: fixed;
-    z-index: 900;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    top: 120px;
-    bottom: 40px;
-    left: 0;
-    right: 0;
-    overflow-y: auto;
-}
+/* Tablet view */
+@media (min-width: 768px) {
+    body {
+        font-size: 18px;
+    }
 
-#favourites-container.show {
-    display: block;
-}
-
-#favorite-list li {
-    border-bottom: 1px solid #9f9f9f; /* Line between each item */
-    padding: 10px 0; /* Padding for better spacing */
-}
-
-#favorite-list li:last-child {
-    border-bottom: none; /* Remove line from the last item */
+    h2 {
+        font-size: 28px;
+    }
 }
 
 /* Desktop */
 @media (min-width: 1024px) {
+
+    body {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
     .container > .row {
         display: flex;
         flex-direction: row;
@@ -273,41 +242,11 @@ h2 {
         position: relative;
     }
 
-
     .col-md-8 {
         width: 100%; /* Adjust width as needed */
 
     }
 
-    .col-md-4 {
-        height: 500px;
-    }
-
-
-
-    #favourites-container {
-        position: relative;
-        width: 100%; /* Adjust width as needed */
-        height: calc(100% - 160px); /* Adjust based on header and footer height */
-        overflow-y: auto;
-        z-index: 1000;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
-        background-color: #d3d3d3;
-        border: 1px solid #6c6c6c;
-        font-size: 20px;
-    }
-
-    #movieImage {
-        width: 150px; /* Adjust width as needed */
-        height: auto; /* Maintain aspect ratio */
-    }
-
-    #movieTitle {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 100%;
-    }
 }
 .hidden {
     display: none;
