@@ -1,12 +1,12 @@
 import {getMovieFromLocalStorage} from './global.js';
 
+// Initialization
 window.onload = function() {
     handleUrlChange();
     window.addEventListener('popstate', handleUrlChange);
 };
 
-const closeMovieDetailsButton = document.getElementById('closeMovieDetails');
-
+// Main functions
 export function showMovieDetails() {
     const urlParams = new URLSearchParams(window.location.search);
     const movieId = parseInt(urlParams.get('id'));
@@ -24,18 +24,31 @@ export function showMovieDetails() {
 
 }
 
-function handleUrlChange() {
-    const urlParams = new URLSearchParams(window.location.search);
+// Event handlers
+const closeMovieDetailsButton = document.getElementById('closeMovieDetails');
 
+if (closeMovieDetailsButton) {
+    closeMovieDetailsButton.addEventListener('click', () => {
+        document.getElementById('movieDisplayed').classList.add('hidden');
+        clearBackgroundImage();
+        clearBrowserUrl();
+    });
+}
+
+function handleUrlChange() {
+
+    const urlParams = new URLSearchParams(window.location.search);
     const movieId = urlParams.get('id');
     if (movieId) {
         showMovieDetails();
     } else {
         document.getElementById('movieDisplayed').classList.add('hidden');
+
     }
 
 }
 
+// Utility functions
 function selectMovieItems(movieDisplayed, movie) {
     movieDisplayed.querySelector('#movie-title').textContent = movie.title;
     const ratedText = movie.rated !== undefined ? movie.rated : 'not rated';
@@ -45,6 +58,7 @@ function selectMovieItems(movieDisplayed, movie) {
     movieDisplayed.querySelector('#movie-director').textContent = movie.director.join(', ');
     movieDisplayed.querySelector('#movie-genre').textContent = movie.genre.join(', ');
     movieDisplayed.querySelector('#movie-stars').textContent = movie.actors.join(', ');
+
     movieDisplayed.querySelector('#movie-synopsis').textContent = movie.synopsis;
 
 }
@@ -61,16 +75,9 @@ function setMovieDisplayImage(movieDisplayed, movie) {
             movieCover.src = movie.imageUrl;
             movieCover.classList.remove('apply-filter');
         }
+
     }
 
-}
-
-if (closeMovieDetailsButton) {
-    closeMovieDetailsButton.addEventListener('click', () => {
-        document.getElementById('movieDisplayed').classList.add('hidden');
-        clearBackgroundImage();
-        clearBrowserUrl();
-    });
 }
 
 function clearBackgroundImage() {
