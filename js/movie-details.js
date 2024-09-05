@@ -1,10 +1,7 @@
 import {getMovieFromLocalStorage} from './global.js';
 
 // Initialization
-window.onload = function() {
-    handleUrlChange();
-    window.addEventListener('popstate', handleUrlChange);
-};
+
 
 // Main functions
 export function showMovieDetails() {
@@ -35,7 +32,7 @@ if (closeMovieDetailsButton) {
     });
 }
 
-function handleUrlChange() {
+export function handleUrlChange() {
 
     const urlParams = new URLSearchParams(window.location.search);
     const movieId = urlParams.get('id');

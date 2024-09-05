@@ -1,4 +1,14 @@
+import {handleUrlChange} from "./movie-details.js";
+import {initializeLogin} from "./login.js";
+
 let movieDataMap;
+
+window.onload = function() {
+    handleUrlChange();
+    window.addEventListener('popstate', handleUrlChange);
+    initializeLogin();
+
+};
 
 export function fetchMovies() {
     const localData = localStorage.getItem('movieData');
