@@ -25,7 +25,6 @@ form {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 400px;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -38,7 +37,7 @@ label {
 }
 
 input, textarea {
-    width: 95%;
+    width: 96%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -97,4 +96,62 @@ button:hover {
     width: 100%;
     margin-top: 20px; /* Add margin to separate from the input fields */
     margin-left : -10px;
+}
+
+/* Tablet and larger */
+@media (min-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+
+    label {
+        font-size: 18px;
+    }
+
+    input, textarea {
+        font-size: 18px;
+        padding: 15px; /* Increase padding for touch targets */
+    }
+
+    button {
+        font-size: 18px;
+        padding: 15px 25px; /* Increase padding for touch targets */
+    }
+
+    .toggle-password {
+        font-size: 20px;
+    }
+
+    .container {
+        padding: 40px; /* Increase padding for better spacing */
+    }
+}
+
+/* Desktop and larger */
+@media (min-width: 1024px) {
+    body {
+        font-size: 20px;
+    }
+
+    label {
+        font-size: 20px;
+    }
+
+    input, textarea {
+        font-size: 20px;
+        padding: 20px; /* Increase padding for touch targets */
+    }
+
+    button {
+        font-size: 20px;
+        padding: 20px 30px; /* Increase padding for touch targets */
+    }
+
+    .toggle-password {
+        font-size: 22px;
+    }
+
+    .container {
+        padding: 50px; /* Increase padding for better spacing */
+    }
 }
