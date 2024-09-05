@@ -1,274 +1,274 @@
- [
-      {
-        "id": 1,
-        "title": "The Shawshank Redemption",
-        "genre": [
-          "Drama"
-        ],
-        "year": 1994,
-        "rating": 9.3,
-        "director": [
-          "Frank Darabont"
-        ],
-        "actors": [
-          "Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler"
-        ],
-        "synopsis": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
-        "imageUrl": "",
-        "favourite": false
-      },
-      {
-        "id": 2,
-        "title": "The Godfather",
-        "genre": [
-          "Crime"
-        ],
-        "year": 1972,
-        "rating": 9.2,
-        "director": [
-          "Francis Ford Coppola"
-        ],
-        "actors": [
-          "Al Pacino, Marlon Brando, Robert Duvall, James Caan"
-        ],
-        "synopsis": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
-        "imageUrl": "img/godfather.webp",
-        "favourite": false
-      },
-      {
-        "id": 4,
-        "title": "The Two Towers",
-        "genre": [
-          "Action",
-          "Adventure",
-          "Drama",
-          "Fantasy"
-        ],
-        "year": 2002,
-        "rating": 8.7,
-        "rated": "PG-13",
-        "director": [
-          "Peter Jackson"
-        ],
-        "actors": [
-          "Sean Astin",
-          "Elijah Wood",
-          "Viggo Mortensen",
-          "Ian McKellen",
-          "Andy Serkis",
-          "Peter Mayhew",
-          "Bob Newhart",
-          "Roger Allers"
-        ],
-        "synopsis": "While Frodo and Sam edge closer to Mordor with the help of the shifty Gollum, the divided fellowship makes a stand against Sauron's new ally, Saruman, and his legions of Isengard.",
-        "imageUrl": "https://resizing.flixster.com/msqvXCa81MSPEJ1gLPIgrm4vd8Q=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30793_p_v8_am.jpg",
-        "favourite": true
-      },
-      {
-        "id": 5,
-        "title": "The Return of the King",
-        "genre": [
-          "Fantasy",
-          "Adventure"
-        ],
-        "year": 2003,
-        "rating": 8.9,
-        "rated": "PG-13",
-        "director": [
-          "Peter Jackson"
-        ],
-        "actors": [
-          "Sean Astin",
-          "Elijah Wood",
-          "Viggo Mortensen",
-          "Ian McKellen",
-          "Andy Serkis",
-          "Peter Mayhew",
-          "Bob Newhart",
-          "Roger Allers"
-        ],
-        "synopsis": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
-        "imageUrl": "",
-        "favourite": false
-      },
-      {
-        "id": 6,
-        "title": "Titanic",
-        "genre": [
-          "Romance",
-          "Drama"
-        ],
-        "year": 1997,
-        "rating": 7.5,
-        "rated": "PG-13",
-        "director": [
-          "James Cameron"
-        ],
-        "actors": [
-          "Leonardo DiCaprio",
-          "Kate Winslet",
-          "Billy Zane",
-          "Kathy Bates"
-        ],
-        "synopsis": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
-        "imageUrl": "",
-        "favourite": false
-      },
-      {
-        "id": 7,
-        "title": "Die Hard",
-        "genre": [
-          "Action",
-          "Thriller"
-        ],
-        "year": 1988,
-        "rating": 8.2,
-        "rated": "R",
-        "director": [
-          "John McTiernan"
-        ],
-        "actors": [
-          "Bruce Willis",
-          "Bonnie Bedelia",
-          "Will ferrell",
-          "Jon Voight"
-        ],
-        "synopsis": "An NYPD officer tries to save his wife and several others taken hostage by German terrorists during a Christmas party at the Nakatomi Plaza.",
-        "imageUrl": "",
-        "favourite": false
-      },
-      {
-        "id": 8,
-        "title": "Die Hard 2",
-        "genre": [
-          "Action",
-          "Thriller"
-        ],
-        "year": 1990,
-        "rating": 7.1,
-        "rated": "R",
-        "director": [
-          "Renny Harlin"
-        ],
-        "actors": [
-          "Bruce Willis",
-          "Bonnie Bedelia",
-          "Will ferrell",
-          "Jon Voight"
-        ],
-        "synopsis": "An NYPD officer tries to save his wife and several others taken hostage by German terrorists during a Christmas party at the Nakatomi palace.",
-        "imageUrl": "",
-        "favourite": false
-      },
-      {
-        "id": 9,
-        "title": "Die Hard: With a Vengeance",
-        "genre": [
-          "Action",
-          "Thriller"
-        ],
-        "year": 1995,
-        "rating": 7.6,
-        "rated": "R",
-        "director": [
-          "John McTiernan"
-        ],
-        "actors": [
-          "Bruce Willis",
-          "Bonnie Bedelia",
-          "Will ferrell",
-          "Jon Voight"
-        ],
-        "synopsis": "An NYPD officer tries to save his wife and several others taken hostage by German terrorists during a Christmas party at the Nakatomi palace.",
-        "imageUrl": "",
-        "favourite": false
-      },
-      {
-        "id": 10,
-        "title": "The Godfather: Part II",
-        "genre": [
-          "Crime",
-          "Drama"
-        ],
-        "year": 1974,
-        "rating": 8.6,
-        "rated": "R",
-        "director": [
-          "Francis Ford Coppola"
-        ],
-        "actors": [
-          "Marlon Brando",
-          "Al Pacino",
-          "James Caan",
-          "Richard S. Castellano"
-        ],
-        "synopsis": "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
-        "imageUrl": "",
-        "favourite": false
-      },
-      {
-        "id": 11,
-        "title": "The Godfather: Part III",
-        "genre": [
-          "Crime",
-          "Drama"
-        ],
-        "year": 1990,
-        "rating": 7.6,
-        "director": [
-          "Francis Ford Coppola"
-        ],
-        "actors": [
-          "Marlon Brando",
-          "Al Pacino",
-          "James Caan",
-          "Richard S. Castellano"
-        ],
-        "synopsis": "In the continuing saga of the Corleone crime family, Michael travels through the 70s and 80s as he attempts to adjust to a new life in the small Southern town of New York.",
-        "imageUrl": "",
-        "favourite": false
-      },
-      {
-        "id": 12,
-        "title": "The Dark Knight",
-        "genre": [
-          "Action",
-          "Crime",
-          "Drama"
-        ],
-        "year": 2008,
-        "rating": 9.1,
-        "rated": "PG-13",
-        "director": [
-          "Christopher Nolan"
-        ],
-        "actors": [
-          "Christian Bale",
-          "Heath Ledger",
-          "Aaron Eckhart",
-          "Michael Caine"
-        ],
-        "synopsis": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
-        "imageUrl": "",
-        "favourite": true
-      },
-      {
-        "id": 13,
-        "title": "the Matrix",
-        "genre": [
-          "Action, Sci-Fi"
-        ],
-        "year": 1999,
-        "rating": 8.7,
-        "rated": "R",
-        "director": [
-          "Lana Wachowski, Lilly Wachowski"
-        ],
-        "actors": [
-          "Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving"
-        ],
-        "synopsis": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
-        "imageUrl": "",
-        "favourite": false
-      }
-    ]
+[
+  {
+    "id": 1,
+    "title": "The Shawshank Redemption",
+    "genre": [
+      "Drama"
+    ],
+    "year": 1994,
+    "rating": 9.3,
+    "director": [
+      "Frank Darabont"
+    ],
+    "actors": [
+      "Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler"
+    ],
+    "synopsis": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+    "imageUrl": "",
+    "favourite": false
+  },
+  {
+    "id": 2,
+    "title": "The Godfather",
+    "genre": [
+      "Crime"
+    ],
+    "year": 1972,
+    "rating": 9.2,
+    "director": [
+      "Francis Ford Coppola"
+    ],
+    "actors": [
+      "Al Pacino, Marlon Brando, Robert Duvall, James Caan"
+    ],
+    "synopsis": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+    "imageUrl": "img/godfather.webp",
+    "favourite": false
+  },
+  {
+    "id": 4,
+    "title": "The Two Towers",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "Fantasy"
+    ],
+    "year": 2002,
+    "rating": 8.7,
+    "rated": "PG-13",
+    "director": [
+      "Peter Jackson"
+    ],
+    "actors": [
+      "Sean Astin",
+      "Elijah Wood",
+      "Viggo Mortensen",
+      "Ian McKellen",
+      "Andy Serkis",
+      "Peter Mayhew",
+      "Bob Newhart",
+      "Roger Allers"
+    ],
+    "synopsis": "While Frodo and Sam edge closer to Mordor with the help of the shifty Gollum, the divided fellowship makes a stand against Sauron's new ally, Saruman, and his legions of Isengard.",
+    "imageUrl": "https://resizing.flixster.com/msqvXCa81MSPEJ1gLPIgrm4vd8Q=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30793_p_v8_am.jpg",
+    "favourite": true
+  },
+  {
+    "id": 5,
+    "title": "The Return of the King",
+    "genre": [
+      "Fantasy",
+      "Adventure"
+    ],
+    "year": 2003,
+    "rating": 8.9,
+    "rated": "PG-13",
+    "director": [
+      "Peter Jackson"
+    ],
+    "actors": [
+      "Sean Astin",
+      "Elijah Wood",
+      "Viggo Mortensen",
+      "Ian McKellen",
+      "Andy Serkis",
+      "Peter Mayhew",
+      "Bob Newhart",
+      "Roger Allers"
+    ],
+    "synopsis": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+    "imageUrl": "",
+    "favourite": false
+  },
+  {
+    "id": 6,
+    "title": "Titanic",
+    "genre": [
+      "Romance",
+      "Drama"
+    ],
+    "year": 1997,
+    "rating": 7.5,
+    "rated": "PG-13",
+    "director": [
+      "James Cameron"
+    ],
+    "actors": [
+      "Leonardo DiCaprio",
+      "Kate Winslet",
+      "Billy Zane",
+      "Kathy Bates"
+    ],
+    "synopsis": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
+    "imageUrl": "",
+    "favourite": false
+  },
+  {
+    "id": 7,
+    "title": "Die Hard",
+    "genre": [
+      "Action",
+      "Thriller"
+    ],
+    "year": 1988,
+    "rating": 8.2,
+    "rated": "R",
+    "director": [
+      "John McTiernan"
+    ],
+    "actors": [
+      "Bruce Willis",
+      "Bonnie Bedelia",
+      "Will ferrell",
+      "Jon Voight"
+    ],
+    "synopsis": "An NYPD officer tries to save his wife and several others taken hostage by German terrorists during a Christmas party at the Nakatomi Plaza.",
+    "imageUrl": "",
+    "favourite": false
+  },
+  {
+    "id": 8,
+    "title": "Die Hard 2",
+    "genre": [
+      "Action",
+      "Thriller"
+    ],
+    "year": 1990,
+    "rating": 7.1,
+    "rated": "R",
+    "director": [
+      "Renny Harlin"
+    ],
+    "actors": [
+      "Bruce Willis",
+      "Bonnie Bedelia",
+      "Will ferrell",
+      "Jon Voight"
+    ],
+    "synopsis": "An NYPD officer tries to save his wife and several others taken hostage by German terrorists during a Christmas party at the Nakatomi palace.",
+    "imageUrl": "",
+    "favourite": false
+  },
+  {
+    "id": 9,
+    "title": "Die Hard: With a Vengeance",
+    "genre": [
+      "Action",
+      "Thriller"
+    ],
+    "year": 1995,
+    "rating": 7.6,
+    "rated": "R",
+    "director": [
+      "John McTiernan"
+    ],
+    "actors": [
+      "Bruce Willis",
+      "Bonnie Bedelia",
+      "Will ferrell",
+      "Jon Voight"
+    ],
+    "synopsis": "An NYPD officer tries to save his wife and several others taken hostage by German terrorists during a Christmas party at the Nakatomi palace.",
+    "imageUrl": "",
+    "favourite": false
+  },
+  {
+    "id": 10,
+    "title": "The Godfather: Part II",
+    "genre": [
+      "Crime",
+      "Drama"
+    ],
+    "year": 1974,
+    "rating": 8.6,
+    "rated": "R",
+    "director": [
+      "Francis Ford Coppola"
+    ],
+    "actors": [
+      "Marlon Brando",
+      "Al Pacino",
+      "James Caan",
+      "Richard S. Castellano"
+    ],
+    "synopsis": "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
+    "imageUrl": "",
+    "favourite": false
+  },
+  {
+    "id": 11,
+    "title": "The Godfather: Part III",
+    "genre": [
+      "Crime",
+      "Drama"
+    ],
+    "year": 1990,
+    "rating": 7.6,
+    "director": [
+      "Francis Ford Coppola"
+    ],
+    "actors": [
+      "Marlon Brando",
+      "Al Pacino",
+      "James Caan",
+      "Richard S. Castellano"
+    ],
+    "synopsis": "In the continuing saga of the Corleone crime family, Michael travels through the 70s and 80s as he attempts to adjust to a new life in the small Southern town of New York.",
+    "imageUrl": "",
+    "favourite": false
+  },
+  {
+    "id": 12,
+    "title": "The Dark Knight",
+    "genre": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "year": 2008,
+    "rating": 9.1,
+    "rated": "PG-13",
+    "director": [
+      "Christopher Nolan"
+    ],
+    "actors": [
+      "Christian Bale",
+      "Heath Ledger",
+      "Aaron Eckhart",
+      "Michael Caine"
+    ],
+    "synopsis": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
+    "imageUrl": "",
+    "favourite": true
+  },
+  {
+    "id": 13,
+    "title": "the Matrix",
+    "genre": [
+      "Action, Sci-Fi"
+    ],
+    "year": 1999,
+    "rating": 8.7,
+    "rated": "R",
+    "director": [
+      "Lana Wachowski, Lilly Wachowski"
+    ],
+    "actors": [
+      "Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving"
+    ],
+    "synopsis": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+    "imageUrl": "",
+    "favourite": false
+  }
+]
