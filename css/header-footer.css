@@ -126,7 +126,6 @@
     outline: none;
     border-color: #666;
 }
-
 /* Log in */
 .login-popup {
     position: fixed;
@@ -184,13 +183,22 @@
     display: none; /* Ensure the login form is hidden by default */
 }
 
-#login-button {
+
+.right-container {
     color: #333;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 10px;
+    border-radius: 15px;
+    padding: 3px 15px 3px 15px;
+    background-color: #f1f1f1;
 }
 
-#login-button:hover {
-    color: #555;
+.right-container:hover {
+    background-color: rgba(191, 191, 191, 0.8);
+
 }
 
 .password-container {
@@ -215,7 +223,6 @@
 .toggle-password:hover {
     color: #555;
 }
-
 
 /* Footer Styles */
 .footer {
