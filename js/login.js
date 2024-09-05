@@ -2,9 +2,7 @@
 /*
 todo: Dark theme, global settings
 todo: design/styling - better looking filter-view, Better styling for favourites list
-todo: functionality filter sort / genres. fovourite list
-TODO: Style  HEADER VIEW IN MOBILE, TABLET, DESKTOP
-
+todo: functionality filter sort / genres. favourite list
  */
 // Kontrollera om användaren är inloggad
 
