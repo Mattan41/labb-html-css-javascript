@@ -1,50 +1,53 @@
-/* css/forms.css */
-
-h2 {
-    color: #0C2733;
-    font-family: 'IBM Plex Sans', Georgia, 'Times New Roman', Times, serif;
-}
 
 body {
     font-family: 'Roboto', Arial, sans-serif;
     color: #333333;
     font-size: 16px;
     line-height: 1.6;
-    margin: 20px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-h1 {
-    color: #042433;
-    font-family: 'IBM Plex Sans', Georgia, 'Times New Roman', Times, serif;
-    font-size: larger;
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 600px;
     width: 100%;
-    margin: 0 auto;
+    max-width: 400px;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #f9f9f9;
 }
 
+label {
+    align-self: flex-start;
+    margin-bottom: 5px;
+}
+
 input, textarea {
-    max-width: 100%;
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-
-label {
-    align-self: flex-start;
-    margin-bottom: 8px;
-    font-weight: bold;
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
 }
 
 button {
@@ -59,24 +62,4 @@ button {
 
 button:hover {
     background-color: #0C2733;
-}
-
-.password-container {
-    position: relative;
-    width: 100%;
-}
-
-#password, #confirm-password {
-    width: 100%;
-}
-
-.button-container {
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-    margin-top: 20px;
-}
-
-.button-container button {
-    margin-right: 10px;
 }
