@@ -1,16 +1,18 @@
-// js/register-form.js
-
 window.onload = function () {
     document.getElementById('register-form').addEventListener('submit', handleSubmit);
-
 
     function handleSubmit(event) {
         event.preventDefault();
         const password = document.getElementById('password').value;
         const confirmPassword = document.getElementById('confirm-password').value;
+        const errorMessage = document.getElementById('error-message');
 
+        if (!validatePassword(password)) {
+            return;
+        }
         if (password !== confirmPassword) {
-            alert('Passwords do not match.');
+            errorMessage.textContent = 'Passwords do not match.';
+            errorMessage.style.display = 'block';
             return;
         }
 
@@ -18,7 +20,7 @@ window.onload = function () {
         window.location.href = 'index.html?message=success';
     }
 
-// Add event listeners for password visibility toggles
+    // Add event listeners for password visibility toggles
     document.getElementById('toggle-password').addEventListener('click', function () {
         togglePasswordVisibility('password', 'toggle-password');
     });
@@ -40,4 +42,18 @@ window.onload = function () {
             toggleIcon.classList.add('fa-eye');
         }
     }
+}
+
+function validatePassword(password) {
+    const errorMessage = document.getElementById('error-message');
+    const passwordCriteria = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
+
+    if (!passwordCriteria.test(password)) {
+        errorMessage.textContent = "Password must be at least 8 characters long and include one letter and one number.";
+        errorMessage.style.display = "block";
+        return false;
+    }
+
+    errorMessage.style.display = "none";
+    return true;
 }

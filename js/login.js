@@ -1,39 +1,39 @@
-    export function initializeLogin() {
-        const isLoggedIn = sessionStorage.getItem("isLoggedIn");
-        const loginButton = document.getElementById("login-button");
+export function initializeLogin() {
+    const isLoggedIn = sessionStorage.getItem("isLoggedIn");
+    const loginButton = document.getElementById("login-button");
 
-        // Set initial welcome message
-        document.getElementById("welcome-message").textContent = "Hi! Sign in: ";
+    // Set initial welcome message
+    document.getElementById("welcome-message").textContent = "Hi! Sign in: ";
 
 
-        if (isLoggedIn) {
-            showLogoutForm();
-            loginButton.classList.add("logged-in");
-            loginButton.title = "Log out";
+    if (isLoggedIn) {
+        showLogoutForm();
+        loginButton.classList.add("logged-in");
+        loginButton.title = "Log out";
+    } else {
+        loginButton.classList.remove("logged-in");
+        loginButton.title = "Sign in";
+    }
+
+    // Add event listener to login form
+    loginButton.addEventListener("click", function () {
+
+        if (sessionStorage.getItem("isLoggedIn")) {
+            logout();
         } else {
-            loginButton.classList.remove("logged-in");
-            loginButton.title = "Sign in";
+            toggleLoginForm();
         }
+    });
 
-        // Add event listener to login form
-        loginButton.addEventListener("click", function () {
-
-            if (sessionStorage.getItem("isLoggedIn")) {
-                logout();
-            } else {
-                toggleLoginForm();
-            }
-        });
-
-        //hide login form when clicking outside of it
-        document.addEventListener("click", function (event) {
-            const loginPopup = document.getElementById("login-popup");
-            const rightContainer = document.querySelector(".right-container");
-            if (!loginPopup.contains(event.target) && !rightContainer.contains(event.target)) {
-                loginPopup.style.display = "none";
-            }
-        });
+    //hide login form when clicking outside of it
+    document.addEventListener("click", function (event) {
+        const loginPopup = document.getElementById("login-popup");
+        const rightContainer = document.querySelector(".right-container");
+        if (!loginPopup.contains(event.target) && !rightContainer.contains(event.target)) {
+            loginPopup.style.display = "none";
         }
+    });
+}
 
 document.getElementById("login-form").addEventListener("submit", login);
 
@@ -80,7 +80,7 @@ function toggleLoginForm() {
 }
 
 // Show/hide password
-document.getElementById('toggle-password').addEventListener('click', function() {
+document.getElementById('toggle-password').addEventListener('click', function () {
     const passwordInput = document.getElementById('password');
     const toggleIcon = document.getElementById('toggle-password');
     if (passwordInput.type === 'password') {

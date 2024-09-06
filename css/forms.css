@@ -30,7 +30,11 @@ form {
     border-radius: 5px;
     background-color: #f9f9f9;
 }
-
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+    align-self: flex-start;
+}
 label {
     align-self: flex-start;
     margin-bottom: 5px;
