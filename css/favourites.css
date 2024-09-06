@@ -21,7 +21,7 @@
 
 #favorite-list li {
     border-bottom: 1px solid #200000;
-    padding: 10px 0;
+    padding: 10px;
     color: cornsilk;
 }
 
@@ -64,8 +64,7 @@
 
     #favorite-list li {
         color: black;
-        padding: 10px 20px;
-        margin: 10px 0;
+        margin: 10px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
