@@ -1,3 +1,16 @@
 .fas.fa-star.favorite {
     color: yellow;
 }
+
+.fas.fa-star {
+    cursor: pointer;
+}
+
+i.fa-solid.fa-f{
+    cursor: pointer;
+    color: #9e0000;
+}
+
+i.fa-solid.fa-f:hover {
+    filter: brightness(1.5);
+}

@@ -1,8 +1,5 @@
 import {getMovieFromLocalStorage} from './global.js';
 
-// Initialization
-
-
 // Main functions
 export function showMovieDetails() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -16,7 +13,7 @@ export function showMovieDetails() {
 
     selectMovieItems(movieDisplayed, movie);
 
-
+    movieDisplayed.classList.add('visible');
     movieDisplayed.classList.remove('hidden');
 
 }
@@ -26,7 +23,9 @@ const closeMovieDetailsButton = document.getElementById('closeMovieDetails');
 
 if (closeMovieDetailsButton) {
     closeMovieDetailsButton.addEventListener('click', () => {
-        document.getElementById('movieDisplayed').classList.add('hidden');
+        const movieDisplayed = document.getElementById('movieDisplayed');
+        movieDisplayed.classList.add('hidden');
+        movieDisplayed.classList.remove('visible');
         clearBackgroundImage();
         clearBrowserUrl();
     });
