@@ -1,10 +1,3 @@
-
-/*
-todo: Dark theme, global settings
-todo: design/styling - better looking filter-view, Better styling for favourites list
-todo: functionality filter sort / genres. favourite list
- */
-
     export function initializeLogin() {
         const isLoggedIn = sessionStorage.getItem("isLoggedIn");
         const loginButton = document.getElementById("login-button");

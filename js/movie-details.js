@@ -1,8 +1,5 @@
 import {getMovieFromLocalStorage} from './global.js';
 
-// Initialization
-
-
 // Main functions
 export function showMovieDetails() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -15,7 +12,6 @@ export function showMovieDetails() {
     setMovieDisplayImage(movieDisplayed, movie);
 
     selectMovieItems(movieDisplayed, movie);
-
 
     movieDisplayed.classList.remove('hidden');
 
