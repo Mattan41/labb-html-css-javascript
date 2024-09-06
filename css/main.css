@@ -23,6 +23,11 @@ h2 {
     margin-bottom: 10px;
 }
 
+h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
 
 /* main.css */
@@ -33,11 +38,11 @@ h2 {
 }
 
 .container {
-   position: relative;
+    position: relative;
 }
 
 /* Movie list styles */
-.col-md-8{
+.col-md-8 {
     flex: auto;
 }
 
@@ -87,7 +92,7 @@ h2 {
 }
 
 .movie-item img {
-    width: 50px;
+    width: 70px;
     height: auto;
     margin-right: 10px;
 }
@@ -222,6 +227,18 @@ h2 {
     h2 {
         font-size: 28px;
     }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    #movieTitle {
+        max-width: 400px;
+    }
+    .movie-item img {
+        width: 100px;
+    }
+
 }
 
 /* Desktop */
@@ -233,6 +250,10 @@ h2 {
 
     h2 {
         font-size: 32px;
+    }
+
+    h3 {
+        font-size: 28px;
     }
 
     .container > .row {
@@ -247,7 +268,13 @@ h2 {
 
     }
 
+    #movieTitle {
+        max-width: 600px;
+    }
+
+
 }
+
 .hidden {
     display: none;
 }

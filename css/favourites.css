@@ -47,28 +47,35 @@
 @media (min-width: 768px) {
 
     .col-md-4 {
-        position: sticky;
+        position: relative;
+        top: auto;
         height: 500px;
 
     }
 
     #favourites-container {
         position: relative;
-        width: 80%; /* Adjust width as needed */
-        height: calc(100%); /* Adjust based on header and footer height */
+        width: 80%;
+        height: calc(100%);
         background-color: rgba(147, 144, 144, 1);
         font-size: 16px;
         color: black;
+
     }
 
     #favorite-list li {
         color: black;
+        padding: 10px 20px;
+        margin: 10px 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
 
     #movieImage {
-        width: 150px; /* Adjust width as needed */
-        height: auto; /* Maintain aspect ratio */
+        width: 150px;
+        height: auto;
     }
 
     #movieTitle {
@@ -88,5 +95,12 @@
         font-size: 20px;
     }
 
+    #close-favourites{
+        display: none;
+    }
+
+    i.fa-solid.fa-f{
+        display: none;
+    }
 
 }
