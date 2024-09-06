@@ -7,10 +7,38 @@ document.getElementById('filter-icon').addEventListener('click', () => {
     filterContainer.classList.toggle('hidden');
 });
 
-document.getElementById('sort-options').addEventListener('change', (event) => {
-    sortMovies(event.target.value);
+document.getElementById('sort-buttons').addEventListener('click', (event) => {
+    if (event.target.tagName === 'BUTTON' || event.target.tagName === 'I') {
+        const button = event.target.tagName === 'BUTTON' ? event.target : event.target.parentElement;
+        const sortCriteria = button.dataset.sort;
+        const isDescending = button.classList.toggle('desc');
+        sortMovies(sortCriteria, isDescending);
+        updateSortIcons(button, isDescending);
+    }
 });
+//sort by title, rating, year
 
+
+function updateSortIcons(button, isDescending) {
+    const icon = button.querySelector('i');
+    if (isDescending) {
+        icon.classList.remove('fa-sort-up');
+        icon.classList.add('fa-sort-down');
+    } else {
+        icon.classList.remove('fa-sort-down');
+        icon.classList.add('fa-sort-up');
+    }
+}
+
+function sortMovies(criteria, isDescending) {
+    const sortFunction = sortFunctions.get(criteria);
+    if (sortFunction) {
+        const sortedMovies = Array.from(movieDataMap.values()).sort((a, b) => {
+            return isDescending ? sortFunction(b, a) : sortFunction(a, b);
+        });
+        populateMovieList(sortedMovies);
+    }
+}
 const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
 
 const sortFunctions = new Map([
@@ -19,15 +47,8 @@ const sortFunctions = new Map([
     ['year', (a, b) => (b.year ?? 0) - (a.year ?? 0)]
 ]);
 
-function sortMovies(criteria) {
-    const sortFunction = sortFunctions.get(criteria);
-    if (sortFunction) {
-        const sortedMovies = Array.from(movieDataMap.values()).sort(sortFunction);
-        populateMovieList(sortedMovies);
-    }
-}
 
-
+// Filter by genre
 document.querySelectorAll('.genre-filter').forEach(genreElement => {
     genreElement.addEventListener('click', () => {
         genreElement.classList.toggle('selected');
