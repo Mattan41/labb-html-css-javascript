@@ -81,6 +81,7 @@
 /* Filter container styles */
 #filterContainer {
     position: relative;
+    flex-direction: column;
     width: 100%;
     background-color: #c6c6c6;
     z-index: 900;
@@ -100,9 +101,10 @@
     border-radius: 15px;
     cursor: pointer;
     background-color: #f1f1f1;
-    max-height: 50px; /* Adjust as needed */
+    max-height: 40px; /* Adjust as needed */
     overflow: hidden;
-    padding: 1px 3px;
+    padding: 3px 6px; /* Reduced padding */
+    font-size: 0.75em; /* Optional: Reduce font size */
 }
 
 .genre-filter.selected {
@@ -120,10 +122,11 @@
     background-color: #f1f1f1;
     border: 1px solid #ccc;
     border-radius: 6px;
-    padding: 5px 10px;
+    padding: 3px 6px; /* Reduced padding */
     margin-right: 5px;
     align-items: center;
     gap: 5px;
+    font-size: 0.75em; /* Optional: Reduce font size */
 }
 
 .sort-button i {
