@@ -121,7 +121,7 @@ h3 {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: fit-content;
+    max-width: 150px;
 }
 
 
