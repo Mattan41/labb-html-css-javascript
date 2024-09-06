@@ -6,7 +6,7 @@
     gap: 10px;
     padding: 5px;
     background-color: #d9d9d9;
-    position: fixed;
+    position: relative;
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -80,6 +80,7 @@
 
 /* Filter container styles */
 #filterContainer {
+    position: relative;
     width: 100%;
     background-color: #c6c6c6;
     z-index: 900;
@@ -109,26 +110,27 @@
     color: #fff;
 }
 
+.sort-buttons{
+    display: flex;
+    flex-flow: row;
+}
 
-/* Sort-by dropdown styles */
-#sort-options {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #fff;
-    font-size: 12px;
+.sort-button {
     cursor: pointer;
-    transition: border-color 0.3s ease;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    align-items: center;
+    gap: 5px;
 }
 
-#sort-options:hover {
-    border-color: #333;
+.sort-button i {
+    transition: transform 0.3s ease;
 }
 
-#sort-options:focus {
-    outline: none;
-    border-color: #666;
-}
+
 
 /* Log in */
 .login-popup {
