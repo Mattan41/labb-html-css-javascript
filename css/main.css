@@ -33,8 +33,8 @@ h3 {
 /* main.css */
 
 .main-content {
-    padding-top: 120px; /* Adjust based on header, movieSearch, and filterContainer height */
-    padding-bottom: 40px; /* Adjust based on footer height */
+    padding-top: 120px;
+    padding-bottom: 40px;
 }
 
 .container {
@@ -95,6 +95,7 @@ h3 {
     width: 70px;
     height: auto;
     margin-right: 10px;
+    border-radius: 4px;
 }
 
 .movie-item-details {
@@ -123,7 +124,7 @@ h3 {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 150px;
+    max-width: fit-content;
 }
 
 
@@ -227,13 +228,9 @@ h3 {
         font-size: 24px;
     }
 
-    #movieTitle {
-        max-width: 200px;
-    }
     .movie-item img {
         width: 100px;
     }
-
 }
 
 /* Desktop */
@@ -251,23 +248,10 @@ h3 {
         font-size: 28px;
     }
 
-    .container > .row {
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-        position: relative;
-    }
-
     .col-md-8 {
-        width: 100%; /* Adjust width as needed */
+        width: 100%;
 
     }
-
-    #movieTitle {
-        max-width: 600px;
-    }
-
-
 }
 
 .hidden {
