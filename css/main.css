@@ -199,11 +199,6 @@ h3 {
     margin-top: 20px;
 }
 
-#paginationControls button {
-    padding: 5px 10px;
-    margin: 0 5px;
-}
-
 /* Hidden class */
 .hidden {
     display: none;
@@ -233,7 +228,7 @@ h3 {
     }
 
     #movieTitle {
-        max-width: 400px;
+        max-width: 200px;
     }
     .movie-item img {
         width: 100px;

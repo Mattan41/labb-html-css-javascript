@@ -8,7 +8,7 @@
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     top: 120px;
-    bottom: 40px;
+    bottom: 0;
     left: 0;
     right: 0;
     overflow-y: auto;
@@ -20,17 +20,17 @@
 }
 
 #favorite-list li {
-    border-bottom: 1px solid #200000; /* Dark Red line between each item */
-    padding: 10px 0; /* Padding for better spacing */
-    color: cornsilk; /* Set text color to white */
+    border-bottom: 1px solid #200000;
+    padding: 10px 0;
+    color: cornsilk;
 }
 
 #favorite-list li:last-child {
-    border-bottom: none; /* Remove line from the last item */
+    border-bottom: none;
 }
 
 .button {
-    background-color: rgba(116, 4, 4, 0.8); /* Match movie-details.css */
+    background-color: rgba(116, 4, 4, 0.8);
     color: white;
     padding: 10px 20px;
     border: none;
@@ -47,7 +47,6 @@
 @media (min-width: 768px) {
 
     .col-md-4 {
-        position: relative;
         top: auto;
         height: 500px;
 
