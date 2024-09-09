@@ -33,12 +33,13 @@ export function fetchMovies() {
             .catch(error => console.error(error));
     }
 }
-
+//get list of movies from localstorage
 export function getMoviesFromLocalStorage() {
     const data = JSON.parse(localStorage.getItem('movieData')) || [];
     movieDataMap = new Map(data.map(movie => [movie.id, movie]));
     return movieDataMap;
 }
+
 export function toggleFavourite(starIcon, movie) {
     starIcon.classList.toggle('favorite', movie.favourite);
     starIcon.title = movie.favourite ? 'Remove from favourites' : 'Add to favourites';
@@ -79,6 +80,7 @@ function displayStoredMovieList() {
         favoriteListElement.appendChild(movieElement);
     });
 }
+//get one movie from localstorage
 export function getMovieFromLocalStorage(movieId) {
     const data = JSON.parse(localStorage.getItem('movieData')) || [];
     const movie = data.find(movie => movie.id === movieId);

@@ -35,13 +35,7 @@ export function populateMovieList(movies = Array.from(movieDataMap.values())) {
             genreList.appendChild(genreItem);
         });
 
-        if (genres.length <= 2) {
-            genreList.classList.add('few-genres');
-        } else if (genres.length <= 4) {
-            genreList.classList.add('medium-genres');
-        } else {
-            genreList.classList.add('many-genres');
-        }
+        selectGenreSizeBasedOnHowManyGenres(genres, genreList);
 
         if (movie.imageUrl) {
             movieImage.src = movie.imageUrl;
@@ -67,4 +61,14 @@ export function populateMovieList(movies = Array.from(movieDataMap.values())) {
 
         movieListContainer.appendChild(movieItem);
     });
+}
+
+function selectGenreSizeBasedOnHowManyGenres(genres, genreList) {
+    if (genres.length <= 2) {
+        genreList.classList.add('few-genres');
+    } else if (genres.length <= 4) {
+        genreList.classList.add('medium-genres');
+    } else {
+        genreList.classList.add('many-genres');
+    }
 }

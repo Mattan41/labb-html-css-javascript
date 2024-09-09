@@ -7,6 +7,7 @@ document.getElementById('filter-icon').addEventListener('click', () => {
     filterContainer.classList.toggle('hidden');
 });
 
+//sort by title, rating, year
 document.getElementById('sort-buttons').addEventListener('click', (event) => {
     if (event.target.tagName === 'BUTTON' || event.target.tagName === 'I') {
         const button = event.target.tagName === 'BUTTON' ? event.target : event.target.parentElement;
@@ -16,7 +17,6 @@ document.getElementById('sort-buttons').addEventListener('click', (event) => {
         updateSortIcons(button, isDescending);
     }
 });
-//sort by title, rating, year
 
 
 function updateSortIcons(button, isDescending) {
