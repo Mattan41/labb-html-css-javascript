@@ -227,6 +227,12 @@ h3 {
     .movie-item img {
         width: 100px;
     }
+
+
+    #movieTitle {
+        max-width: 300px;
+    }
+
 }
 
 /* Desktop */
@@ -247,6 +253,10 @@ h3 {
     .col-md-8 {
         width: 100%;
 
+    }
+
+    #movieTitle {
+        max-width: 450px;
     }
 }
 
