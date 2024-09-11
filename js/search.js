@@ -3,6 +3,7 @@ import {populateMovieList} from './movies.js';
 let movieDataMap = fetchMovies().then(() => {
     movieDataMap = getMoviesFromLocalStorage();
     populateMovieList();
+    populateGenreFilters();
 });
 
 document.getElementById('filter-icon').addEventListener('click', () => {
@@ -49,6 +50,29 @@ const sortFunctions = new Map([
     ['rating', (a, b) => (b.rating ?? 0) - (a.rating ?? 0)],
     ['year', (a, b) => (b.year ?? 0) - (a.year ?? 0)]
 ]);
+
+//populate genre filters
+function populateGenreFilters() {
+    const genreFiltersContainer = document.getElementById('genre-filters');
+    genreFiltersContainer.innerHTML = '<label>Filter by genre:</label>'; // Clear existing genres
+
+    const genres = new Set();
+    movieDataMap.forEach(movie => {
+        movie.genre.forEach(genre => genres.add(genre));
+    });
+
+    genres.forEach(genre => {
+        const genreElement = document.createElement('span');
+        genreElement.classList.add('genre-filter');
+        genreElement.dataset.genre = genre;
+        genreElement.textContent = genre;
+        genreElement.addEventListener('click', () => {
+            genreElement.classList.toggle('selected');
+            filterMoviesByGenre();
+        });
+        genreFiltersContainer.appendChild(genreElement);
+    });
+}
 
 
 // Filter by genre
