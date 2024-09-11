@@ -1,5 +1,6 @@
 .fas.fa-star.favorite {
     color: yellow;
+    margin-inline: 10px;
 }
 
 .fas.fa-star {
