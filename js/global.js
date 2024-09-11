@@ -11,27 +11,29 @@ window.onload = function() {
 };
 
 export function fetchMovies() {
-    const localData = localStorage.getItem('movieData');
-    if (localData) {
-        movieDataMap = new Map(JSON.parse(localData).map(movie => [movie.id, movie]));
-        loadFavouriteList();
-        return Promise.resolve(movieDataMap);
-    } else {
-        return fetch('json/data.json', { mode: 'no-cors' })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok ' + response.statusText);
+    return fetch('json/data.json', { mode: 'no-cors' })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const localData = JSON.parse(localStorage.getItem('movieData')) || [];
+            const localDataMap = new Map(localData.map(movie => [movie.id, movie]));
+
+            data.forEach(movie => {
+                if (localDataMap.has(movie.id)) {
+                    movie.favourite = localDataMap.get(movie.id).favourite;
                 }
-                return response.json();
-            })
-            .then(data => {
-                localStorage.setItem('movieData', JSON.stringify(data));
-                movieDataMap = new Map(data.map(movie => [movie.id, movie]));
-                loadFavouriteList();
-                return movieDataMap;
-            })
-            .catch(error => console.error(error));
-    }
+            });
+
+            localStorage.setItem('movieData', JSON.stringify(data));
+            movieDataMap = new Map(data.map(movie => [movie.id, movie]));
+            loadFavouriteList();
+            return movieDataMap;
+        })
+        .catch(error => console.error(error));
 }
 //get list of movies from localstorage
 export function getMoviesFromLocalStorage() {

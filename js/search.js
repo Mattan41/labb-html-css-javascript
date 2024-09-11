@@ -1,6 +1,9 @@
-import { getMoviesFromLocalStorage } from "./global.js";
+import {fetchMovies, getMoviesFromLocalStorage} from "./global.js";
 import {populateMovieList} from './movies.js';
-let movieDataMap = getMoviesFromLocalStorage();
+let movieDataMap = fetchMovies().then(() => {
+    movieDataMap = getMoviesFromLocalStorage();
+    populateMovieList();
+});
 
 document.getElementById('filter-icon').addEventListener('click', () => {
     const filterContainer = document.getElementById('filterContainer');

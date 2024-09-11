@@ -1,7 +1,6 @@
 import {fetchMovies, getMoviesFromLocalStorage, toggleFavourite} from './global.js';
 import {showMovieDetails} from "./movie-details.js";
 
-
 let movieDataMap;
 fetchMovies().then(() => {
     movieDataMap = getMoviesFromLocalStorage();
@@ -16,7 +15,7 @@ export function populateMovieList(movies = Array.from(movieDataMap.values())) {
     movies.forEach((movie) => {
         const movieItem = movieTemplate.content.cloneNode(true);
         const movieTitle = movieItem.querySelector('#movieTitle');
-        const movieImage = movieItem.querySelector('.movieCover'); //
+        const movieImage = movieItem.querySelector('.movieCover');
         const starIcon = movieItem.querySelector('#starIcon');
 
         movieTitle.textContent = movie.title;
@@ -55,9 +54,7 @@ export function populateMovieList(movies = Array.from(movieDataMap.values())) {
             history.pushState(null, '', '?' + urlParams.toString());
             console.log('Movie ID: ' + movie.id + ' clicked');
             showMovieDetails();
-
         });
-
 
         movieListContainer.appendChild(movieItem);
     });
