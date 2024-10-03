@@ -1,29 +1,27 @@
-# Movie Fetcher
+# Labb HTML CSS JavaScript
 
-This project fetches popular movies from the TMDB API and saves them to a JSON file.
+## Description
+This project fetches popular movies from The Movie Database (TMDB) API and saves them to a JSON file.
 
 ## Prerequisites
-
-- Node.js
-- npm
+- Node.js (version 12.20.0 or higher)
+- npm (Node Package Manager)
 
 ## Setup
 
-1. Clone the repository:
-   ```sh
-   git clone <repository-url>
-   cd <repository-directory>
-    ```
-2. Install dependencies:
+1. **Clone this repository**:
+
+2. **Install dependencies**:
    ```sh
    npm install
    ```
-3. Create a `.env` file in the root directory and add the following environment variables:
+3. **Install dotenv**:
    ```sh
-    TMDB_API_KEY=<your-tmdb-api-key>
-    ```
-4. To fetch movies and save them to a JSON file, run:
-   ```sh
-   node js/fetchAndSaveMovies.mjs
+   npm install dotenv
    ```
-5. The movies will be saved to `data/movies.json`.
+4. Create a .env file in the root of your project and add your API key:  
+      API_KEY=your_actual_api_key
+5. **Run the command to populate the JSON file with popular movies**:
+   ```sh
+   npm run fetch-movies
+   ```

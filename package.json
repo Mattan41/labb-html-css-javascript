@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fetch-movies": "node js/fetchAndSaveMovies.mjs"
   },
   "repository": {
     "type": "git",
@@ -12,6 +13,7 @@
   },
   "private": true,
   "dependencies": {
+    "dotenv": "^16.4.5",
     "node-fetch": "^3.3.2"
   }
 }
