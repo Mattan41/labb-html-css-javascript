@@ -17,7 +17,7 @@ export function fetchMovies() {
         loadFavouriteList();
         return Promise.resolve(movieDataMap);
     } else {
-        return fetch('json/data.json', { mode: 'no-cors' })
+        return fetch('json/movies.json', { mode: 'no-cors' })
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
