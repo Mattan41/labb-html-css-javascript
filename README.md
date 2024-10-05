@@ -22,8 +22,3 @@ This project fetches popular movies from The Movie Database (TMDB) API and saves
 4. Create a .env file in the root of your project and add your API key:  
       API_KEY=your_actual_api_key
 make sure to replace your_actual_api_key with your actual API key.
- 
-5. **Run the command to populate the JSON file with popular movies**:
-   ```sh
-   npm run fetch-movies
-   ```
