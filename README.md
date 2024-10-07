@@ -15,10 +15,6 @@ This project fetches popular movies from The Movie Database (TMDB) API and saves
    ```sh
    npm install
    ```
-3. **Install dotenv**:
-   ```sh
-   npm install dotenv
-   ```
-4. Create a .env file in the root of your project and add your API key:  
-      API_KEY=your_actual_api_key
-make sure to replace your_actual_api_key with your actual API key.
+3. Create a .env file in the root of your project and add your API key:
+      VITE_ACCESS_TOKEN=your_actual_access_token
+make sure to replace your_access_token with your actual access token.
